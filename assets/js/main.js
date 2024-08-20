@@ -1,15 +1,15 @@
 let x = document.querySelectorAll('.footer-dvivition');
 let displayAboutUs = false;
-
+let displaySupportMenu = false;
 
 x.forEach(e => {
     e.addEventListener('mouseover', b => {
-        if (displayAboutUs) return
+        if (displayAboutUs || displaySupportMenu) return
         e.style.animation = 'slide-up 0.3s ease';
         e.style.transform = 'translateY(-10px)';
     });
     e.addEventListener('mouseout', b => {
-        if (displayAboutUs) return
+        if (displayAboutUs || displaySupportMenu) return
         e.style.animation = 'slide-up-reverse 0.3s ease';
         e.style.transform = '';
     });
@@ -17,12 +17,24 @@ x.forEach(e => {
 
 var aboutButton = document.querySelector('.footer-dvivition:nth-child(2)');
 x[1].addEventListener('click', e => {
-    document.querySelector('body>#aboutUS').style.display = !displayAboutUs == true ? 'flex' : 'none';
-    displayAboutUs = !displayAboutUs;
+    document.querySelector('body>#aboutUS').style.display = !displayAboutUs && !displaySupportMenu ? 'flex' : 'none';
+    displayAboutUs = !displaySupportMenu ? !displayAboutUs : displayAboutUs;
     aboutButton.style.animation = 'slide-up-reverse 0.3s ease';
     aboutButton.style.transform = '';
 });
 document.querySelector('#aboutUS .box .close').addEventListener('click', e => {
-    document.querySelector('body>#aboutUS').style.display = !displayAboutUs == true ? 'flex' : 'none';
-    displayAboutUs = !displayAboutUs;
+    document.querySelector('body>#aboutUS').style.display = !displayAboutUs && !displaySupportMenu ? 'flex' : 'none';
+    displayAboutUs = !displaySupportMenu ? !displayAboutUs : displayAboutUs;
+});
+
+var supportButton = document.querySelector('.footer-dvivition:last-child');
+x[x.length - 1].addEventListener('click', e => {
+    document.querySelector('body>#support').style.display = !displaySupportMenu && !displayAboutUs ? 'flex' : 'none';
+    displaySupportMenu = !displayAboutUs ? !displaySupportMenu : displaySupportMenu;
+    supportButton.style.animation = 'slide-up-reverse 0.3s ease';
+    supportButton.style.transform = '';
+});
+document.querySelector('#support .box .close').addEventListener('click', e => {
+    document.querySelector('body>#support').style.display = !displaySupportMenu && !displaySupportMenu ? 'flex' : 'none';
+    displaySupportMenu = !displayAboutUs ? !displaySupportMenu : displaySupportMenu;
 });
