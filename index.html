@@ -8,6 +8,53 @@
     <link rel="stylesheet" href="assets/css/main.css">
     <link rel="stylesheet" href="assets/css/home.css">
     <title>کتابخانه روبیکا - RubikaLib</title>
+    <style>
+        .code-container {
+            background-color: #f5f5f5;
+            padding: 10px;
+            border-radius: 5px;
+            font-family: 'Courier New', monospace;
+            font-size: 14px;
+            line-height: 1.4;
+            position: relative;
+        }
+
+        .code-container::before {
+            content: "";
+            position: absolute;
+            top: 0;
+            bottom: 0;
+            left: 0;
+            width: 3em;
+            background-color: #e6e6e6;
+            border-right: 1px solid #ddd;
+            text-align: right;
+            padding-right: 0.5em;
+            color: #666;
+            counter-reset: line-number;
+        }
+
+        .code-container pre {
+            margin-left: 3em;
+            white-space: pre-wrap;
+            word-break: break-all;
+            counter-increment: line-number;
+        }
+
+        .code-container pre::before {
+            content: counter(line-number) ". ";
+            display: inline-block;
+            width: 3em;
+            margin-left: -3em;
+            text-align: right;
+            color: #666;
+        }
+
+        code.language-php {
+            color: #333;
+            font-weight: bold;
+        }
+    </style>
 </head>
 
 <body>
@@ -46,7 +93,17 @@
         </div>
     </div>
     <section>
-        <div class="example"></div>
+        <div class="example">
+            <div class="title">sample :</div>
+            <div class="code-container">
+                <pre><code class="language-php">
+&lt;?php
+echo "Hello, World!";
+?>
+                            </code></pre>
+            </div>
+        </div>
+        <div class="circles"></div>
     </section>
     <footer>
         <div class="divitions">
