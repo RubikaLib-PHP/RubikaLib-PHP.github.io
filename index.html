@@ -49,24 +49,23 @@
         <div class="example">
             <div class="title">Quick Start : <span style="font-family: monospace; font-size: medium;"><span
                         class="red">composer</span> <span class="string">require</span> rubikalib/rubikalib</span></div>
-            <pre class="code">
-                <code>
+            <pre class="code"><code>
 <span style="color: #b57a3e;">&lt;?php</span>
 
 <span class="keyword">declare</span><span class="parantez">(</span><span class="consts">strict_types</span>=<span class="numbers">1</span><span class="parantez">)</span>;
 <span class="keyword">require_once </span><span class="string">'vendor/autoload.php'</span>;
 
 <span class="types">use</span> <span class="red">RubikaLib\enums\chatActivities</span>;
-<span class="types">use</span> <span class="red">RubikaLib\interfaces\runner</span>;
+<span class="types">use</span> <span class="red">RubikaLib\interfaces\Runner</span>;
 <span class="types">use</span> <span class="red">RubikaLib\</span><span class="parantez">{</span>
     <span class="types">use</span> <span class="red">Logger</span>,
     <span class="types">use</span> <span class="red">Main</span>
-<span class="parantez">}</span>
+<span class="parantez">}</span>;
 
 <span class="keyword">try</span> <span class="parantez">{</span>
     <span class="variable">$app</span> = <span class="types">new</span> <span class="red">Main</span><span class="parantez">(</span><span class="numbers">989123456789</span><span class="parantez">)</span>;
 
-    <span class="keyword">class</span> <span class="red">App</span> <span class="keyword">implements</span> <span class="red">runner</span> <span class="parantez">{</span>
+    <span class="keyword">class</span> <span class="red">App</span> <span class="keyword">implements</span> <span class="red">Runner</span> <span class="parantez">{</span>
         <span class="keyword">private</span> <span class="types">?array</span> <span class="variable">$self</span>;
 
         <span class="keyword">public function</span> <span class="method">onStart</span><span class="parantez">(</span><span class="types">array</span> <span class="variable">$mySelf</span><span class="parantez">)</span>: <span class="types">void</span>
@@ -101,7 +100,7 @@
 <span class="parantez">}</span> <span class="keyword">catch</span> <span class="parantez">(</span><span class="red">Logger</span> <span class="variable">$e</span><span class="parantez">)</span> <span class="parantez">{</span>
     <span class="keyword">echo</span> <span class="variable">$e</span>-><span class="method">getMessage</span><span class="parantez">(</span><span class="parantez">)</span> . <span class="string">"\n"</span>;
 <span class="parantez">}</span>
-                </code>
+</code>
         </div>
         <div class="docs">
             <a href="/docs/">برای دیدن کامل مستندات کلیک کنید!</a>
