@@ -16,7 +16,7 @@ x.forEach(e => {
 });
 
 var aboutButton = document.querySelector('.footer-dvivition:nth-child(2)');
-x[1].addEventListener('click', e => {
+x[0].addEventListener('click', e => {
     document.querySelector('body>#aboutUS').style.display = !displayAboutUs && !displaySupportMenu ? 'flex' : 'none';
     displayAboutUs = !displaySupportMenu ? !displayAboutUs : displayAboutUs;
     aboutButton.style.animation = 'slide-up-reverse 0.3s ease';
