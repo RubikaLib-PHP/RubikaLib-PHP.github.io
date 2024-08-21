@@ -38,3 +38,16 @@ document.querySelector('#support .box .close').addEventListener('click', e => {
     document.querySelector('body>#support').style.display = !displaySupportMenu && !displaySupportMenu ? 'flex' : 'none';
     displaySupportMenu = !displayAboutUs ? !displaySupportMenu : displaySupportMenu;
 });
+
+var list = document.querySelector('section .list ul');
+fetch('methods.json').then((resp) => resp.text()).then(function (data) {
+    let parse = JSON.parse(data);
+    parse.forEach(e => {
+        let newATag = document.createElement('a');
+        let newLiTag = document.createElement('li');
+        newLiTag.append(document.createTextNode(e));
+        newATag.appendChild(newLiTag);
+        newATag.setAttribute('href', `${e}.html`);
+        list.appendChild(newATag);
+    });
+});
