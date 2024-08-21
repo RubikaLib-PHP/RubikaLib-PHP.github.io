@@ -8,53 +8,6 @@
     <link rel="stylesheet" href="assets/css/main.css">
     <link rel="stylesheet" href="assets/css/home.css">
     <title>کتابخانه روبیکا - RubikaLib</title>
-    <style>
-        .code-container {
-            background-color: #f5f5f5;
-            padding: 10px;
-            border-radius: 5px;
-            font-family: 'Courier New', monospace;
-            font-size: 14px;
-            line-height: 1.4;
-            position: relative;
-        }
-
-        .code-container::before {
-            content: "";
-            position: absolute;
-            top: 0;
-            bottom: 0;
-            left: 0;
-            width: 3em;
-            background-color: #e6e6e6;
-            border-right: 1px solid #ddd;
-            text-align: right;
-            padding-right: 0.5em;
-            color: #666;
-            counter-reset: line-number;
-        }
-
-        .code-container pre {
-            margin-left: 3em;
-            white-space: pre-wrap;
-            word-break: break-all;
-            counter-increment: line-number;
-        }
-
-        .code-container pre::before {
-            content: counter(line-number) ". ";
-            display: inline-block;
-            width: 3em;
-            margin-left: -3em;
-            text-align: right;
-            color: #666;
-        }
-
-        code.language-php {
-            color: #333;
-            font-weight: bold;
-        }
-    </style>
 </head>
 
 <body>
@@ -74,7 +27,7 @@
             </div>
             <div class="data">
                 <span>
-                    نویسنده کلی ربات: <a href="https://amirrezafiroz.github.io">Amirreza</a>
+                    نویسنده کلی کتابخانه: <a href="https://amirrezafiroz.github.io">Amirreza</a>
                 </span>
             </div>
         </div>
@@ -94,16 +47,65 @@
     </div>
     <section>
         <div class="example">
-            <div class="title">sample :</div>
-            <div class="code-container">
-                <pre><code class="language-php">
-&lt;?php
-echo "Hello, World!";
-?>
-                            </code></pre>
-            </div>
+            <div class="title">Quick Start : <span style="font-family: monospace; font-size: medium;"><span
+                        class="red">composer</span> <span class="string">require</span> rubikalib/rubikalib</span></div>
+            <pre class="code">
+                <code>
+<span style="color: #b57a3e;">&lt;?php</span>
+
+<span class="keyword">declare</span><span class="parantez">(</span><span class="consts">strict_types</span>=<span class="numbers">1</span><span class="parantez">)</span>;
+<span class="keyword">require_once </span><span class="string">'vendor/autoload.php'</span>;
+
+<span class="types">use</span> <span class="red">RubikaLib\enums\chatActivities</span>;
+<span class="types">use</span> <span class="red">RubikaLib\interfaces\runner</span>;
+<span class="types">use</span> <span class="red">RubikaLib\</span><span class="parantez">{</span>
+    <span class="types">use</span> <span class="red">Logger</span>,
+    <span class="types">use</span> <span class="red">Main</span>
+<span class="parantez">}</span>
+
+<span class="keyword">try</span> <span class="parantez">{</span>
+    <span class="variable">$app</span> = <span class="types">new</span> <span class="red">Main</span><span class="parantez">(</span><span class="numbers">989123456789</span><span class="parantez">)</span>;
+
+    <span class="keyword">class</span> <span class="red">App</span> <span class="keyword">implements</span> <span class="red">runner</span> <span class="parantez">{</span>
+        <span class="keyword">private</span> <span class="types">?array</span> <span class="variable">$self</span>;
+
+        <span class="keyword">public function</span> <span class="method">onStart</span><span class="parantez">(</span><span class="types">array</span> <span class="variable">$mySelf</span><span class="parantez">)</span>: <span class="types">void</span>
+        <span class="parantez">{</span>
+            <span class="variable">$this</span>-><span class="method">self</span> = <span class="variable">$mySelf</span>;
+        <span class="parantez">}</span>
+
+        <span class="keyword">public function</span> <span class="method">onMessage</span><span class="parantez">(</span><span class="types">array</span> <span class="variable">$updates</span>, <span class="red">Main</span> <span class="variable">$obj</span><span class="parantez">)</span>: <span class="types">void</span>
+        <span class="parantez">{</span>
+            <span class="keyword">if</span> <span class="parantez2">(</span><span class="keyword">isset</span><span class="parantez">(</span><span class="variable">$updates</span><span class="parantez3">[</span><span class="string">'message_updates'</span><span class="parantez3">]</span><span class="parantez">)</span><span class="parantez2">)</span> <span class="parantez">{</span>
+                <span class="keyword">foreach</span> <span class="parantez2">(</span><span class="variable">$updates</span><span class="parantez3">[</span><span class="string">'message_updates'</span><span class="parantez3">]</span> <span class="types">as</span> <span class="variable">$update</span><span class="parantez">)</span> <span class="parantez2">{</span>
+                    <span class="variable">$guid</span> = <span class="variable">$update</span><span class="parantez">[</span><span class="string">'object_guid'</span><span class="parantez">]</span>; <span class="comments"># chat guid</span>
+                    <span class="variable">$message_id</span> = <span class="variable">$update</span><span class="parantez">[</span><span class="string">'message_id'</span><span class="parantez">]</span>;
+                    <span class="variable">$from</span> = <span class="variable">$update</span><span class="parantez">[</span><span class="string">'message'</span><span class="parantez">]</span><span class="parantez">[</span><span class="string">'author_object_guid'</span><span class="parantez">]</span>; <span class="comments"># message from who?</span>
+                    <span class="variable">$text</span> = <span class="variable">$update</span><span class="parantez">[</span><span class="string">'message'</span><span class="parantez">]</span><span class="parantez">[</span><span class="string">'text'</span><span class="parantez">]</span>;
+
+                    <span class="variable">$obj</span>-><span class="method">sendMessage</span><span class="parantez">(</span>
+                        <span class="types">guid:</span> <span class="variable">$guid</span>,
+                        <span class="types">text:</span> <span class="string">"message recived: </span><span class="variable">$text</span><span class="string">"</span>,
+                        <span class="types">reply_to_message_id:</span> <span class="variable">$message_id</span>
+                    <span class="parantez">)</span>;
+                <span class="parantez2">}</span>
+            <span class="parantez">}</span>
+        <span class="parantez">}</span>
+
+        <span class="keyword">public function</span> <span class="method">onAction</span><span class="parantez">(</span><span class="red">chatActivities</span> <span class="variable">$activitie</span><span class="parantez">, <span class="types">string</span> <span class="variable">$guid</span>, <span class="types">string</span> <span class="variable">$from</span>, <span class="red">Main</span> <span class="variable">$obj</span><span class="parantez"></span><span class="parantez"></span><span class="parantez"></span>)</span>: <span class="types">void</span>
+        <span class="parantez">{</span><span class="parantez">}</span>
+    <span class="parantez">}</span>
+
+    <span class="variable">$app</span>-><span class="method">proccess</span><span class="parantez">(</span><span class="types">new</span> <span class="red">App</span><span class="parantez">)</span>;
+    <span class="variable">$app</span>-><span class="method">run</span><span class="parantez">(</span><span class="parantez">)</span>;
+<span class="parantez">}</span> <span class="keyword">catch</span> <span class="parantez">(</span><span class="red">Logger</span> <span class="variable">$e</span><span class="parantez">)</span> <span class="parantez">{</span>
+    <span class="keyword">echo</span> <span class="variable">$e</span>-><span class="method">getMessage</span><span class="parantez">(</span><span class="parantez">)</span> . <span class="string">"\n"</span>;
+<span class="parantez">}</span>
+                </code>
         </div>
-        <div class="circles"></div>
+        <div class="docs">
+            <a href="/docs/">برای دیدن کامل مستندات کلیک کنید!</a>
+        </div>
     </section>
     <footer>
         <div class="divitions">
@@ -185,5 +187,17 @@ echo "Hello, World!";
     </footer>
 </body>
 <script src="assets/js/main.js"></script>
-
+<script>
+    let d = document.querySelector('.docs a');
+    d.addEventListener('mouseout', e => {
+        d.style.animation = 'ButtonGoUp-reverse 0.25s ease';
+        d.style.marginBottom = '0';
+        d.style.boxShadow = '';
+    });
+    d.addEventListener('mouseover', e => {
+        d.style.animation = 'ButtonGoUp 0.25s ease';
+        d.style.marginBottom = '10px';
+        d.style.boxShadow = '0 5px 10px black';
+    });
+</script>
 </html>
