@@ -7,6 +7,7 @@
     <link rel="icon" href="../assets/img/icon.jpg">
     <link rel="stylesheet" href="../assets/css/main.css">
     <link rel="stylesheet" href="css/docs.css">
+    <link rel="stylesheet" href="css/tables.css">
     <title>کتابخانه روبیکا - RubikaLib</title>
 </head>
 <style>
@@ -72,57 +73,76 @@
                     <li>شروع استفاده</li>
                 </a>
                 <a href="./inital.html">
-                    <li style="background: #005A9E;">ورود به حساب</li>
+                    <li>ورود به حساب</li>
                 </a>
                 <a href="MainSettings.html">
-                    <li>تنظیمات شخصی سازی شده</li>
+                    <li style="background: #005A9E;">تنظیمات شخصی سازی شده</li>
                 </a>
             </ul>
         </dic>
         <div class="container">
             <span class="text-title" style="margin-top: 0;">
-                ورود به حساب و ایجاد نشست
+                اعمال تغییرات به هنگام ورود به حساب
             </span>
             <span class="passage">
-                پس از اجرا شدن کتابحانه به هنگام وارد کردن رمز حساب(در صورت وجود) و کد ورود فایل نشست در پوشه lib/ در
-                دایرکتوری فعلی ایجاد شده و اطلاعات لازم برای نشست و ادامه ورود به حساب در صورتی که به هنگام ورود خطایی
-                رخ دهد با پسوند .rub ذخیره میشود.<br>
-                برای بررسی ایننکه قبلا نشستی برای شماره تلفنی وجود دارد یا خیر میتوانید از روش زیر استفاده کنید:<br>
-                <pre class="code"><code>
-<span class="types">use</span> <span class="red">RubikaLib\Session</span> <span class="keyword">as</span> <span class="red">ses</span>;
-                                                                                                
-<span class="keyword">if</span> <span class="parantez">(</span><span class="red">ses</span>::is_session<span class="parantez3">(</span><span class="numbers">989123456789</span><span class="parantez3">)</span><span class="parantez">)</span> <span class="parantez2">{</span>
-    <span class="comments">// do somethink</span>
-<span class="parantez2">}</span>
-</code>
-</pre>
+                کتابخانه برای انجام عملیات ورود به حساب از موارد خاصی استفاده میکند که میتواند توسط کاربر مجددا و به
+                موارد دلخواه تغییر یابد.<br>
+                لازم به ذکر است که این تنظیمات تنها به هنگام ایجاد نشست و ورود به حساب استفاده خواهند شد و پس از ان
+                امکان تغییر انها وجود ندارد.<br>
+                این موارد در حال حاضر عبارتند از:
             </span>
-            <div class="hint">
-                <span class="hint-span">
-                    <span style="color: yellow; font-weight: bold;">نکته!</span>
-                    برای این متد حتما باید شماره با 98 وارد شود یعنی با فرمت زیر:<br>
-                    * 989123456789
-                </span>
-            </div>
-            <span class="text-title">تخلیه خودکار نشست</span>
-            <span class="passage" style="flex-direction: row; justify-content: flex-start; align-items: center;">
-                کتابخانه پس از ارسال هر درخاست برررسی میکند که ایا نشست هنوز وجود دارد یا خیر.<br>
-                در صورتی که نشست خالی شده باشد کتابخانه با ارسال یک Exception نشست را پاک میکند. و به شما اطلاع میدهد که
-                با اجرا مجدد کتابخانه مجددا وارد حساب شوید.
-            </span>
-            <span class="passage" style="flex-direction: row; justify-content: flex-start; align-items: center;">
-                برای تخلیه دستی نشست از متد همچنین میتوانید <a href="logout.html" class="method"
-                    style="margin: 0 2px;">logout</a> استفاده کنید
-            </span>
-            <pre class="code"><code>
-<span class="variable">$app</span>-><span class="method">logout</span><span class="parantez">(</span><span class="parantez">)</span>;
-</code>
-</pre>
+            <table>
+                <tr>
+                    <td>
+                        auth
+                    </td>
+                    <td>
+                        <span class="types">string</span>
+                    </td>
+                    <td>
+                        این تنها به عنوان پارامتر tmp_session ارسال خواهد شد و بعدا با auth که از api دریافت میشود
+                        جایگذین خواهد شد.
+                    </td>
+                    <td>
+                        به صورت پیش فرض ایجد میشود است
+                    </td>
+                </tr>
+                <tr>
+                    <td>
+                        useragent
+                    </td>
+                    <td>
+                        <span class="types">string</span>
+                    </td>
+                    <td>
+                        هنگامی که کتابخانه در حال انجام عملیات ورود به حساب است از این useragent استفاده خواهد کرد و در
+                        مراحل بعدی حتی اگر تغییر دهید باز هم از همان useragent که در ابتدا تنظیم و در نسیت ذخیره شده است
+                        استفاده خواهد شد
+                    </td>
+                    <td>
+                        به صورت پیش فرض ایجاد میشود
+                    </td>
+                </tr>
+                <tr>
+                    <td>
+                        Optimal
+                    </td>
+                    <td>
+                        <span class="types">bool</span>
+                    </td>
+                    <td>
+                        این برای کاهش مصرف منابع است و به صورت پیش فرض روی true قرار دارد
+                    </td>
+                    <td>
+                        true|false
+                    </td>
+                </tr>
+            </table>
             <div class="buttons" style="margin-top: 10px;">
-                <a href=".">
+                <a href="inital.html">
                     <div class="button" style="border-radius: 24% 76% 76% 24% / 50% 50% 50% 50% ;">صفحه قبلی</div>
                 </a>
-                <a href="MainSettings.html">
+                <a href="logout.html">
                     <div class="button" style="border-radius: 76% 24% 24% 76% / 50% 50% 50% 50% ;">صفحه بعدی</div>
                 </a>
             </div>
