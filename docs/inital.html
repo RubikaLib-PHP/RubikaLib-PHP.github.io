@@ -69,10 +69,10 @@
         <dic class="list">
             <ul>
                 <a href=".">
-                    <li style="background: #005A9E;">شروع استفاده</li>
+                    <li>شروع استفاده</li>
                 </a>
                 <a href="./inital.html">
-                    <li>ورود به حساب</li>
+                    <li style="background: #005A9E;">ورود به حساب</li>
                 </a>
                 <a href="MainSettings.html">
                     <li>تنظیمات شخصی سازی شده</li>
@@ -81,81 +81,34 @@
         </dic>
         <div class="container">
             <span class="text-title" style="margin-top: 0;">
-                نصب و راه اندازی
+                ورود به حساب و ایجاد نشست
             </span>
             <span class="passage">
-                برای استفاده از این کتابخانه ابتدا باید آنرا نصب کنید.<br>
-                پیش نیاز های این کتابخانه عبارتند از:<br>
-                php >= 8.1<br>
-                composer<br>
-                mbstring extension<br>
-                openssl extension<br><br>
-                برای نصب کتابخانه میتوانید از دستور زیر استفاده کنید:
+                پس از اجرا شدن کتابحانه به هنگام وارد کردن رمز حساب(در صورت وجود) و کد ورود فایل نشست در پوشه lib/ در
+                دایرکتوری فعلی ایجاد شده و اطلاعات لازم برای نشست و ادامه ورود به حساب در صورتی که به هنگام ورود خطایی
+                رخ دهد با پسوند .rub ذخیره میشود.<br>
+                برای بررسی ایننکه قبلا نشستی برای شماره تلفنی وجود دارد یا خیر میتوانید از روش زیر استفاده کنید:<br>
                 <pre class="code"><code>
-<span class="red">composer</span> <span class="string">require</span> <span class="types">rubikalib/rubikalib</span>
-</code>
-</pre>
-            </span>
-            <span class="text-title">استفاده از کتابخانه</span>
-            <span class="passage">
-                برای استفاده از کتابخانه کافیست پس از نصب ان کلاس هارا لود کنید:
-                <pre class="code"><code>
-<span class="types">use</span> <span class="red">RubikaLib\</span><span class="red">Main</span>;
-</code>
-</pre>
-                سپس یک نسخه از این کلاس را ایجاد کنید.
-                <pre class="code"><code>
-<span class="variable">$app</span> = <span class="types">new</span> <span class="red">Main</span><span class="parantez">(</span><span class="numbers">989123456789</span><span class="parantez">)</span>;
+<span class="types">use</span> <span class="red">RubikaLib\Session</span> <span class="keyword">as</span> <span class="red">ses</span>;
+                                                                                                
+<span class="keyword">if</span> <span class="parantez">(</span><span class="red">ses</span>::is_session<span class="parantez3">(</span><span class="numbers">989123456789</span><span class="parantez3">)</span><span class="parantez">)</span> <span class="parantez2">{</span>
+    <span class="comments">// do somethink</span>
+<span class="parantez2">}</span>
 </code>
 </pre>
             </span>
             <div class="hint">
                 <span class="hint-span">
-                    <span style="color: yellow; font-weight: bold;">نکته!</span> در حال حاضر وارد کردن شماره تلفن فقط
-                    برای
-                    شماره های ایرانی و تنها به صورت زیر ممکن است:<br>
-                    * 989123456789<br>
-                    * 9123456789<br>
-                    همچنین شماره تلفن باید به صورت int وارد شود.
+                    <span style="color: yellow; font-weight: bold;">نکته!</span>
+                    برای این متد حتما باید شماره با 98 وارد شود یعنی با فرمت زیر:<br>
+                    * 989123456789
                 </span>
             </div>
-            <span class="passage">
-                میتوانید نام ربات را نیز مشخص کنید تا در صورتی کهاز تعداد زیاد نشست ها استفاده مکنید به راختی انها را از
-                یکدیگر تشخیض دهید:<br>
-                <pre class="code"><code>
-<span class="variable">$app</span> = <span class="types">new</span> <span class="red">Main</span><span class="parantez">(</span><span class="types">phone_number: </span><span class="numbers">989123456789</span><span class="parantez">, <span class="types">app_name:</span> <span class="string">'my-app-1'</span>)</span>;
-</code>
-</pre>
-            </span>
-            <div class="hint">
-                <span class="hint-span">
-                    <span style="color: yellow; font-weight: bold;">نکته!</span> نامی که انتخاب میشود تنها در مرحله <a
-                        href="inital.html">ورود به حساب</a> استفاده خواهد شد و پس از آن وارد کردن ان تاثیری ندارد
-                </span>
-            </div>
-            <span class="passage" style="flex-direction: row; justify-content: flex-start; align-items: center;">
-                همچنین میتوانید <a href="MainSettings.html" style="margin: 0 2px;">تنظیمات شخضی سازی</a> را نیز اعمال
-                کنید
-            </span>
-            <pre class="code"><code>
-<span class="types">use</span> <span class="red">RubikaLib\interfaces\MainSettings</span>;
-
-<span class="variable">$settings</span> = <span class="types">new</span> <span class="red">MainSettings</span>;
-
-<span class="variable">$settings</span>-><span class="method">setUserAgent<span class="parantez">(</span><span class="string">'Mozilla/5.0 (Windows NT 10.0; Win64; x64; rv:129.0) Gecko/20100101 Firefox/129.0'</span><span class="parantez">)</span></span>; 
-
-<span class="variable">$app</span> = <span class="types">new</span> <span class="red">Main</span><span class="parantez">(</span>
-  <span class="types">phone_number: </span><span class="numbers">989123456789</span><span class="parantez">,
-    <span class="types">app_name:</span> <span class="string">'my-app-1'</span>
-    <span class="types">settings: </span><span class="variable">$settings</span><span class="parantez">,
-)</span>;
-</code>
-</pre>
-            <div class="buttons">
-                <a href="..">
+            <div class="buttons" style="margin-top: 10px;">
+                <a href=".">
                     <div class="button" style="border-radius: 24% 76% 76% 24% / 50% 50% 50% 50% ;">صفحه قبلی</div>
                 </a>
-                <a href="inital.html">
+                <a href="MainSettings.html">
                     <div class="button" style="border-radius: 76% 24% 24% 76% / 50% 50% 50% 50% ;">صفحه بعدی</div>
                 </a>
             </div>
