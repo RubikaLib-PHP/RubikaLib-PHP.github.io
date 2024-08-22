@@ -138,6 +138,36 @@
                     </td>
                 </tr>
             </table>
+            <span class="passage">
+                کلاس مربوط به این تنظیمات MainSettings است.<br>
+                این تنظیمات به کلاس Main پس میشوند<br>
+                <pre class="code"><code>
+<span class="types">use </span> <span class="red">RubikaLib\interfaces\MainSettings</span>;
+
+<span class="variable">$settings</span> = <span class="types">new</span> <span class="red">MainSettings</span>;
+
+<span class="variable">$settings</span>-><span class="method">auth</span> = <span class="string">'...'</span>;
+<span class="variable">$settings</span>-><span class="method">Optimal</span> = <span class="string">true</span>;
+
+<span class="variable">$app</span> = <span class="types">new</span> <span class="red">Main</span><span class="parantez">(</span>
+    <span class="types">phone_number: </span><span class="numbers">98912345678</span>,
+    <span class="types">settings: </span><span class="variable">$settings</span>
+<span class="parantez">)</span>;
+</code>
+</pre>
+                همچنین میتوانید از روش زنجیر کردن برای انجام این کار ها استفاده کنید تا کد ها کمتر شوند
+                <pre class="code"><code>
+<span class="variable">$app</span> = <span class="types">new</span> <span class="red">Main</span><span
+    class="parantez">(</span>
+    <span class="types">phone_number: </span><span class="numbers">98912345678</span>,
+    <span class="types">settings: </span><span class="parantez2">(</span><span class="types">new</span> <span class="red">MainSettings</span><span class="parantez2">)</span>
+        -><span class="method">setAuth</span><span class="parantez3">(</span><span class="string">'...'</span><span class="parantez3">)</span>
+        -><span class="method">setUserAgent</span><span class="parantez3">(</span><span class="string">'...'</span><span class="parantez3">)</span>
+        -><span class="method">setOptimal</span><span class="parantez3">(</span><span class="parantez2">true</span><span class="parantez3">)</span>
+<span class="parantez">)</span>;
+</code>
+</pre>
+            </span>
             <div class="buttons" style="margin-top: 10px;">
                 <a href="inital.html">
                     <div class="button" style="border-radius: 24% 76% 76% 24% / 50% 50% 50% 50% ;">صفحه قبلی</div>
