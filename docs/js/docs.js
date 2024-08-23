@@ -41,18 +41,41 @@ document.querySelector('#support .box .close').addEventListener('click', e => {
     displaySupportMenu = !displayAboutUs ? !displaySupportMenu : displaySupportMenu;
 });
 
-// var list = document.querySelector('section .list ul');
-// fetch('methods.json').then((resp) => resp.text()).then(function (data) {
-//     let parse = JSON.parse(data);
-// //     parse.forEach(e => {
-//         let newATag = document.createElement('a');
-//         let newLiTag = document.createElement('li');
-//         newLiTag.append(document.createTextNode(e));
-//         newATag.appendChild(newLiTag);
-//         newATag.setAttribute('href', `${e}.html`);
-//         list.appendChild(newATag);
-//     });
-// });
+let list = document.querySelector('section .list ul');
+let fileName = window.location.pathname.substring(window.location.pathname.lastIndexOf('/') + 1).replace('.html', '');
+fetch('methods.json').then((resp) => resp.text()).then(function (data) {
+    let parse = JSON.parse(data);
+    parse.forEach(e => {
+        let newATag = document.createElement('a');
+        let newLiTag = document.createElement('li');
+        newLiTag.append(document.createTextNode(e));
+        if (fileName == e) {
+            newLiTag.style.background = '#4191cf';
+        }
+        newATag.appendChild(newLiTag);
+        newATag.setAttribute('href', `${e}.html`);
+        list.appendChild(newATag);
+    });
+
+    if (!['', 'inital', 'MainSettings'].includes(fileName)) {
+        let currentIndex = parse.indexOf(fileName);
+        let prevFileName = currentIndex > 0 ? parse[currentIndex - 1] : null;
+        let nextFileName = currentIndex < parse.length - 1 ? parse[currentIndex + 1] : null;
+
+        let backButton = document.querySelector('.buttons a:first-child .button');
+        let nextButton = document.querySelector('.buttons a:last-child .button');
+
+        if (prevFileName && fileName.toLowerCase() != 'logout') {
+            backButton.textContent = 'صفحه قبلی';
+            backButton.parentElement.setAttribute('href', `${prevFileName}.html`);
+        }
+
+        if (nextFileName) {
+            nextButton.textContent = 'صفحه بعدی';
+            nextButton.parentElement.setAttribute('href', `${nextFileName}.html`);
+        }
+    }
+});
 
 document.querySelectorAll('.list .box .line').forEach(e => {
     e.style.transform = `rotate(${iuahuebruocnae ? '-' : ''}45deg)`;
@@ -94,10 +117,11 @@ d.addEventListener('click', e => {
         });
         rr.style.justifyContent = 'space-between';
         rr.style.padding = '12px 0';
+        listSideBar.style.position = 'fixed';
     } else {
         listSideBarUL.style.display = '';
         listSideBar.style.width = '300px';
-        listSideBar.style.height = '100%';
+        listSideBar.style.height = '3775px';
         d.style.animation = 'ButtonGoUp 0.25s ease';
         d.style.margin = '10px 10px 15px 0';
         d.style.boxShadow = '2px -5px 10px black';
@@ -111,7 +135,9 @@ d.addEventListener('click', e => {
         });
         rr.style.justifyContent = 'center';
         rr.style.padding = '0';
+        listSideBar.style.position = 'absolute';
     }
 
     sideListOpen = !sideListOpen;
 });
+d.click();

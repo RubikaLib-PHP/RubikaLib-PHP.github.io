@@ -1,7 +1,7 @@
 [
     "logout",
     "getMySessions",
-    "terminateSession",
+    "TerminateSession",
     "getMySelf",
     "changeUsername",
     "editProfile",
