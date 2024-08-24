@@ -86,18 +86,18 @@
             </ul>
         </dic>
         <div class="container">
-            <span class="text-title" style="margin-top: 0;">ارسال پیام - sendMessage</span>
+            <span class="text-title" style="margin-top: 0;">ویرایش پیام - EditMessage</span>
             <span class="passage">
                 <pre class="code"><code>
 <span class="comments">/**
-* send text to someone or somewhere
+* Edit Message Text
 *
 * @param string $guid object_guid
-* @param string $text message
-* @param int $reply_to_message_id if you have to reply
+* @param string $NewText message
+* @param int $message_id
 * @return array API result
 */</span>
-<span class="keyword">public function</span> <span class="method">sendMessage</span><span class="parantez">(</span><span class="types">string</span> <span class="variable">$guid</span>, <span class="types">string</span> <span class="variable">$text</span>, <span class="types">int</span> <span class="variable">$reply_to_message_id</span> = <span class="numbers">0</span><span class="parantez">)</span>: <span class="types">array</span>
+<span class="keyword">public function</span> <span class="method">EditMessage</span><span class="parantez">(</span><span class="types">string</span> <span class="variable">$guid</span>, <span class="types">string</span> <span class="variable">$NewText</span>, <span class="types">int</span> <span class="variable">$message_id</span><span class="parantez">)</span>: <span class="types">array</span>
 </code>
 </pre>
                 این متد تصویر پروفایل جدیدی به لیست پروفایل ها اضافه میکند و تصویر انتخاب شده به عنوان اخرین تصویر
@@ -113,93 +113,78 @@
                         <span class="types">string</span>
                     </td>
                     <td>
-                        guid چتی که پیام در ان ارسال خواهد شد. توجه داشته باشید که ممکن است author_object_guid با
+                        guid چتی که پیام در ان ویرایش خواهد شد. توجه داشته باشید که ممکن است author_object_guid با
                         object_guid متفاوت باشد
                     </td>
                 </tr>
                 <tr>
                     <td>
-                        text
+                        NewText
                     </td>
                     <td>
                         <span class="types">string</span>
                     </td>
                     <td>
-                        متن پیام
+                        متن جدید پیام
                     </td>
                 </tr>
                 <tr>
                     <td>
-                        reply_to_message_id
+                        message_id
                     </td>
                     <td>
                         <span class="types">int</span>
                     </td>
                     <td>
-                        شناسه پیامی که ممکن است روی ان ریپلای بزنید. در صورتی که خالی باشد ارسال نمیشود و به صورت پیشفرض
-                        هم خالیست. شناسه پیام از نوع عددی است اما API انرا به صورت string ارسال و دریافت میکند
+                        شناسه پیامی که ویرایش خواهد شد
                     </td>
                 </tr>
             </table>
             <span class="passage">
                 <pre class="code"><code>
-<span class="variable">$app</span>-><span class="method">sendMessage</span><span class="parantez">(</span><span class="string">'u0HMRYa0b...'</span>, <span class="string">'hello'</span><span class="parantez">)</span>;
+<span class="variable">$app</span>-><span class="method">EditMessage</span><span class="parantez">(</span><span class="string">'u0HMRYa0b...'</span>, <span class="string">'new text'</span>, <span class="numbers">518619840...</span><span class="parantez">)</span>;
 </code>
 </pre>
                 نمونه خروجی:
                 <pre class="code"><code>
 {
     "message_update": {
-        "message_id": "1076126339027385",
-        "action": "New",
-        "message": {
-            "message_id": "1076126339027385",
-            "text": "hello",
-            "time": "1723294543",
-            "is_edited": false,
-            "type": "Text",
-            "author_type": "User",
-            "author_object_guid": "u0HMRZI03...",
-            "allow_transcription": false
-        },
-        "updated_parameters": [],
-        "timestamp": "1723294543",
-        "prev_message_id": "1073901226465385",
-        "object_guid": "u0HMRZI03...",
-        "type": "User",
-        "state": "1723294483"
-    },
-    "status": "OK",
-    "chat_update": {
-        "object_guid": "u0HMRZI03...",
+        "message_id": "1090978231335631",
         "action": "Edit",
-        "chat": {
-            "time_string": "172329454300001076126339027385",
-            "last_message": {
-                "message_id": "1076126339027385",
-                "type": "Text",
-                "text": "hello",
-                "author_object_guid": "u0HMRZI03...",
-                "is_mine": true,
-                "author_title": "\u0634\u0645\u0627",
-                "author_type": "User"
-            },
-            "last_seen_my_mid": "1076126339027385",
-            "last_seen_peer_mid": "0",
-            "status": "Active",
-            "time": 1723294543,
-            "last_message_id": "1076126339027385"
+        "message": {
+            "text": "new text",
+            "is_edited": true
         },
         "updated_parameters": [
-            "last_message_id",
-            "last_message",
-            "status",
-            "time_string",
-            "last_seen_my_mid",
-            "last_seen_peer_mid",
-            "time"
+            "text",
+            "is_edited",
+            "metadata"
         ],
-        "timestamp": "1723294543",
+        "timestamp": "1724489772",
+        "object_guid": "u0HMRYa0b...",
+        "type": "User",
+        "state": "1724489712"
+    },
+    "chat_update": {
+        "object_guid": "u0HMRYa0b...",
+        "action": "Edit",
+        "chat": {
+            "last_message": {
+                "message_id": "1090978231335631",
+                "type": "Text",
+                "text": "new text",
+                "author_object_guid": "u0HMRYa0b...",
+                "is_mine": true,
+                "author_title": "شما",
+                "author_type": "User"
+            },
+            "last_message_id": "1090978231335631"
+        },
+        "updated_parameters": [
+            "last_message",
+            "last_message_id"
+        ],
+        "timestamp": "1724489772",
         "type": "User"
     }
 }

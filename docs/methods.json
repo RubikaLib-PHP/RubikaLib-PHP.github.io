@@ -9,7 +9,7 @@
     "UploadNewProfileAvatar",
     "DeleteMyAvatar",
     "sendMessage",
-    "editMessage",
+    "EditMessage",
     "forwardMessages",
     "deleteMessages",
     "sendChatActivity",
