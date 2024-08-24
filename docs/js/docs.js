@@ -57,7 +57,7 @@ fetch('methods.json').then((resp) => resp.text()).then(function (data) {
         list.appendChild(newATag);
     });
 
-    if (!['', 'inital', 'MainSettings'].includes(fileName)) {
+    if (!['', 'inital', 'MainSettings', 'getUpdates', 'enums'].includes(fileName)) {
         let currentIndex = parse.indexOf(fileName);
         let prevFileName = currentIndex > 0 ? parse[currentIndex - 1] : null;
         let nextFileName = currentIndex < parse.length - 1 ? parse[currentIndex + 1] : null;
