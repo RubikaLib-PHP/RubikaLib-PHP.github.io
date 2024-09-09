@@ -63,7 +63,7 @@
 <span class="parantez">}</span>;
 
 <span class="keyword">try</span> <span class="parantez">{</span>
-    <span class="variable">$app</span> = <span class="types">new</span> <span class="red">Main</span><span class="parantez">(</span><span class="numbers">989123456789</span><span class="parantez">)</span>;
+    <span class="variable">$app</span> = <span class="types">new</span> <span class="red">Main</span><span class="parantez">(</span><span class="parantez">)</span>;
 
     <span class="keyword">class</span> <span class="red">App</span> <span class="keyword">implements</span> <span class="red">Runner</span> <span class="parantez">{</span>
         <span class="keyword">private</span> <span class="types">?array</span> <span class="variable">$self</span>;
@@ -82,7 +82,7 @@
                     <span class="variable">$from</span> = <span class="variable">$update</span><span class="parantez">[</span><span class="string">'message'</span><span class="parantez">]</span><span class="parantez">[</span><span class="string">'author_object_guid'</span><span class="parantez">]</span>; <span class="comments"># message from who?</span>
                     <span class="variable">$text</span> = <span class="variable">$update</span><span class="parantez">[</span><span class="string">'message'</span><span class="parantez">]</span><span class="parantez">[</span><span class="string">'text'</span><span class="parantez">]</span>;
 
-                    <span class="variable">$obj</span>-><span class="method">sendMessage</span><span class="parantez">(</span>
+                    <span class="variable">$obj</span>-><span class="method">Messages</span>-><span class="method">SendMessage</span><span class="parantez">(</span>
                         <span class="types">guid:</span> <span class="variable">$guid</span>,
                         <span class="types">text:</span> <span class="string">"message recived: </span><span class="variable">$text</span><span class="string">"</span>,
                         <span class="types">reply_to_message_id:</span> <span class="variable">$message_id</span>
@@ -95,8 +95,8 @@
         <span class="parantez">{</span><span class="parantez">}</span>
     <span class="parantez">}</span>
 
-    <span class="variable">$app</span>-><span class="method">proccess</span><span class="parantez">(</span><span class="types">new</span> <span class="red">App</span><span class="parantez">)</span>;
-    <span class="variable">$app</span>-><span class="method">RunAndLoop</span><span class="parantez">(</span><span class="parantez">)</span>;
+    <span class="variable">$app</span>-><span class="method">proccess</span><span class="parantez">(</span><span class="types">new</span> <span class="red">App</span><span class="parantez">)</span>
+        -><span class="method">RunAndLoop</span><span class="parantez">(</span><span class="parantez">)</span>;
 <span class="parantez">}</span> <span class="keyword">catch</span> <span class="parantez">(</span><span class="red">Logger</span> <span class="variable">$e</span><span class="parantez">)</span> <span class="parantez">{</span>
     <span class="keyword">echo</span> <span class="variable">$e</span>-><span class="method">getMessage</span><span class="parantez">(</span><span class="parantez">)</span> . <span class="string">"\n"</span>;
 <span class="parantez">}</span>
