@@ -60,7 +60,7 @@
             </div>
             <div class="data">
                 <span>
-                    ربات تلگرام: <a href="https://t.me/HarfinoBot?start=61cc3416ef61e23">link</a>
+                    ربات تلگرام: <a href="https://t.me/AmirrezaMessengerBot">link</a>
                 </span>
             </div>
         </div>
@@ -73,7 +73,7 @@
                 <div class="line"></div>
             </div>
             <ul>
-                <a href=".">
+                <!-- <a href=".">
                     <li style="background: #4191cf;">شروع استفاده</li>
                 </a>
                 <a href="./inital.html">
@@ -87,7 +87,7 @@
                 </a>
                 <a href="enums.html">
                     <li>لیست تمام enum ها</li>
-                </a>
+                </a> -->
             </ul>
         </dic>
         <div class="container">
@@ -98,7 +98,7 @@
                 برای استفاده از این کتابخانه ابتدا باید آنرا نصب کنید.<br>
                 پیش نیاز های این کتابخانه عبارتند از:<br>
                 php >= 8.1<br>
-                composer<br>
+                GD extension<br>
                 mbstring extension<br>
                 openssl extension<br><br>
                 برای نصب کتابخانه میتوانید از دستور زیر استفاده کنید:
@@ -117,10 +117,12 @@
                 سپس یک نسخه از این کلاس را ایجاد کنید.
                 <pre class="code"><code>
 <span class="variable">$app</span> = <span class="types">new</span> <span class="red">Main</span><span class="parantez">(</span><span class="numbers">989123456789</span><span class="parantez">)</span>;
+<span class="comments">// OR</span>
+<span class="variable">$app</span> = <span class="types">new</span> <span class="red">Main</span><span class="parantez">(</span><span class="parantez">)</span>;
 </code>
 </pre>
             </span>
-            <div class="hint">
+            <div class="hint" style="margin-bottom: 10px;">
                 <span class="hint-span">
                     <span style="color: yellow; font-weight: bold;">نکته!</span> در حال حاضر وارد کردن شماره تلفن فقط
                     برای
@@ -130,12 +132,17 @@
                     همچنین شماره تلفن باید به صورت int وارد شود.
                 </span>
             </div>
+            <div class="hint">
+                <span class="warning-span">
+                    <span style="color: yellow; font-weight: bold;">نکته!</span> در صورتی که خالی باشد میتوانید بصورت دستی لاگین را انجام دهید.
+                </span>
+            </div>
             <span class="passage">
                 میتوانید نام ربات را نیز مشخص کنید تا در صورتی که از تعداد زیاد نشست ها استفاده میکنید به راختی انها را
                 از
                 یکدیگر تشخیض دهید:<br>
                 <pre class="code"><code>
-<span class="variable">$app</span> = <span class="types">new</span> <span class="red">Main</span><span class="parantez">(</span><span class="types">phone_number: </span><span class="numbers">989123456789</span><span class="parantez">, <span class="types">app_name:</span> <span class="string">'my-app-1'</span>)</span>;
+<span class="variable">$app</span> = <span class="types">new</span> <span class="red">Main</span><span class="parantez">(</span><span class="types">app_name:</span> <span class="string">'my-app-1'</span>)</span>;
 </code>
 </pre>
             </span>
@@ -155,6 +162,7 @@
 <span class="variable">$settings</span> = <span class="types">new</span> <span class="red">MainSettings</span>;
 
 <span class="variable">$settings</span>-><span class="method">setUserAgent<span class="parantez">(</span><span class="string">'Mozilla/5.0 (Windows NT 10.0; Win64; x64; rv:129.0) Gecko/20100101 Firefox/129.0'</span><span class="parantez">)</span></span>; 
+    -><span class="method">setAppType</span><span class="parantez">(</span><span class="red">AppType</span>::Rubika<span class="parantez">)</span>; 
 
 <span class="variable">$app</span> = <span class="types">new</span> <span class="red">Main</span><span class="parantez">(</span>
   <span class="types">phone_number: </span><span class="numbers">989123456789</span><span class="parantez">,
