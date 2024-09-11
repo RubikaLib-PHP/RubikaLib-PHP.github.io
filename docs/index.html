@@ -4,10 +4,17 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta name="description" content="کتابخانه روبیکا | صفحه اصلی">
+    <meta name="auther" content="AmirrezaFiroz">
+    <meta name="designer" content="AmirrezaFiroz">
+    <meta name="owner" content="AmirrezaFiroz">
     <link rel="icon" href="../assets/img/icon.jpg">
     <link rel="stylesheet" href="../assets/css/main.css">
     <link rel="stylesheet" href="css/docs.css">
+    <link rel="stylesheet" href="css/tables.css">
     <title>کتابخانه روبیکا - RubikaLib</title>
+    <meta name="robots" content="index, follow">
+    <meta name="subject" content="index, follow">
 </head>
 <style>
     footer .divitions {
@@ -65,60 +72,95 @@
             </div>
         </div>
     </div>
+    <!-- <dic class="list">
+        <div class="box">
+            <div class="line"></div>
+            <div class="line"></div>
+            <div class="line"></div>
+        </div>
+        <ul>
+            <a href=".">
+                <li style="background: #4191cf;">شروع استفاده</li>
+            </a>
+            <a href="./inital.html">
+                <li>ورود به حساب</li>
+            </a>
+            <a href="MainSettings.html">
+                <li>تنظیمات شخصی سازی شده</li>
+            </a>
+            <a href="getUpdates.html">
+                <li>دریافت آپدیت ها</li>
+            </a>
+            <a href="enums.html">
+                <li>لیست تمام enum ها</li>
+            </a>
+        </ul>
+    </dic> -->
     <section>
-        <dic class="list">
-            <div class="box">
-                <div class="line"></div>
-                <div class="line"></div>
-                <div class="line"></div>
-            </div>
-            <ul>
-                <a href=".">
-                    <li style="background: #4191cf;">شروع استفاده</li>
-                </a>
-                <a href="./inital.html">
-                    <li>ورود به حساب</li>
-                </a>
-                <a href="MainSettings.html">
-                    <li>تنظیمات شخصی سازی شده</li>
-                </a>
-                <a href="getUpdates.html">
-                    <li>دریافت آپدیت ها</li>
-                </a>
-                <a href="enums.html">
-                    <li>لیست تمام enum ها</li>
-                </a>
-            </ul>
-        </dic>
         <div class="container">
             <span class="text-title" style="margin-top: 0;">
                 نصب و راه اندازی
             </span>
-            <span class="passage">
+            <span class="passage" style="flex-direction: row; justify-content: space-between;">
                 برای استفاده از این کتابخانه ابتدا باید آنرا نصب کنید.<br>
                 پیش نیاز های این کتابخانه عبارتند از:<br>
                 php >= 8.1<br>
-                composer<br>
+                PHP pictures GD extension<br>
                 mbstring extension<br>
                 openssl extension<br><br>
-                برای نصب کتابخانه میتوانید از دستور زیر استفاده کنید:
-                <pre class="code"><code>
+                برای نصب کتابخانه میتوانید از دستور مقابل استفاده کنید:
+                <pre class="code" style="width: 260px; margin-top: 70px;"><code>
 <span class="red">composer</span> <span class="string">require</span> <span class="types">rubikalib/rubikalib</span>
 </code>
 </pre>
             </span>
             <span class="text-title">استفاده از کتابخانه</span>
             <span class="passage">
-                برای استفاده از کتابخانه کافیست پس از نصب ان کلاس هارا لود کنید:
-                <pre class="code"><code>
-<span class="types">use</span> <span class="red">RubikaLib\</span><span class="red">Main</span>;
+                برای استفاده از کتابخانه کافیست پس از نصب ان کلاس Main را لود کنید و سپس یک نسخه از این کلاس را ایجاد
+                کنید:
+                <pre class="code" style="width: 400px; align-self: flex-end;"><code>
+<span class="types">use</span> <span class="red">RubikaLib\Main</span>;
+<span class="variable">$app</span> = <span class="types">new</span> <span class="red">Main</span><span class="parantez">(</span><span class="numbers">989123456789</span><span class="parantez">)</span>; <span class="comments">// can be empty</span>
 </code>
 </pre>
-                سپس یک نسخه از این کلاس را ایجاد کنید.
-                <pre class="code"><code>
-<span class="variable">$app</span> = <span class="types">new</span> <span class="red">Main</span><span class="parantez">(</span><span class="numbers">989123456789</span><span class="parantez">)</span>;
-</code>
-</pre>
+                این کلاس 3 ورودی دارد:
+                <table style="margin: 5px 0 10px 0; align-self: center;">
+                    <tr>
+                        <td>
+                            phone_number
+                        </td>
+                        <td>
+                            <span class="types">int</span>
+                        </td>
+                        <td>
+                            شماره تلفن. در صروتی که خالی باشد در کامندلاین یا صفحه وب درخواست میشود
+                        </td>
+                    </tr>
+                    <tr>
+                        <td>
+                            app_name
+                        </td>
+                        <td>
+                            <span class="types">string</span>
+                        </td>
+                        <td>
+                            این پارامتر تنها به هنگام لاگین استفاده میشود و در لیست سشن ها ذخیره میشود. نحوه
+                            جایگذاری:<br>
+                            <span class="string">"Rubika-lib($app_name) $VERSION"</span>
+                        </td>
+                    </tr>
+                    <tr>
+                        <td>
+                            settings
+                        </td>
+                        <td>
+                            <span class="red">MainSettings</span>
+                        </td>
+                        <td>
+                            تنظیمات <a href="MainSettings.html" style="margin: 0 2px;">تنظیمات شخصی سازی</a> برنامه
+                        </td>
+                    </tr>
+                </table>
             </span>
             <div class="hint">
                 <span class="hint-span">
@@ -131,22 +173,22 @@
                 </span>
             </div>
             <span class="passage">
-                میتوانید نام ربات را نیز مشخص کنید تا در صورتی که از تعداد زیاد نشست ها استفاده میکنید به راختی انها را
+                میتوانید نام ربات را مشخص کنید تا در صورتی که از تعداد زیاد نشست ها استفاده میکنید به راختی انها را
                 از
                 یکدیگر تشخیض دهید:<br>
                 <pre class="code"><code>
-<span class="variable">$app</span> = <span class="types">new</span> <span class="red">Main</span><span class="parantez">(</span><span class="types">phone_number: </span><span class="numbers">989123456789</span><span class="parantez">, <span class="types">app_name:</span> <span class="string">'my-app-1'</span>)</span>;
+<span class="variable">$app</span> = <span class="types">new</span> <span class="red">Main</span><span class="parantez">(</span><span class="types">app_name:</span> <span class="string">'my-app-1'</span>)</span>;
 </code>
 </pre>
             </span>
             <div class="hint">
-                <span class="hint-span">
+                <span class="hint-span" style="font-size: small;">
                     <span style="color: yellow; font-weight: bold;">نکته!</span> نامی که انتخاب میشود تنها در مرحله <a
                         href="inital.html">ورود به حساب</a> استفاده خواهد شد و پس از آن وارد کردن ان تاثیری ندارد
                 </span>
             </div>
             <span class="passage" style="flex-direction: row; justify-content: flex-start; align-items: center;">
-                همچنین میتوانید <a href="MainSettings.html" style="margin: 0 2px;">تنظیمات شخضی سازی</a> را نیز اعمال
+                همچنین میتوانید <a href="MainSettings.html" style="margin: 0 2px; font-size: 14px;">تنظیمات شخصی سازی</a> را نیز اعمال
                 کنید
             </span>
             <pre class="code"><code>
@@ -155,6 +197,7 @@
 <span class="variable">$settings</span> = <span class="types">new</span> <span class="red">MainSettings</span>;
 
 <span class="variable">$settings</span>-><span class="method">setUserAgent<span class="parantez">(</span><span class="string">'Mozilla/5.0 (Windows NT 10.0; Win64; x64; rv:129.0) Gecko/20100101 Firefox/129.0'</span><span class="parantez">)</span></span>; 
+<span class="variable">$settings</span>-><span class="method">setAppType<span class="parantez">(</span><span class="red">AppType</span>::Shad<span class="parantez">)</span></span>;
 
 <span class="variable">$app</span> = <span class="types">new</span> <span class="red">Main</span><span class="parantez">(</span>
   <span class="types">phone_number: </span><span class="numbers">989123456789</span><span class="parantez">,
