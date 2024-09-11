@@ -4,16 +4,22 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta name="description" content="کتابخانه روبیکا | صفحه اصلی">
+    <meta name="auther" content="AmirrezaFiroz">
+    <meta name="designer" content="AmirrezaFiroz">
+    <meta name="owner" content="AmirrezaFiroz">
     <link rel="icon" href="assets/img/icon.jpg">
     <link rel="stylesheet" href="assets/css/main.css">
     <link rel="stylesheet" href="assets/css/home.css">
+    <meta name="robots" content="index, follow">
+    <meta name="subject" content="index, follow">
     <title>کتابخانه روبیکا - RubikaLib</title>
 </head>
 
 <body>
     <header>
         <div class="icon">
-            <a href="."> <img src="assets/img/icon.jpg" alt=""></a>
+            <a href="."><img src="assets/img/icon.jpg" alt="logo"></a>
         </div>
         <div class="title">کتابخانه روبیکا</div>
         <div class="sidebar">
@@ -27,7 +33,8 @@
             </div>
             <div class="data">
                 <span>
-                    نویسنده کلی کتابخانه: <a href="https://amirrezafiroz.github.io">Amirreza</a>
+                    نویسنده کلی کتابخانه: <a href="https://amirrezafiroz.github.io"
+                        style="color: #d43232; text-decoration: none;">Amirreza</a>
                 </span>
             </div>
         </div>
@@ -40,29 +47,34 @@
             </div>
             <div class="data">
                 <span>
-                    ربات تلگرام: <a href="https://t.me/AmirrezaMessengerBot">AmirrezaMessengerBot</a>
+                    ربات تلگرام: <a href="https://t.me/AmirrezaMessengerBot"
+                        style="color: #d43232; text-decoration: none;">AmirrezaMessengerBot</a>
                 </span>
                 <span>
-                    کانال تلگرام: <a href="https://t.me/rubika_lib">rubika_lib</a>
+                    کانال تلگرام: <a href="https://t.me/rubika_lib"
+                        style="color: #d43232; text-decoration: none;">rubika_lib</a>
                 </span>
                 <span>
-                    کانال روبیکا: <a href="https://rubika.ir/rubikalibphp">RubikaLibPHP</a>
+                    کانال روبیکا: <a href="https://rubika.ir/rubikalibphp"
+                        style="color: #d43232; text-decoration: none;">RubikaLibPHP</a>
                 </span>
             </div>
         </div>
     </div>
-    <section>
-        <div class="example">
-            <div class="title">Quick Start : <span style="font-family: monospace; font-size: medium;"><span
-                        class="red">composer</span> <span class="string">require</span> rubikalib/rubikalib</span></div>
-            <pre class="code"><code>
+    <main>
+        <section>
+            <div class="example">
+                <div class="title">Quick Start : <span style="font-family: monospace; font-size: medium;"><span
+                            class="red">composer</span> <span class="string">require</span> rubikalib/rubikalib</span>
+                </div>
+                <pre class="code"><code>
 <span style="color: #b57a3e;">&lt;?php</span>
 
 <span class="keyword">declare</span><span class="parantez">(</span><span class="consts">strict_types</span>=<span class="numbers">1</span><span class="parantez">)</span>;
 <span class="keyword">require_once </span><span class="string">'vendor/autoload.php'</span>;
 
-<span class="types">use</span> <span class="red">RubikaLib\enums\chatActivities</span>;
-<span class="types">use</span> <span class="red">RubikaLib\interfaces\Runner</span>;
+<span class="types">use</span> <span class="red">RubikaLib\Enums\ChatActivities</span>;
+<span class="types">use</span> <span class="red">RubikaLib\Interfaces\Runner</span>;
 <span class="types">use</span> <span class="red">RubikaLib\</span><span class="parantez">{</span>
     <span class="types">use</span> <span class="red">Logger</span>,
     <span class="types">use</span> <span class="red">Main</span>
@@ -70,6 +82,15 @@
 
 <span class="keyword">try</span> <span class="parantez">{</span>
     <span class="variable">$app</span> = <span class="types">new</span> <span class="red">Main</span><span class="parantez">(</span><span class="parantez">)</span>;
+
+    <span class="comments">/* or for shad</span>
+    <span class="comments">use RubikaLib\Enums\Apptype;
+        use RubikaLib\Interfaces\MainSettings;
+
+        $app = new Main(
+            settings: (new MainSettings)->setAppType(AppType::Shad)
+        );</span>
+    <span class="comments">*/</span>
 
     <span class="keyword">class</span> <span class="red">App</span> <span class="keyword">implements</span> <span class="red">Runner</span> <span class="parantez">{</span>
         <span class="keyword">private</span> <span class="types">?array</span> <span class="variable">$self</span>;
@@ -97,7 +118,7 @@
             <span class="parantez">}</span>
         <span class="parantez">}</span>
 
-        <span class="keyword">public function</span> <span class="method">onAction</span><span class="parantez">(</span><span class="red">chatActivities</span> <span class="variable">$activitie</span><span class="parantez">, <span class="types">string</span> <span class="variable">$guid</span>, <span class="types">string</span> <span class="variable">$from</span>, <span class="red">Main</span> <span class="variable">$obj</span><span class="parantez"></span><span class="parantez"></span><span class="parantez"></span>)</span>: <span class="types">void</span>
+        <span class="keyword">public function</span> <span class="method">onAction</span><span class="parantez">(</span><span class="red">ChatActivities</span> <span class="variable">$activitie</span><span class="parantez">, <span class="types">string</span> <span class="variable">$guid</span>, <span class="types">string</span> <span class="variable">$from</span>, <span class="red">Main</span> <span class="variable">$obj</span><span class="parantez"></span><span class="parantez"></span><span class="parantez"></span>)</span>: <span class="types">void</span>
         <span class="parantez">{</span><span class="parantez">}</span>
     <span class="parantez">}</span>
 
@@ -108,10 +129,32 @@
 <span class="parantez">}</span>
 </code>
         </div>
-        <div class="docs">
-            <a href="/docs/">برای دیدن کامل مستندات کلیک کنید!</a>
+        <div class="butttons">
+            <a href="/docs">برای دیدن کامل مستندات کلیک کنید!</a>
         </div>
+
+        <div class="butttons">
+            <a style="width: 120px; margin-right: 5px;" href="https://github.com/AmirrezaFiroz/RubikaLib">Github</a>
+            <a style="width: 120px; margin-right: 5px;" href="https://t.me/rubika_lib">Telegram</a>
+            <a style="width: 120px;" href="https://rubika.ir/RubikaLibPHP">Rubika</a>
+        </div>
+        <script>
+            let d = document.querySelectorAll('.butttons a');
+            d.forEach(b => {
+                b.addEventListener('mouseout', e => {
+                    b.style.animation = 'ButtonGoUp-reverse 0.25s ease';
+                    b.style.marginBottom = '0';
+                    b.style.boxShadow = '';
+                });
+                b.addEventListener('mouseover', e => {
+                    b.style.animation = 'ButtonGoUp 0.25s ease';
+                    b.style.marginBottom = '10px';
+                    b.style.boxShadow = '0 5px 10px black';
+                });
+            });
+        </script>
     </section>
+    </main>
     <footer>
         <div class="divitions">
             <a href="./docs">
@@ -192,17 +235,4 @@
     </footer>
 </body>
 <script src="assets/js/main.js"></script>
-<script>
-    let d = document.querySelector('.docs a');
-    d.addEventListener('mouseout', e => {
-        d.style.animation = 'ButtonGoUp-reverse 0.25s ease';
-        d.style.marginBottom = '0';
-        d.style.boxShadow = '';
-    });
-    d.addEventListener('mouseover', e => {
-        d.style.animation = 'ButtonGoUp 0.25s ease';
-        d.style.marginBottom = '10px';
-        d.style.boxShadow = '0 5px 10px black';
-    });
-</script>
 </html>
