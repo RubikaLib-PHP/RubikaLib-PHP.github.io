@@ -41,7 +41,7 @@ document.querySelector('#support .box .close').addEventListener('click', e => {
     displaySupportMenu = !displayAboutUs ? !displaySupportMenu : displaySupportMenu;
 });
 
-let list = document.querySelector('section .list ul');
+let list = document.querySelector('.list ul');
 let fileName = window.location.pathname.substring(window.location.pathname.lastIndexOf('/') + 1).replace('.html', '');
 fetch('methods.json').then((resp) => resp.text()).then(function (data) {
     let parse = JSON.parse(data);
@@ -97,8 +97,8 @@ d.addEventListener('mouseover', e => {
         d.style.boxShadow = '2px -5px 10px black';
     }
 });
-let listSideBar = document.querySelector('section .list');
-let listSideBarUL = document.querySelector('section .list ul');
+let listSideBar = document.querySelector('.list');
+let listSideBarUL = document.querySelector('.list ul');
 let rr = document.querySelector('.list .box');
 d.addEventListener('click', e => {
     if (sideListOpen) {

@@ -62,7 +62,7 @@ body {
 
 body>section {
     width: calc(80% - 20px);
-    height: 1400px;
+    height: 2000px;
     /*  *50  */
     margin-left: 10px;
     display: flex;
@@ -196,7 +196,8 @@ code {
     border-radius: 0 5px 5px 0;
     position: absolute;
     background: #1456e3;
-    display: none;
+    right: 10px;
+    direction: rtl;
 }
 
 .list .box {
