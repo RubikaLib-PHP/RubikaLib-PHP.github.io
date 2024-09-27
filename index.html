@@ -4,22 +4,188 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <meta name="description" content="کتابخانه روبیکا | صفحه اصلی| کتابخانه ای برای کار با API های روبیکا و شاد">
+    <meta name="description" content="کتابخانه روبیکا | صفحه اصلی | کتابخانه ای برای کار با API های روبیکا و شاد">
     <meta name="auther" content="AmirrezaFiroz">
-    <link rel="icon" href="assets/img/icon.jpg">
-    <link rel="stylesheet" href="assets/css/main.css">
+    <link rel="icon" href="assets/icon.png">
+    <link rel="stylesheet" href="assets/css/home.css">
+    <link rel="stylesheet" href="assets/css/code.css">
     <meta name="robots" content="index, follow">
     <title>کتابخانه روبیکا - RubikaLib</title>
 </head>
-<body>
-    <header>
-        <div class="icon">
-            <a href="."><img src="assets/img/icon.jpg" alt="logo"></a>
-        </div>
-        <div class="title">کتابخانه روبیکا</div>
-        <div class="sidebar">
-        </div>
+
+<body dir="rtl">
+    <header dir="ltr">
+        <a href="." class="icon">
+            <img src="assets/icon.png" alt="logo">
+            <span>کتابخانه روبیکا</span>
+        </a>
+        <nav>
+            <a href="/docs">Docs</a>
+            <a target=”_blank” href="https://t.me/rubika_lib">Telegram</a>
+            <a target=”_blank” href="https://github.com/AmirrezaFiroz/RubikaLib">Github</a>
+            <a target=”_blank” href="https://rubika.ir/rubikalibphp">Rubika</a>
+        </nav>
     </header>
+    <main>
+        <article id="a1">
+            <a target=”_blank” href="https://github.com/AmirrezaFiroz/RubikaLib">
+                <h3>ورژن فعلی: v2.0.1</h3>
+            </a>
+        </article>
+        <article style="height: 1021px;">
+            <h1>چرا این کتابخانه؟؟</h1>
+            <section id="why-this-library">
+                <table>
+                    <tr>
+                        <td>سرعت بالا</td>
+                        <td>آسانی در استفاده</td>
+                        <td>امنیت بیشتر</td>
+                        <td>قابلیت های بی نظیر</td>
+                    </tr>
+                    <tr>
+                        <td>پشتیبانی</td>
+                        <td>راهنمایی انلاین</td>
+                        <td>پوشش بیشترین متد ها</td>
+                        <td>قابلیت های شخضی سازی</td>
+                    </tr>
+                    <tr>
+                        <td>قابلیت اجرا در حالت های مختلف</td>
+                        <td>بهینه بودن مصرف منابع</td>
+                        <td>مثال های متنوع</td>
+                        <td>همواره بروز</td>
+                    </tr>
+                </table>
+                <p>
+                    این کتابخانه به صورت رایگان بر روی <a href="https://github.com/AmirrezaFiroz/RubikaLib"
+                        target="_blank" style="text-decoration: none;">Github</a> آپلود شده است.
+                    <br>
+                    میتوانید تنها با استفاده از دستور زیر در composer آنرا نصب کنید:
+                </p>
+                <pre class="code" style="max-width: 300px; margin-right: calc(50% - 150px);"><code>
+<span class="types">composer</span> <span class="string">require</span> <span class="red">rubikalib/rubikalib</span>    
+
+</code></pre>
+                <p style="margin-top: 5px;">
+                    یا اگر که دسترسی به composer را ندارید این کار را انجام دهید:
+                </p>
+                <pre class="code" style="max-width: 900px; margin-right: calc(50% - 450px);"><code>
+<span class="orange">&lt;?php</span> <span class="keyword">declare</span><span class="parantez">(</span><span class="consts">strict_types</span>=<span class="numbers">1</span><span class="parantez">)</span>;
+
+<span class="comments">// get vendor pack</span>
+<span class="keyword">if</span> <span class="parantez">(</span>!<span class="keyword">file_exists</span><span class="parantez2">(</span><span class="string">'vendor-pack.zip'</span><span class="parantez2">)</span><span class="parantez">)</span> <span class="keyword">copy</span><span class="parantez2">(</span><span class="string">'https://github.com/AmirrezaFiroz/RubikaLib/releases/download/v2.0.1/vendor-pack.zip'</span>, <span class="string">'vendor-pack.zip'</span><span class="parantez2">);</span>
+<span class="keyword">if</span> <span class="parantez2">(</span>!<span class="keyword">is_dir</span><span class="parantez">(</span><span class="string">'vendor'</span><span class="parantez">)</span> <span class="keyword">or</span> !<span class="keyword">file_exists</span><span class="parantez">(</span><span class="string">'composer.json'</span><span class="parantez">)</span><span class="parantez2">)</span> <span class="parantez3">{</span>
+    <span class="variable">$zip</span> = <span class="keyword">new</span> <span class="keyword">ZipArchive</span>;
+    <span class="variable">$zip</span>-><span class="method">open</span><span class="parantez">(</span><span class="string">'vendor-pack.zip'</span><span class="parantez">)</span>;
+    <span class="variable">$zip</span>-><span class="method">extractTo</span><span class="parantez">(</span><span class="string">'.'</span><span class="parantez">)</span>;
+    <span class="variable">$zip</span>-><span class="method">close</span><span class="parantez">()</span>;
+
+    <span class="keyword">function</span> <span class="types">movef</span><span class="parantez">(</span><span class="types">string</span> <span class="variable">$dir</span>, <span class="types">string</span> <span class="variable">$toWhere</span><span class="parantez">)</span>
+    <span class="parantez">{</span>
+        <span class="keyword">foreach</span> <span class="parantez">(</span><span class="keyword">scandir</span><span class="parantez">(</span><span class="variable">$dir</span><span class="parantez">)</span> <span class="keyword">as</span> <span class="variable">$e</span><span class="parantez">)</span> <span class="parantez">{</span>
+            <span class="keyword">if</span> <span class="parantez">(</span><span class="variable">$e</span> == <span class="string">'.'</span> <span class="keyword">or</span> <span class="variable">$e</span> == <span class="string">'..'</span><span class="parantez">)</span> <span class="keyword">continue</span>;
+            <span class="keyword">if</span> <span class="parantez">(</span><span class="keyword">is_file</span><span class="parantez">(</span><span class="string">"<span class="variable">$dir</span>/<span class="variable">$e</span>"</span><span class="parantez">))</span> <span class="parantez">{</span>
+                <span class="keyword">copy</span><span class="parantez">(</span><span class="string">"<span class="variable">$dir</span>/<span class="variable">$e</span>"</span>, <span class="string">"<span class="variable">$toWhere</span>/<span class="variable">$e</span>"</span><span class="parantez">)</span>;
+                <span class="keyword">unlink</span><span class="parantez">(</span><span class="string">"<span class="variable">$dir</span>/<span class="variable">$e</span>"</span><span class="parantez">)</span>;
+            <span class="parantez">}</span> <span class="keyword">else</span> <span class="parantez">{</span>
+                <span class="keyword">mkdir</span><span class="parantez">(</span><span class="string">"<span class="variable">$toWhere</span>/<span class="variable">$e</span>"</span><span class="parantez">)</span>;
+                <span class="keyword">movef</span><span class="parantez">(</span><span class="string">"<span class="variable">$dir</span>/<span class="variable">$e</span>"</span>, <span class="string">"<span class="variable">$toWhere</span>/<span class="variable">$e</span>"</span><span class="parantez">)</span>;
+                <span class="keyword">rmdir</span><span class="parantez">(</span><span class="string">"<span class="variable">$dir</span>/<span class="variable">$e</span>"</span><span class="parantez">)</span>;
+            <span class="parantez">}</span>
+        <span class="parantez">}</span>
+    <span class="parantez">}</span>
+    
+    <span class="keyword">movef</span><span class="parantez">(</span><span class="string">'vendor-pack'</span>, <span class="string">'.'</span><span class="parantez">)</span>;
+    <span class="keyword">rmdir</span><span class="parantez">(</span><span class="string">'vendor-pack'</span><span class="parantez">)</span>;
+    <span class="keyword">unlink</span><span class="parantez">(</span><span class="string">'vendor-pack.zip'</span><span class="parantez">)</span>;
+<span class="parantez3">}</span>
+
+<span class="keyword">require_once </span><span class="string">'vendor/autoload.php'</span>;
+<span class="comments">// other codes</span>
+
+</code></pre>
+            </section>
+        </article>
+        <div class="read-this">
+            <div class="line"></div>
+            <div class="context">
+                <h4>همچنین بخوانید !</h4>
+                <p>
+                    نمونه کد ها و ربات های نوشته شده را در <a style="text-decoration: none;" href="./examples">اینجا</a>
+                    ببینید.
+                </p>
+            </div>
+        </div>
+        <article style="height: 1348px;">
+            <h1>
+                بِیس کلی ربات هایی که نوشته میشوند:
+            </h1>
+            <section id="how-to-use">
+                <pre class="code" style="max-width: 900px; margin-right: calc(50% - 450px);"><code>
+<span style="color: #b57a3e;">&lt;?php</span> <span class="keyword">declare</span><span class="parantez">(</span><span class="consts">strict_types</span>=<span class="numbers">1</span><span class="parantez">)</span>;
+
+<span class="keyword">require_once </span><span class="string">'vendor/autoload.php'</span>;
+
+<span class="types">use</span> <span class="red">RubikaLib\Enums\ChatActivities</span>;
+<span class="types">use</span> <span class="red">RubikaLib\Interfaces\Runner</span>;
+<span class="types">use</span> <span class="red">RubikaLib\</span><span class="parantez">{</span>
+    <span class="types">use</span> <span class="red">Logger</span>,
+    <span class="types">use</span> <span class="red">Main</span>
+<span class="parantez">}</span>;
+
+<span class="keyword">try</span> <span class="parantez">{</span>
+    <span class="variable">$app</span> = <span class="types">new</span> <span class="red">Main</span><span class="parantez">(</span><span class="parantez">)</span>;
+
+    <span class="comments">/* or for shad</span>
+    <span class="comments">use RubikaLib\Enums\Apptype;
+        use RubikaLib\Interfaces\MainSettings;
+
+        $app = new Main(
+            settings: (new MainSettings)->setAppType(AppType::Shad)
+        );</span>
+    <span class="comments">*/</span>
+
+    <span class="keyword">class</span> <span class="red">App</span> <span class="keyword">implements</span> <span class="red">Runner</span> <span class="parantez">{</span>
+        <span class="keyword">private</span> <span class="types">?array</span> <span class="variable">$self</span>;
+
+        <span class="keyword">public function</span> <span class="method">onStart</span><span class="parantez">(</span><span class="types">array</span> <span class="variable">$mySelf</span><span class="parantez">)</span>: <span class="types">void</span>
+        <span class="parantez">{</span>
+            <span class="variable">$this</span>-><span class="method">self</span> = <span class="variable">$mySelf</span>;
+        <span class="parantez">}</span>
+
+        <span class="keyword">public function</span> <span class="method">onMessage</span><span class="parantez">(</span><span class="types">array</span> <span class="variable">$updates</span>, <span class="red">Main</span> <span class="variable">$obj</span><span class="parantez">)</span>: <span class="types">void</span>
+        <span class="parantez">{</span>
+            <span class="keyword">if</span> <span class="parantez2">(</span><span class="keyword">isset</span><span class="parantez">(</span><span class="variable">$updates</span><span class="parantez3">[</span><span class="string">'message_updates'</span><span class="parantez3">]</span><span class="parantez">)</span><span class="parantez2">)</span> <span class="parantez">{</span>
+                <span class="keyword">foreach</span> <span class="parantez2">(</span><span class="variable">$updates</span><span class="parantez3">[</span><span class="string">'message_updates'</span><span class="parantez3">]</span> <span class="types">as</span> <span class="variable">$update</span><span class="parantez">)</span> <span class="parantez2">{</span>
+                    <span class="variable">$guid</span> = <span class="variable">$update</span><span class="parantez">[</span><span class="string">'object_guid'</span><span class="parantez">]</span>; <span class="comments"># chat guid</span>
+                    <span class="variable">$message_id</span> = <span class="variable">$update</span><span class="parantez">[</span><span class="string">'message_id'</span><span class="parantez">]</span>;
+                    <span class="variable">$from</span> = <span class="variable">$update</span><span class="parantez">[</span><span class="string">'message'</span><span class="parantez">]</span><span class="parantez">[</span><span class="string">'author_object_guid'</span><span class="parantez">]</span>; <span class="comments"># message from who?</span>
+                    <span class="variable">$text</span> = <span class="variable">$update</span><span class="parantez">[</span><span class="string">'message'</span><span class="parantez">]</span><span class="parantez">[</span><span class="string">'text'</span><span class="parantez">]</span>;
+
+                    <span class="variable">$obj</span>-><span class="method">Messages</span>-><span class="method">SendMessage</span><span class="parantez">(</span>
+                        <span class="types">guid:</span> <span class="variable">$guid</span>,
+                        <span class="types">text:</span> <span class="string">"ــmessage recived: </span><span class="variable">$text</span><span class="string">ــ"</span>,
+                        <span class="types">reply_to_message_id:</span> <span class="variable">$message_id</span>
+                    <span class="parantez">)</span>;
+                <span class="parantez2">}</span>
+            <span class="parantez">}</span>
+        <span class="parantez">}</span>
+
+        <span class="keyword">public function</span> <span class="method">onAction</span><span class="parantez">(</span><span class="red">ChatActivities</span> <span class="variable">$activitie</span><span class="parantez">, <span class="types">string</span> <span class="variable">$guid</span>, <span class="types">string</span> <span class="variable">$from</span>, <span class="red">Main</span> <span class="variable">$obj</span><span class="parantez"></span><span class="parantez"></span><span class="parantez"></span>)</span>: <span class="types">void</span>
+        <span class="parantez">{</span><span class="parantez">}</span>
+    <span class="parantez">}</span>
+
+    <span class="variable">$app</span>-><span class="method">proccess</span><span class="parantez">(</span><span class="types">new</span> <span class="red">App</span><span class="parantez">)</span>
+        -><span class="method">RunAndLoop</span><span class="parantez">(</span><span class="parantez">)</span>;
+<span class="parantez">}</span> <span class="keyword">catch</span> <span class="parantez">(</span><span class="red">Logger</span> <span class="variable">$e</span><span class="parantez">)</span> <span class="parantez">{</span>
+    <span class="keyword">echo</span> <span class="variable">$e</span>-><span class="method">getMessage</span><span class="parantez">(</span><span class="parantez">)</span> . <span class="string">"\n"</span>;
+<span class="parantez">}</span>
+
+</code></pre>
+            </section>
+        </article>
+    </main>
 </body>
 <script src="assets/js/main.js"></script>
+<script src="assets/js/home.js"></script>
+
 </html>

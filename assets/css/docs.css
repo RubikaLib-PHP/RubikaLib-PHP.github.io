@@ -1,0 +1,105 @@
+@keyframes MakeHeaderNavShadow {
+  from {
+    box-shadow: none;
+    margin-right: 5px;
+    width: 90px;
+    height: 40px;
+  }
+  to {
+    box-shadow: 0 2px 5px #1b1b40;
+    margin-right: 7px;
+    width: 88px;
+    height: 38px;
+  }
+}
+@keyframes RemoveHeaderNavShadow {
+  from {
+    box-shadow: 0 2px 5px #1b1b40;
+    margin-right: 7px;
+    width: 88px;
+    height: 38px;
+  }
+  to {
+    box-shadow: none;
+    margin-right: 5px;
+    width: 90px;
+    height: 40px;
+  }
+}
+* {
+  border-radius: 5px;
+  box-sizing: border-box;
+  margin: 0;
+  padding: 0;
+  font-family: sans-serif;
+}
+
+html {
+  width: 100%;
+}
+
+body {
+  width: 100%;
+  height: 100%;
+  background: #65deff;
+}
+
+body header {
+  height: 50px;
+  background: #597dfe;
+  margin: 5px 10px;
+  padding: 5px;
+  display: flex;
+  flex-direction: row;
+  align-items: center;
+  justify-content: space-between;
+  overflow-x: scroll;
+  overflow-y: hidden;
+}
+body header .icon {
+  display: flex;
+  flex-direction: row;
+  justify-content: center;
+  align-items: center;
+  text-decoration: none;
+  color: black;
+}
+body header .icon img {
+  width: 40px;
+  height: 40px;
+  margin-right: 10px;
+}
+body header .icon > span {
+  font-size: large;
+  font-style: bold;
+}
+body header nav {
+  width: 375px;
+  height: 40px;
+  display: flex;
+  align-items: center;
+}
+body header nav a {
+  background: #9ba6d1;
+  width: 90px;
+  height: 40px;
+  margin-right: 5px;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  text-decoration: none;
+  color: black;
+  font-family: Georgia;
+}
+body header nav a :hover {
+  cursor: pointer;
+}
+body header nav a :last-child {
+  margin-right: 0;
+}
+
+body header nav {
+  width: 280px;
+}
+
+/*# sourceMappingURL=docs.css.map */
