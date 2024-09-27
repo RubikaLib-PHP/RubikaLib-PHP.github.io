@@ -118,7 +118,7 @@ body header nav a :last-child {
 }
 
 main {
-  height: 3000px;
+  height: 2700px;
   margin: 5px 10px;
   display: flex;
   flex-direction: column;
@@ -208,6 +208,112 @@ main .read-this .context {
 }
 main :nth-child(4) {
   flex-direction: row;
+}
+
+footer {
+  width: calc(100% - 20px);
+  height: 100px;
+  background: #445284;
+  display: flex;
+  flex-direction: row;
+  margin: 0 10px 10px 10px;
+  padding: 5px;
+}
+footer > * {
+  overflow: hidden;
+}
+footer > :nth-child(1) {
+  width: 60%;
+  border-radius: 0;
+  border-left: 2px solid black;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  overflow-x: scroll;
+}
+footer > :nth-child(1) nav {
+  width: 240px;
+  height: 50px;
+}
+footer > :nth-child(1) nav ul {
+  width: 100%;
+  height: 100%;
+  display: flex;
+  flex-direction: row;
+  justify-content: center;
+  align-items: center;
+  list-style: none;
+  padding: 0;
+  margin: 0;
+}
+footer > :nth-child(1) nav ul li {
+  margin-right: -25px;
+}
+footer > :nth-child(1) nav ul li:last-child {
+  margin-right: 0;
+}
+footer > :nth-child(1) nav ul li img {
+  width: 50px;
+  height: 50px;
+  border-radius: 50%;
+  transition: all 0.3s ease;
+  position: relative;
+}
+footer > :nth-child(1) nav ul li:nth-child(1) {
+  z-index: 4;
+}
+footer > :nth-child(1) nav ul li:nth-child(1) img {
+  z-index: 4;
+}
+footer > :nth-child(1) nav ul li:nth-child(2) {
+  z-index: 3;
+}
+footer > :nth-child(1) nav ul li:nth-child(2) img {
+  z-index: 3;
+}
+footer > :nth-child(1) nav ul li:nth-child(3) {
+  z-index: 2;
+}
+footer > :nth-child(1) nav ul li:nth-child(3) img {
+  z-index: 2;
+}
+footer > :nth-child(1) nav ul li:nth-child(4) {
+  z-index: 1;
+}
+footer > :nth-child(1) nav ul li:nth-child(4) img {
+  z-index: 1;
+}
+footer > :nth-child(1) nav ul li:nth-child(5) {
+  z-index: 0;
+}
+footer > :nth-child(1) nav ul li:nth-child(5) img {
+  z-index: 0;
+}
+footer > :nth-child(1) nav ul li:hover img {
+  transform: translateY(-5px);
+}
+footer > :nth-child(2) {
+  width: 40%;
+  display: flex;
+  justify-content: flex-end;
+  align-items: center;
+}
+footer .icon {
+  display: flex;
+  flex-direction: row;
+  justify-content: center;
+  align-items: center;
+  text-decoration: none;
+  color: black;
+}
+footer .icon > span {
+  font-size: large;
+  font-style: bold;
+}
+footer .icon img {
+  width: 80px;
+  height: 80px;
+  margin: 0 10px;
 }
 
 /*# sourceMappingURL=home.css.map */

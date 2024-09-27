@@ -68,7 +68,7 @@
                 <p style="margin-top: 5px;">
                     یا اگر که دسترسی به composer را ندارید این کار را انجام دهید:
                 </p>
-                <pre class="code" style="max-width: 900px; margin-right: calc(50% - 450px);"><code>
+                <pre class="code" style="max-width: 900px;"><code>
 <span class="orange">&lt;?php</span> <span class="keyword">declare</span><span class="parantez">(</span><span class="consts">strict_types</span>=<span class="numbers">1</span><span class="parantez">)</span>;
 
 <span class="comments">// get vendor pack</span>
@@ -120,7 +120,7 @@
                 بِیس کلی ربات هایی که نوشته میشوند:
             </h1>
             <section id="how-to-use">
-                <pre class="code" style="max-width: 900px; margin-right: calc(50% - 450px);"><code>
+                <pre class="code" style="max-width: 900px;"><code>
 <span style="color: #b57a3e;">&lt;?php</span> <span class="keyword">declare</span><span class="parantez">(</span><span class="consts">strict_types</span>=<span class="numbers">1</span><span class="parantez">)</span>;
 
 <span class="keyword">require_once </span><span class="string">'vendor/autoload.php'</span>;
@@ -136,11 +136,11 @@
     <span class="variable">$app</span> = <span class="types">new</span> <span class="red">Main</span><span class="parantez">(</span><span class="parantez">)</span>;
 
     <span class="comments">/* or for shad</span>
-    <span class="comments">use RubikaLib\Enums\Apptype;
-        use RubikaLib\Interfaces\MainSettings;
+    <span class="comments">(+) -> use RubikaLib\Enums\Apptype;
+        (+) -> use RubikaLib\Interfaces\MainSettings;
 
         $app = new Main(
-            settings: (new MainSettings)->setAppType(AppType::Shad)
+            (+) -> settings: (new MainSettings)->setAppType(AppType::Shad)
         );</span>
     <span class="comments">*/</span>
 
@@ -158,7 +158,7 @@
                 <span class="keyword">foreach</span> <span class="parantez2">(</span><span class="variable">$updates</span><span class="parantez3">[</span><span class="string">'message_updates'</span><span class="parantez3">]</span> <span class="types">as</span> <span class="variable">$update</span><span class="parantez">)</span> <span class="parantez2">{</span>
                     <span class="variable">$guid</span> = <span class="variable">$update</span><span class="parantez">[</span><span class="string">'object_guid'</span><span class="parantez">]</span>; <span class="comments"># chat guid</span>
                     <span class="variable">$message_id</span> = <span class="variable">$update</span><span class="parantez">[</span><span class="string">'message_id'</span><span class="parantez">]</span>;
-                    <span class="variable">$from</span> = <span class="variable">$update</span><span class="parantez">[</span><span class="string">'message'</span><span class="parantez">]</span><span class="parantez">[</span><span class="string">'author_object_guid'</span><span class="parantez">]</span>; <span class="comments"># message from who?</span>
+                    <span class="variable">$from</span> = <span class="variable">$update</span><span class="parantez">[</span><span class="string">'message'</span><span class="parantez">]</span><span class="parantez">[</span><span class="string">'author_object_guid'</span><span class="parantez">]</span>; <span class="comments"># Who is message from?</span>
                     <span class="variable">$text</span> = <span class="variable">$update</span><span class="parantez">[</span><span class="string">'message'</span><span class="parantez">]</span><span class="parantez">[</span><span class="string">'text'</span><span class="parantez">]</span>;
 
                     <span class="variable">$obj</span>-><span class="method">Messages</span>-><span class="method">SendMessage</span><span class="parantez">(</span>
@@ -184,6 +184,25 @@
             </section>
         </article>
     </main>
+    <footer>
+        <div>
+            <nav>
+                <ul>
+                    <li><img src="assets/telegram.png" alt="Telegram"></li>
+                    <li><img src="assets/github.png" alt="Github"></li>
+                    <li><img src="assets/me.png" alt="Me"></li>
+                    <li><img src="assets/icon.png" alt="Rubika"></li>
+                    <li><img src="assets/bot.png" alt="PV"></li>
+                </ul>
+            </nav>
+        </div>
+        <div>
+            <a href="." class="icon">
+                <span>کتابخانه روبیکا</span>
+                <img src="assets/icon.png" alt="logo">
+            </a>
+        </div>
+    </footer>
 </body>
 <script src="assets/js/main.js"></script>
 <script src="assets/js/home.js"></script>
