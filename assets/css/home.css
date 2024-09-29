@@ -44,6 +44,32 @@
     margin-bottom: 0;
   }
 }
+@keyframes OpenHeaderNav320 {
+  from {
+    width: 40px;
+    height: 40px;
+  }
+  to {
+    width: 200px;
+    height: 85px;
+  }
+}
+@keyframes CloseHeaderNav320 {
+  from {
+    width: 200px;
+    height: 85px;
+    position: absolute;
+    right: 15px;
+    top: 10px;
+  }
+  to {
+    width: 40px;
+    height: 40px;
+    position: absolute;
+    right: 15px;
+    top: 10px;
+  }
+}
 * {
   border-radius: 5px;
   box-sizing: border-box;
@@ -61,7 +87,6 @@ body {
   height: 100%;
   background: #65deff;
 }
-
 body header {
   height: 50px;
   background: #597dfe;
@@ -92,13 +117,13 @@ body header .icon > span {
   font-size: large;
   font-style: bold;
 }
-body header nav {
+body header #n1 {
   width: 375px;
   height: 40px;
   display: flex;
   align-items: center;
 }
-body header nav a {
+body header #n1 a {
   background: #9ba6d1;
   width: 90px;
   height: 40px;
@@ -110,11 +135,90 @@ body header nav a {
   color: black;
   font-family: Georgia;
 }
-body header nav a :hover {
+body header #n1 a :hover {
   cursor: pointer;
 }
-body header nav a :last-child {
+body header #n1 a :last-child {
   margin-right: 0;
+}
+body header #n2 {
+  background: #9ba6d1;
+  cursor: pointer;
+  display: flex;
+  justify-content: flex-start;
+  align-items: flex-end;
+  flex-direction: column;
+}
+@media (min-width: 457px) {
+  body header #n2 {
+    display: none;
+  }
+}
+body header #n2 nav {
+  flex-direction: row;
+  justify-content: flex-start;
+  align-items: flex-start;
+  width: calc(100% - 10px);
+  height: 40px;
+  overflow-x: scroll;
+}
+body header #n2 nav a {
+  background: rgb(211, 217, 240);
+  width: 90px;
+  height: 40px;
+  margin-right: 5px;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  text-decoration: none;
+  color: black;
+  font-family: Georgia;
+  font-size: small;
+}
+body header .n22 {
+  position: absolute;
+  right: 15px;
+  top: 10px;
+  width: 200px;
+  height: 85px;
+  margin: 0 5px 5px 5px;
+}
+@media (max-width: 606px) {
+  body header #n1 {
+    width: 295px;
+  }
+  body header #n1 a {
+    font-size: medium;
+    width: 70px;
+  }
+}
+@media (max-width: 526px) {
+  body header #n1 {
+    width: 225px;
+  }
+  body header #n1 a {
+    font-size: small;
+    width: 50px;
+  }
+  body header #n1 :nth-child(2) {
+    width: 60px;
+  }
+}
+@media (max-width: 457px) {
+  body header #n1 {
+    display: none;
+  }
+}
+body .can-not-display {
+  width: calc(100% - 20px);
+  display: none;
+  justify-content: center;
+  align-items: center;
+  background: rgb(230, 90, 90);
+  margin: 10px;
+  font-style: bold;
+  padding: 10px;
+  direction: ltr;
 }
 
 main {
@@ -157,6 +261,16 @@ main article table {
   border-collapse: collapse;
   margin-bottom: 10px;
 }
+@media (max-width: 886px) {
+  main article table {
+    font-size: small;
+  }
+}
+@media (max-width: 726px) {
+  main article table {
+    font-size: x-small;
+  }
+}
 main article table :last-child {
   border-bottom: 0;
 }
@@ -177,10 +291,30 @@ main article table tr td {
   overflow-y: scroll;
   overflow-x: hidden;
 }
+@media (max-width: 590px) {
+  main article table tr {
+    height: 30px;
+  }
+}
+@media (max-width: 347px) {
+  main article table tr {
+    height: 40px;
+  }
+}
 main article p {
   font-family: Helvetica;
   font-size: medium;
   margin-right: 5px;
+}
+@media (max-width: 886px) {
+  main article p {
+    font-size: small;
+  }
+}
+@media (max-width: 726px) {
+  main article p {
+    font-size: x-small;
+  }
 }
 main .read-this {
   width: 100%;
@@ -190,8 +324,8 @@ main .read-this {
   padding: 5px;
   display: flex;
   flex-direction: row;
-  max-width: 400px;
   overflow-x: scroll;
+  max-width: 400px;
 }
 main .read-this .line {
   width: 5px;
@@ -205,6 +339,11 @@ main .read-this .context {
   background: #94aad1;
   border-radius: 5px 0 0 5px;
   padding: 5px;
+}
+@media (max-width: 400px) {
+  main .read-this .context {
+    font-size: small;
+  }
 }
 main :nth-child(4) {
   flex-direction: row;
@@ -229,11 +368,11 @@ footer > :nth-child(1) {
   display: flex;
   justify-content: center;
   align-items: center;
-  overflow-x: scroll;
 }
-footer > :nth-child(1) nav {
-  width: 240px;
-  height: 50px;
+@media (max-width: 430px) {
+  footer > :nth-child(1) {
+    width: 65%;
+  }
 }
 footer > :nth-child(1) nav ul {
   width: 100%;
@@ -243,11 +382,12 @@ footer > :nth-child(1) nav ul {
   justify-content: center;
   align-items: center;
   list-style: none;
+  direction: ltr;
   padding: 0;
   margin: 0;
 }
 footer > :nth-child(1) nav ul li {
-  margin-right: -25px;
+  margin-right: -20px;
 }
 footer > :nth-child(1) nav ul li:last-child {
   margin-right: 0;
@@ -256,7 +396,7 @@ footer > :nth-child(1) nav ul li img {
   width: 50px;
   height: 50px;
   border-radius: 50%;
-  transition: all 0.3s ease;
+  transition: all 0.1s ease;
   position: relative;
 }
 footer > :nth-child(1) nav ul li:nth-child(1) {
@@ -298,22 +438,62 @@ footer > :nth-child(2) {
   justify-content: flex-end;
   align-items: center;
 }
-footer .icon {
+footer > :nth-child(2) .icon {
   display: flex;
-  flex-direction: row;
   justify-content: center;
   align-items: center;
   text-decoration: none;
   color: black;
 }
-footer .icon > span {
+footer > :nth-child(2) .icon > span {
   font-size: large;
   font-style: bold;
 }
-footer .icon img {
+footer > :nth-child(2) .icon img {
   width: 80px;
   height: 80px;
   margin: 0 10px;
+}
+@media (max-width: 534px) {
+  footer > :nth-child(2) {
+    justify-content: center;
+  }
+  footer > :nth-child(2) .icon > span {
+    font-size: medium;
+    font-style: bold;
+  }
+  footer > :nth-child(2) .icon img {
+    width: 50px;
+    height: 50px;
+    margin: 0 5px;
+  }
+}
+@media (max-width: 430px) {
+  footer > :nth-child(2) {
+    justify-content: center;
+    width: 45%;
+  }
+  footer > :nth-child(2) .icon {
+    padding-right: 10px;
+  }
+  footer > :nth-child(2) .icon > span {
+    font-size: small;
+    font-style: bold;
+  }
+  footer > :nth-child(2) .icon img {
+    width: 40px;
+    height: 40px;
+    margin: 0 10px;
+  }
+}
+
+@media (max-width: 300px) {
+  body * {
+    display: none;
+  }
+  body .can-not-display {
+    display: block;
+  }
 }
 
 /*# sourceMappingURL=home.css.map */

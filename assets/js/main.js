@@ -14,3 +14,22 @@ document.querySelectorAll('header nav a').forEach(el => {
         el.style.marginRight = '5px';
     })
 });
+
+let no = document.querySelectorAll('#n2');
+no.forEach(n2 => {
+    n2.onclick = async function () {
+        await n2.classList.toggle('n22');
+        if (n2.classList.contains('opened')) {
+            n2.style.animation = 'CloseHeaderNav320 0.1s linear';
+            document.querySelectorAll('#n2 svg')[1].style.display = 'none';
+            document.querySelectorAll('#n2 svg')[0].style.display = 'block';
+            document.querySelector('#n2 nav').style.display = 'none';
+        } else {
+            n2.style.animation = 'OpenHeaderNav320 0.1s linear';
+            document.querySelectorAll('#n2 svg')[0].style.display = 'none';
+            document.querySelectorAll('#n2 svg')[1].style.display = 'block';
+            document.querySelector('#n2 nav').style.display = 'flex';
+        }
+        n2.classList.toggle('opened');
+    }
+});
