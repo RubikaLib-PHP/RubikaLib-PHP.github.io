@@ -1,5 +1,6 @@
 document.querySelectorAll('header nav a').forEach(el => {
     el.addEventListener('mouseover', ev => {
+        if (window.innerWidth < 606) return;
         el.style.animation = "MakeHeaderNavShadow 0.15s linear";
         el.style.boxShadow = "0 2px 5px #1b1b40";
         el.style.height = '38px';
@@ -7,6 +8,7 @@ document.querySelectorAll('header nav a').forEach(el => {
         el.style.marginRight = '7px';
     })
     el.addEventListener('mouseout', ev => {
+        if (window.innerWidth < 606) return;
         el.style.animation = "RemoveHeaderNavShadow 0.15s linear"
         el.style.boxShadow = "none";
         el.style.height = '40px';
