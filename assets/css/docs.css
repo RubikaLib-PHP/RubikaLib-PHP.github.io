@@ -273,270 +273,201 @@ body .can-not-display {
   direction: ltr;
 }
 
+body header #n1 {
+  width: 230px;
+}
+@media (max-width: 606px) {
+  body header #n1 {
+    width: 205px;
+  }
+  body header #n1 a {
+    font-size: medium;
+    width: 70px;
+  }
+  body header #n1 :nth-child(1) {
+    font-size: small;
+  }
+}
+@media (max-width: 526px) {
+  body header #n1 {
+    width: 175px;
+  }
+  body header #n1 a {
+    font-size: small;
+    width: 50px;
+  }
+  body header #n1 :nth-child(1) {
+    width: 60px;
+    font-size: x-small;
+  }
+}
+@media (max-width: 457px) {
+  body header #n1 {
+    display: none;
+  }
+}
+
 main {
-  height: 2700px;
-  margin: 5px 10px;
+  width: calc(100% - 10px);
+  margin: 5px;
+  height: 1500px;
+  display: flex;
+  flex-direction: row;
+}
+main aside {
+  width: 300px;
+}
+@media (max-width: 1000px) {
+  main aside {
+    width: 350px;
+  }
+}
+@media (max-width: 820px) {
+  main aside {
+    display: none;
+  }
+}
+main aside nav {
+  width: 100%;
+  background: #6ba4ff;
+  height: 100%;
   display: flex;
   flex-direction: column;
   align-items: flex-start;
-  padding: 5px;
 }
-main #a1 {
+main aside nav .cls {
+  width: 40px;
+  height: 40px;
+  margin: 5px;
+}
+@media (min-width: 820px) {
+  main aside nav .cls {
+    display: none;
+  }
+}
+main aside nav ul {
   width: 100%;
-  background: none;
-  padding: 15px;
-  margin: 30px 0 50px 0;
-  display: flex;
-  justify-content: center;
-  align-items: center;
-  color: #4510b0;
-  font-style: bold;
+  height: calc(100% - 50px);
 }
-main #a1 a {
+main aside nav ul > a {
   text-decoration: none;
+  color: black;
+  font-weight: bold;
+  border-radius: 0;
 }
-main #a1 h3 {
-  padding: 15px;
+main aside nav ul > a li {
+  width: 100%;
+  height: 50px;
+  border-bottom: 0.5px solid black;
+  border-radius: 0;
+  display: flex;
+  justify-content: flex-start;
+  align-items: center;
+}
+main aside nav ul > a :hover {
+  background: linear-gradient(to left, white, 1%, #3c67ff);
+}
+main aside nav ul div {
+  list-style: none;
+  padding-right: 30px;
+  padding-top: 10px;
+  border-radius: 0;
+  font-size: small;
+  margin-bottom: 10px;
+}
+main aside nav ul div * {
+  text-decoration: none;
+  font-weight: normal;
+  color: #18609a;
+}
+main aside nav ul div li::before {
+  content: "> ";
+}
+main aside nav ul > :first-child li {
+  border-radius: 5px 5px 0 0;
+}
+main aside nav ul > :last-child li {
+  border-radius: 0 0 5px 5px;
+  border-bottom: none;
 }
 main article {
   width: 100%;
-  padding: 5px;
-  background: #6ba4ff;
-}
-main article h1 {
-  margin-bottom: 10px;
-}
-main article table {
-  border: 1px solid black;
-  border-radius: 0;
-  width: 100%;
-  border-collapse: collapse;
-  margin-bottom: 10px;
-}
-@media (max-width: 886px) {
-  main article table {
-    font-size: small;
-  }
-}
-@media (max-width: 726px) {
-  main article table {
-    font-size: x-small;
-  }
-}
-main article table :last-child {
-  border-bottom: 0;
-}
-main article table tr {
-  display: flex;
-  flex-direction: row;
-  justify-content: space-around;
-  height: 25px;
-  border-bottom: 1px solid black;
-  border-radius: 0;
-}
-main article table tr td {
-  width: 100%;
-  border-radius: 0;
-  border-right: 1px solid black;
-  display: flex;
-  justify-content: center;
-  overflow-y: scroll;
-  overflow-x: hidden;
-}
-@media (max-width: 590px) {
-  main article table tr {
-    height: 30px;
-  }
-}
-@media (max-width: 347px) {
-  main article table tr {
-    height: 40px;
-  }
-}
-main article p {
-  font-family: Helvetica;
-  font-size: medium;
   margin-right: 5px;
+  padding: 5px 10px;
 }
-@media (max-width: 886px) {
-  main article p {
-    font-size: small;
-  }
-}
-@media (max-width: 726px) {
-  main article p {
-    font-size: x-small;
-  }
-}
-main .read-this {
-  width: 100%;
-  height: 70px;
-  background: #6ba4ff;
-  margin: 10px 0;
-  padding: 5px;
-  display: flex;
-  flex-direction: row;
-  overflow-x: scroll;
-  max-width: 400px;
-}
-main .read-this .line {
-  width: 5px;
-  height: 100%;
-  background: #464646;
-  border-radius: 0 5px 5px 0;
-}
-main .read-this .context {
-  width: 100%;
-  height: 100%;
-  background: #94aad1;
-  border-radius: 5px 0 0 5px;
-  padding: 5px;
-}
-@media (max-width: 400px) {
-  main .read-this .context {
-    font-size: small;
-  }
-}
-main :nth-child(4) {
-  flex-direction: row;
-}
-
-footer {
-  width: calc(100% - 20px);
-  height: 100px;
-  background: #445284;
-  display: flex;
-  flex-direction: row;
-  margin: 0 10px 10px 10px;
-  padding: 5px;
-}
-footer > * {
-  overflow: hidden;
-}
-footer > :nth-child(1) {
-  width: 60%;
-  border-radius: 0;
-  border-left: 2px solid black;
+main article .title {
+  background: rgba(231, 247, 255, 0.8392156863);
+  box-sizing: border-box;
+  padding: 10px;
+  max-width: 180px;
   display: flex;
   justify-content: center;
   align-items: center;
-}
-@media (max-width: 430px) {
-  footer > :nth-child(1) {
-    width: 65%;
-  }
-}
-footer > :nth-child(1) nav ul {
-  width: 100%;
-  height: 100%;
-  display: flex;
-  flex-direction: row;
-  justify-content: center;
-  align-items: center;
-  list-style: none;
-  direction: ltr;
-  padding: 0;
-  margin: 0;
-}
-footer > :nth-child(1) nav ul li {
-  margin-right: -20px;
-}
-footer > :nth-child(1) nav ul li:last-child {
-  margin-right: 0;
-}
-footer > :nth-child(1) nav ul li img {
-  width: 50px;
-  height: 50px;
-  border-radius: 50%;
-  transition: all 0.1s ease;
-  position: relative;
-}
-footer > :nth-child(1) nav ul li:nth-child(1) {
-  z-index: 4;
-}
-footer > :nth-child(1) nav ul li:nth-child(1) img {
-  z-index: 4;
-}
-footer > :nth-child(1) nav ul li:nth-child(2) {
-  z-index: 3;
-}
-footer > :nth-child(1) nav ul li:nth-child(2) img {
-  z-index: 3;
-}
-footer > :nth-child(1) nav ul li:nth-child(3) {
-  z-index: 2;
-}
-footer > :nth-child(1) nav ul li:nth-child(3) img {
-  z-index: 2;
-}
-footer > :nth-child(1) nav ul li:nth-child(4) {
-  z-index: 1;
-}
-footer > :nth-child(1) nav ul li:nth-child(4) img {
-  z-index: 1;
-}
-footer > :nth-child(1) nav ul li:nth-child(5) {
-  z-index: 0;
-}
-footer > :nth-child(1) nav ul li:nth-child(5) img {
-  z-index: 0;
-}
-footer > :nth-child(1) nav ul li:hover img {
-  transform: translateY(-5px);
-}
-footer > :nth-child(2) {
-  width: 40%;
-  display: flex;
-  justify-content: flex-end;
-  align-items: center;
-}
-footer > :nth-child(2) .icon {
-  display: flex;
-  justify-content: center;
-  align-items: center;
-  text-decoration: none;
-  color: black;
-}
-footer > :nth-child(2) .icon > span {
+  font-weight: bold;
   font-size: large;
-  font-style: bold;
 }
-footer > :nth-child(2) .icon img {
-  width: 80px;
-  height: 80px;
-  margin: 0 10px;
+main article .title ::before {
+  display: inline-block;
+  content: "";
+  border-top: 0.3rem solid black;
+  width: 4rem;
+  margin: 0 1rem;
+  transform: translateY(-1rem);
 }
-@media (max-width: 534px) {
-  footer > :nth-child(2) {
-    justify-content: center;
-  }
-  footer > :nth-child(2) .icon > span {
-    font-size: medium;
-    font-style: bold;
-  }
-  footer > :nth-child(2) .icon img {
-    width: 50px;
-    height: 50px;
-    margin: 0 5px;
-  }
+main article section {
+  background-color: #6ba4ff;
+  padding: 10px 5px;
+  font-size: small;
+  margin-top: 10px;
 }
-@media (max-width: 430px) {
-  footer > :nth-child(2) {
-    justify-content: center;
-    width: 45%;
-  }
-  footer > :nth-child(2) .icon {
-    padding-right: 10px;
-  }
-  footer > :nth-child(2) .icon > span {
-    font-size: small;
-    font-style: bold;
-  }
-  footer > :nth-child(2) .icon img {
-    width: 40px;
-    height: 40px;
-    margin: 0 10px;
-  }
+main article section .hint {
+  width: 100%;
+  display: flex;
+  justify-content: center;
+  margin: 10px 0;
+}
+main article section .hint-span {
+  padding: 20px 10px;
+  background: rgba(196, 42, 42, 0.9490196078);
+  height: 100%;
+}
+main article section table {
+  border-collapse: collapse;
+  text-align: center;
+}
+main article section table td {
+  border: 1px solid black;
+  padding: 10px;
+}
+main article section table .table-header {
+  background: rgba(255, 255, 255, 0.7529411765);
+}
+main article section code {
+  font-family: Consolas;
+  font-size: small;
+}
+main article section p {
+  margin-top: 5px;
+}
+main article .buttons {
+  display: flex;
+  flex-direction: row;
+  justify-content: space-between;
+  padding: 0 5px;
+  margin-top: 10px;
+}
+main article .buttons :nth-child(1) {
+  border-radius: 25% 75% 75% 25%/45% 45% 55% 55%;
+}
+main article .buttons :nth-child(2) {
+  border-radius: 75% 25% 25% 75%/45% 45% 55% 55%;
+}
+main article .buttons > * {
+  background: #6ba4ff;
+  text-decoration: none;
+  padding: 5px;
+  padding-bottom: 9px;
+  font-size: small;
 }
 
 @media (max-width: 300px) {
@@ -548,4 +479,8 @@ footer > :nth-child(2) .icon img {
   }
 }
 
-/*# sourceMappingURL=home.css.map */
+html {
+  scroll-behavior: smooth;
+}
+
+/*# sourceMappingURL=docs.css.map */
