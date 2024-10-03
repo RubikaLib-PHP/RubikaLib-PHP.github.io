@@ -340,40 +340,58 @@ main aside nav .cls {
   height: 40px;
   margin: 5px;
 }
+@media (min-width: 820px) {
+  main aside nav .cls {
+    display: none;
+  }
+}
 main aside nav ul {
   width: 100%;
   height: calc(100% - 50px);
 }
-main aside nav ul :first-child {
-  border-radius: 5px 5px 0 0;
-}
-main aside nav ul :last-child {
-  border-radius: 0 0 5px 5px;
-  border-bottom: none;
-}
-main aside nav ul a {
+main aside nav ul > a {
   text-decoration: none;
   color: black;
-  font-size: bold;
+  font-weight: bold;
   border-radius: 0;
 }
-main aside nav ul a li {
+main aside nav ul > a li {
   width: 100%;
   height: 50px;
-  border-bottom: 1px solid black;
+  border-bottom: 0.5px solid black;
   border-radius: 0;
-  background: red;
   display: flex;
   justify-content: flex-start;
   align-items: center;
 }
-main aside nav ul a :hover {
-  background: #3c67ff;
-  transition: 0.1s linear;
+main aside nav ul > a :hover {
+  background: linear-gradient(to left, white, 1%, #3c67ff);
+}
+main aside nav ul div {
+  list-style: none;
+  padding-right: 30px;
+  padding-top: 10px;
+  border-radius: 0;
+  font-size: small;
+  margin-bottom: 10px;
+}
+main aside nav ul div * {
+  text-decoration: none;
+  font-weight: normal;
+  color: #18609a;
+}
+main aside nav ul div li::before {
+  content: "> ";
+}
+main aside nav ul > :first-child li {
+  border-radius: 5px 5px 0 0;
+}
+main aside nav ul > :last-child li {
+  border-radius: 0 0 5px 5px;
+  border-bottom: none;
 }
 main article {
   width: 100%;
-  border: 1px solid black;
   margin-right: 5px;
   padding: 5px 10px;
 }
@@ -385,6 +403,8 @@ main article .title {
   display: flex;
   justify-content: center;
   align-items: center;
+  font-weight: bold;
+  font-size: large;
 }
 main article .title ::before {
   display: inline-block;
@@ -394,6 +414,61 @@ main article .title ::before {
   margin: 0 1rem;
   transform: translateY(-1rem);
 }
+main article section {
+  background-color: #6ba4ff;
+  padding: 10px 5px;
+  font-size: small;
+  margin-top: 10px;
+}
+main article section .hint {
+  width: 100%;
+  display: flex;
+  justify-content: center;
+  margin: 10px 0;
+}
+main article section .hint-span {
+  padding: 20px 10px;
+  background: rgba(196, 42, 42, 0.9490196078);
+  height: 100%;
+}
+main article section table {
+  border-collapse: collapse;
+  text-align: center;
+}
+main article section table td {
+  border: 1px solid black;
+  padding: 10px;
+}
+main article section table .table-header {
+  background: rgba(255, 255, 255, 0.7529411765);
+}
+main article section code {
+  font-family: Consolas;
+  font-size: small;
+}
+main article section p {
+  margin-top: 5px;
+}
+main article .buttons {
+  display: flex;
+  flex-direction: row;
+  justify-content: space-between;
+  padding: 0 5px;
+  margin-top: 10px;
+}
+main article .buttons :nth-child(1) {
+  border-radius: 25% 75% 75% 25%/45% 45% 55% 55%;
+}
+main article .buttons :nth-child(2) {
+  border-radius: 75% 25% 25% 75%/45% 45% 55% 55%;
+}
+main article .buttons > * {
+  background: #6ba4ff;
+  text-decoration: none;
+  padding: 5px;
+  padding-bottom: 9px;
+  font-size: small;
+}
 
 @media (max-width: 300px) {
   body * {
@@ -402,6 +477,10 @@ main article .title ::before {
   body .can-not-display {
     display: block;
   }
+}
+
+html {
+  scroll-behavior: smooth;
 }
 
 /*# sourceMappingURL=docs.css.map */

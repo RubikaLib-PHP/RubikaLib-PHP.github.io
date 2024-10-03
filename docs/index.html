@@ -55,25 +55,141 @@
                     <a href=".">
                         <li style="background: #3c67ff; border-radius: 0 5px 0 0;">ورود به حساب</li>
                     </a>
-                    <a href="/MainSettings.html">
+                    <div href=".">
+                        <li><a href="./#login">انجام ورود به حساب</a></li>
+                    </div>
+                    <a href="./MainSettings.html">
                         <li>تنظیمات</li>
                     </a>
-                    <a href="Failures.html">
+                    <a href="./Failures.html">
                         <li>error handling</li>
                     </a>
-
+                    <a href="./messages.html">
+                        <li>پیامرسانی</li>
+                    </a>
+                    <a href="./Account.html">
+                        <li>مدیریت حساب</li>
+                    </a>
+                    <a href="./chats.html">
+                        <li>چت ها</li>
+                    </a>
+                    <a href="./contacts.html">
+                        <li>مخاطبین</li>
+                    </a>
+                    <a href="./folders.html">
+                        <li>پوشه ها</li>
+                    </a>
                 </ul>
             </nav>
         </aside>
         <article>
-            <div style="margin-top: 50px;" class="title">ورود به حساب</div>
+            <h1>
+                <div style="margin-top: 20px;" class="title">ورود به حساب</div>
+            </h1>
             <section id="login">
                 <p>
                     برای ورود به حساب نیاز به انجام کار خاصی نیست. تنها کافیت یک نمونه از کلاس <abbr
                         title="کلاس شامل تمام متد ها با دسترسی به سراسر کتابخانه">Main</abbr> ایجاد کنید و شماره تلفن
                     اکانت را به ان تحویل دهید.
                 </p>
+                <pre class="code"><code>
+<span class="types">use</span> <span class="red">RubikaLib\Main</span>;
+<span class="variable">$app</span> = <span class="types">new</span> <span class="red">Main</span><span class="parantez">(</span><span class="numbers">989123456789</span><span class="parantez">)</span>; <span class="comments">// can be empty</span>
+</code>
+</pre>
+
+                این کلاس 3 ورودی دارد:
+                <table style="margin: 5px 0 10px 0; align-self: center;">
+                    <tr>
+                        <td>
+                            phone_number
+                        </td>
+                        <td>
+                            <span class="types">int</span>
+                        </td>
+                        <td>
+                            شماره تلفن. در صروتی که خالی باشد در کامندلاین یا صفحه وب درخواست میشود
+                        </td>
+                    </tr>
+                    <tr>
+                        <td>
+                            app_name
+                        </td>
+                        <td>
+                            <span class="types">string</span>
+                        </td>
+                        <td>
+                            این پارامتر تنها به هنگام لاگین استفاده میشود و در لیست سشن ها ذخیره میشود. نحوه
+                            جایگذاری:<br>
+                            <span class="string">"Rubika-lib($app_name) $VERSION"</span>
+                        </td>
+                    </tr>
+                    <tr>
+                        <td>
+                            settings
+                        </td>
+                        <td>
+                            <span class="red">MainSettings</span>
+                        </td>
+                        <td>
+                            تنظیمات <a href="MainSettings.html" style="margin: 0 2px;">تنظیمات شخصی سازی</a> برنامه
+                        </td>
+                    </tr>
+                </table>
+                </span>
+                <div class="hint">
+                    <span class="hint-span">
+                        <span style="color: yellow; font-weight: bold;">نکته!</span> در حال حاضر وارد کردن شماره تلفن
+                        فقط
+                        برای
+                        شماره های ایرانی و تنها به صورت زیر ممکن است:<br>
+                        * 989123456789<br>
+                        * 9123456789<br>
+                        همچنین شماره تلفن باید به صورت int وارد شود.
+                    </span>
+                </div>
+                <span class="passage">
+                    میتوانید نام ربات را مشخص کنید تا در صورتی که از تعداد زیاد نشست ها استفاده میکنید به راختی انها را
+                    از
+                    یکدیگر تشخیض دهید:<br>
+                    <pre class="code"><code>
+<span class="variable">$app</span> = <span class="types">new</span> <span class="red">Main</span><span class="parantez">(</span><span class="types">app_name:</span> <span class="string">'my-app-1'</span><span class="parantez">)</span></span>;
+</code>
+</pre>
+                </span>
+                <div class="hint">
+                    <span class="hint-span" style="font-size: small;">
+                        <span style="color: yellow; font-weight: bold;">نکته!</span> نامی که انتخاب میشود تنها در مرحله
+                        <a href="inital.html">ورود به حساب</a> استفاده خواهد شد و پس از آن وارد کردن ان تاثیری ندارد
+                    </span>
+                </div>
+                <span class="passage" style="flex-direction: row; justify-content: flex-start; align-items: center;">
+                    همچنین میتوانید <a href="MainSettings.html" style="margin: 0 2px; font-size: 14px;">تنظیمات شخصی
+                        سازی</a> را نیز
+                    اعمال
+                    کنید:
+                </span>
+                <pre class="code"><code>
+<span class="types">use</span> <span class="red">RubikaLib\interfaces\MainSettings</span>;
+
+<span class="variable">$settings</span> = <span class="types">new</span> <span class="red">MainSettings</span>;
+
+<span class="variable">$settings</span>-><span class="method">setUserAgent<span class="parantez">(</span><span class="string">'Mozilla/5.0 (Windows NT 10.0; Win64; x64; rv:129.0) Gecko/20100101 Firefox/129.0'</span><span class="parantez">)</span></span>; 
+<span class="variable">$settings</span>-><span class="method">setAppType<span class="parantez">(</span><span class="red">AppType</span>::Shad<span class="parantez">)</span></span>;
+
+<span class="variable">$app</span> = <span class="types">new</span> <span class="red">Main</span><span class="parantez">(</span>
+  <span class="types">phone_number: </span><span class="numbers">989123456789</span><span class="parantez">,
+    <span class="types">app_name:</span> <span class="string">'my-app-1'</span>
+    <span class="types">settings: </span><span class="variable">$settings</span><span class="parantez">,
+)</span>;
+</code>
+</pre>
             </section>
+            <div class="buttons">
+                <a href="MainSettings.html">
+                    <div class="button" style="border-radius: 76% 24% 24% 76% / 50% 50% 50% 50% ;">صفحه بعدی</div>
+                </a>
+            </div>
         </article>
     </main>
     <span class="can-not-display">can't display on this size of page. please use another device or use desktop
