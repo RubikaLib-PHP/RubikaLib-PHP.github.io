@@ -68,9 +68,9 @@
                     <a href="./Failures.html">
                         <li style="background: #3c67ff; border-radius: 0 5px 0 0;">error handling</li>
                     </a>
-                    <div>
-                        <li><a href="./Failures.html#sec1">جدول property ها</a></li>
-                    </div>
+                    <!-- <div>
+                        <li><a href="./Failures.html#usefor">موارد استفاده</a></li>
+                    </div> -->
                     <a href="./messages.html">
                         <li>پیامرسانی</li>
                     </a>
@@ -91,10 +91,33 @@
         </aside>
         <article>
             <h1>
-                <div style="margin-top: 20px;" class="title">title</div>
+                <div style="margin-top: 20px;" class="title">موارد استفاده</div>
             </h1>
-            <section id="sec1">
-                setion 1
+            <section>
+                <p>
+                    کتابخانه برای جداسازی ارور های خود از باقی ارور های PHP و دیگر کتابخانه های مورد استفاده از یک کلاس
+                    Exception خصوصی با نام
+                    <abbr title="کلاس اختصاصی Exception برای کتابخانه">Failure</abbr> استفاده میکند.
+                    <br>
+                    کافیست با یک try catch ساده انهارا دریافت کنید:
+                </p>
+                <pre class="code"><code>
+<span class="keyword">try</span> <span class="parantez2">{</span>
+    <span class="variable">$app</span> = <span class="keyword">new</span> <span class="types">Main</span><span class="parantez">(</span><span class="numbers">9123456789</span><span class="parantez">)</span>;
+
+    <span class="comments">// ...</span>
+
+    <span class="variable">$app</span><span class="parantez">-></span><span class="method">RunAndLoop</span><span class="parantez">(</span><span class="parantez">)</span>;
+    <span class="parantez2">}</span> <span class="keyword">catch</span> <span class="parantez2">(</span><span class="types">Failure</span> <span class="variable">$error</span><span class="parantez2">)</span> <span class="parantez2">{</span>
+    <span class="keyword">echo</span> <span class="variable">$error</span><span class="parantez">-></span><span class="method">getMessage</span><span class="parantez">(</span><span class="parantez">)</span> . <span class="consts">PHP_EOL</span>;
+
+    <span class="keyword">if</span> <span class="parantez">(</span><span class="variable">$error</span><span class="parantez">-></span><span class="variable">obj</span> != <span class="parantez">array</span><span class="parantez">(</span><span class="parantez">)</span><span class="parantez">)</span> <span class="parantez2">{</span>
+        <span class="keyword">var_dump</span><span class="parantez">(</span><span class="variable">$error</span><span class="parantez">-></span><span class="variable">obj</span><span class="parantez">)</span>;
+        <span class="keyword">echo</span> <span class="consts">PHP_EOL</span>;
+    <span class="parantez2">}</span>
+<span class="parantez2">}</span>
+
+</code></pre>
             </section>
             <div class="buttons">
                 <a href="messages.html">
