@@ -446,6 +446,17 @@ main article .title ::before {
   margin: 0 1rem;
   transform: translateY(-1rem);
 }
+main article .hint {
+  width: 100%;
+  display: flex;
+  justify-content: center;
+  margin: 10px 0;
+}
+main article .hint-span {
+  padding: 20px 10px;
+  background: rgba(196, 42, 42, 0.9490196078);
+  height: 100%;
+}
 main article section {
   background-color: #6ba4ff;
   padding: 10px 5px;

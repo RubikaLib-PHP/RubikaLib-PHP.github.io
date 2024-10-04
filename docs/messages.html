@@ -74,6 +74,12 @@
                     <div>
                         <li><a href="./messages.html#intro">معرفی</a></li>
                     </div>
+                    <div>
+                        <li><a href="./messages.html#SendMessage">SendMessage</a></li>
+                    </div>
+                    <div>
+                        <li><a href="./messages.html#EditMessage">EditMessage</a></li>
+                    </div>
                     <a href="./account.html">
                         <li>مدیریت حساب</li>
                     </a>
@@ -108,8 +114,157 @@
                     لیست کامل متد هارا اینجا میبینیم:
                 </p>
             </section>
-            <section id="sendMessage">
+            <h1>
+                <div style="margin-top: 20px;" class="title">SendMessage</div>
+            </h1>
+            <section id="SendMessage">
+                این متد یک پیام متنی را به یک کاربر ارسال میکند.
+                پارامتر های دریافتی:
+                <pre class="code"><code>
+<span class="comments">/**
+ * send text to someone or somewhere
+ *
+ * @param string $guid object_guid
+ * @param string $text message (can be with markworn metadatas)
+ * @param int $reply_to_message_id if you have to reply
+ * @return array API result
+ */</span>
+<span class="keyword">public function</span> <span class="method">SendMessage</span><span class="parantez">(</span><span class="types">string</span> <span class="variable">$guid</span>, <span class="types">string</span> <span class="variable">$text</span>, <span class="types">int</span> <span class="variable">$reply_to_message_id</span> = <span class="numbers">0</span><span class="parantez">)</span>: <span class="types">array</span>
+
+</code></pre>
+                <style>
+                    .tab {
+                        width: 100%;
+                        display: flex;
+                        justify-content: center;
+                        margin-top: 10px;
+                    }
+
+                    .tab table tr:not(:first-child) td:nth-child(1) {
+                        color: #4b7095;
+                        background: #252526;
+                        border-radius: 0;
+                        direction: ltr;
+                    }
+                </style>
+                <p>
+                    توضیحات پارامتر ها:
+                </p>
+                <div class="tab">
+                    <table>
+                        <tr class="table-header">
+                            <td>
+                                پارامتر
+                            </td>
+                            <td>
+                                توضیحات
+                            </td>
+                        </tr>
+                        <tr>
+                            <td>
+                                $guid
+                            </td>
+                            <td>
+                                guid فرد, گروه یا کانالی که قرار است پیام به او ارسال شود.
+                            </td>
+                        <tr>
+                            <td>
+                                $text
+                            </td>
+                            <td>
+                                متن پیام که میتواند با الگو های markdown زیر باشند:<br>
+                                <span dir="ltr" class="string" style="background: #252526; padding: 0 5px;">"Mono" =>
+                                    '/\`([^`]+)\`/'</span><br>
+                                <span dir="ltr" class="string" style="background: #252526; padding: 0 5px;">"Bold" =>
+                                    '/\*\*([^*]+)\*\*/'</span><br>
+                                <span dir="ltr" class="string" style="background: #252526; padding: 0 5px;">"Italic" =>
+                                    '/\_\_([^_]+)\_\_/'</span><br>
+                                <span dir="ltr" class="string" style="background: #252526; padding: 0 5px;">"Spoiler" =>
+                                    '/\|\|([^#]+)\|\|/'</span>
+                            </td>
+                        </tr>
+                        <tr>
+                            <td>
+                                $reply_to_message_id
+                            </td>
+                            <td>
+                                در صورتی که پاس داده شود روی پیام مورد نظر reply زده میشود.
+                            </td>
+                        </tr>
+                    </table>
+                </div>
             </section>
+            <h1>
+                <div style="margin-top: 20px;" class="title">EditMessage</div>
+            </h1>
+            <section id="EditMessage">
+                این متد یک پیام متنی را به یک کاربر ارسال میکند.
+                پارامتر های دریافتی:
+                <pre class="code"><code>
+<span class="comments">/**
+ * Edit Message Text
+ *
+ * @param string $guid object_guid
+ * @param string $NewText message
+ * @param int $message_id
+ * @return array API result
+ */</span>
+<span class="keyword">public function</span> <span class="method">EditMessage</span><span class="parantez">(</span><span class="types">string</span> <span class="variable">$guid</span>, <span class="types">string</span> <span class="variable">$NewText</span>, <span class="types">int</span> <span class="variable">$message_id</span><span class="parantez">)</span>: <span class="types">array</span>
+
+</code></pre>
+                <p>
+                    توضیحات پارامتر ها:
+                </p>
+                <div class="tab">
+                    <table>
+                        <tr class="table-header">
+                            <td>
+                                پارامتر
+                            </td>
+                            <td>
+                                توضیحات
+                            </td>
+                        </tr>
+                        <tr>
+                            <td>
+                                $guid
+                            </td>
+                            <td>
+                                guid فرد, گروه یا کانالی که قرار است پیام به او ارسال شود.
+                            </td>
+                        <tr>
+                            <td>
+                                $NewText
+                            </td>
+                            <td>
+                                متن پیام جدید که میتواند با الگو های markdown زیر باشند:<br>
+                                <span dir="ltr" class="string" style="background: #252526; padding: 0 5px;">"Mono" =>
+                                    '/\`([^`]+)\`/'</span><br>
+                                <span dir="ltr" class="string" style="background: #252526; padding: 0 5px;">"Bold" =>
+                                    '/\*\*([^*]+)\*\*/'</span><br>
+                                <span dir="ltr" class="string" style="background: #252526; padding: 0 5px;">"Italic" =>
+                                    '/\_\_([^_]+)\_\_/'</span><br>
+                                <span dir="ltr" class="string" style="background: #252526; padding: 0 5px;">"Spoiler" =>
+                                    '/\|\|([^#]+)\|\|/'</span>
+                            </td>
+                        </tr>
+                        <tr>
+                            <td>
+                                $message_id
+                            </td>
+                            <td>
+                                ایدی پیامی که باید ویرایش شود.(اجباری)
+                            </td>
+                        </tr>
+                    </table>
+                </div>
+            </section>
+            <div class="hint">
+                <span class="hint-span">
+                    <span style="color: yellow; font-weight: bold;">نکته!</span> تفاوتی ندارد که پیام مورد نظر برای
+                    ویرایش حاوی تصویر یا رسانه دیگری باشد.<br>
+                    این متد میتواند تمام پیام های ارسالی از طرف خودتان را ویرایش کند.
+            </div>
             <div class="buttons">
                 <a href="messages.html">
                     <div class="button" style="border-radius: 76% 24% 24% 76% / 50% 50% 50% 50% ;">صفحه بعدی</div>
