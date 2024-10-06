@@ -1,0 +1,123 @@
+@keyframes MakeHeaderNavShadow {
+    from {
+        box-shadow: none;
+        margin-right: 5px;
+        width: 90px;
+        height: 40px;
+    }
+    to {
+        box-shadow: 0 2px 5px #1b1b40;
+        margin-right: 7px;
+        width: 88px;
+        height: 38px;
+    }
+}
+@keyframes RemoveHeaderNavShadow {
+    from {
+        box-shadow: 0 2px 5px #1b1b40;
+        margin-right: 7px;
+        width: 88px;
+        height: 38px;
+    }
+    to {
+        box-shadow: none;
+        margin-right: 5px;
+        width: 90px;
+        height: 40px;
+    }
+}
+
+@keyframes MakeHeaderNavShadow2 {
+    from {
+        box-shadow: none;
+        margin-right: 5px;
+        width: 90px;
+    }
+    to {
+        box-shadow: 0 2px 5px #1b1b40;
+        margin-right: 7px;
+        width: 88px;
+    }
+}
+@keyframes RemoveHeaderNavShadow2 {
+    from {
+        box-shadow: 0 2px 5px #1b1b40;
+        margin-right: 7px;
+        width: 88px;
+        height: 38px;
+    }
+    to {
+        box-shadow: none;
+        margin-right: 5px;
+        width: 90px;
+        height: 40px;
+    }
+}
+
+@keyframes MakeTopARCShadow {
+    from {
+        box-shadow: none;
+        margin-bottom: 0;
+    }
+    to {
+        box-shadow: 0 5px 10px #eaeaea;
+    }
+}
+@keyframes RemoveTopARCShadow {
+    from {
+        box-shadow: 0 5px 10px #eaeaea;
+    }
+    to {
+        box-shadow: none;
+        margin-bottom: 0;
+    }
+}
+
+@keyframes OpenHeaderNav320 {
+    from {
+        width: 40px;
+        height: 40px;
+    }
+    to {
+        width: 200px;
+        height: 85px;
+    }
+}
+@keyframes CloseHeaderNav320 {
+    from {
+        width: 200px;
+        height: 85px;
+        position: absolute;
+        right: 15px;
+        top: 10px;
+    }
+    to {
+        width: 40px;
+        height: 40px;
+        position: absolute;
+        right: 15px;
+        top: 10px;
+    }
+}
+
+@keyframes DocsNavCloseBTN-Up {
+    from {
+        margin: 5px;
+        box-shadow: none;
+    }
+    to {
+        margin: 4px 5px 6px 5px;
+        box-shadow: 0 2px 5px #1b1b40;
+    }
+}
+
+@keyframes DocsNavCloseBTN-Down {
+    from {
+        margin: 4px 5px 6px 5px;
+        box-shadow: 0 2px 5px #1b1b40;
+    }
+    to {
+        margin: 5px;
+        box-shadow: none;
+    }
+}

@@ -4,13 +4,13 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <meta name="description" content="کتابخانه روبیکا | صفحه اصلی | کتابخانه ای برای کار با API های روبیکا و شاد">
+    <meta name="description" content="کتابخانه روبیکا | docs | انجام ورود به حساب">
     <meta name="auther" content="AmirrezaFiroz">
     <link rel="icon" href="../assets/icon.png">
     <link rel="stylesheet" href="../assets/css/docs.css">
     <link rel="stylesheet" href="../assets/css/code.css">
     <meta name="robots" content="index, follow">
-    <title>کتابخانه روبیکا - RubikaLib</title>
+    <title>کتابخانه روبیکا - انجام ورود به حساب</title>
 </head>
 
 <body dir="rtl">
@@ -107,6 +107,17 @@
 
                 این کلاس 3 ورودی دارد:
                 <table style="margin: 5px 0 10px 0; align-self: center;">
+                    <tr class="table-header">
+                        <td>
+                            property
+                        </td>
+                        <td>
+                            <span class="types">نوع داده</span>
+                        </td>
+                        <td>
+                            توضیحات
+                        </td>
+                    </tr>
                     <tr>
                         <td>
                             phone_number
@@ -143,16 +154,29 @@
                         </td>
                     </tr>
                 </table>
-                </span>
+                <div class="sample_imgs">
+                    <img src="imgs/web-view.png" alt="web-view">
+                    <img src="imgs/cli-view.png" alt="CLI-view">
+                    <script>
+                        let imgs = document.querySelectorAll('.sample_imgs img');
+                        console.log(imgs)
+                        imgs[0].addEventListener('click', function () {
+                            window.open("imgs/web-view.png", '_blank');
+                        });
+                        imgs[1].addEventListener('click', function () {
+                            window.open("imgs/cli-view.png", '_blank');
+                        });
+                    </script>
+                </div>
                 <div class="hint">
                     <span class="hint-span">
-                        <span style="color: yellow; font-weight: bold;">نکته!</span> در حال حاضر وارد کردن شماره تلفن
+                        <h3 style="color: yellow; font-weight: bold;">نکته!</h3> در حال حاضر وارد کردن شماره تلفن
                         فقط
                         برای
                         شماره های ایرانی و تنها به صورت زیر ممکن است:<br>
                         * 989123456789<br>
                         * 9123456789<br>
-                        همچنین شماره تلفن باید به صورت int وارد شود.
+                        همچنین شماره تلفن باید به صورت <span class="types">int</span> وارد شود.
                     </span>
                 </div>
                 <span class="passage">
@@ -166,8 +190,8 @@
                 </span>
                 <div class="hint">
                     <span class="hint-span" style="font-size: small;">
-                        <span style="color: yellow; font-weight: bold;">نکته!</span> نامی که انتخاب میشود تنها در مرحله
-                        <a href="inital.html">ورود به حساب</a> استفاده خواهد شد و پس از آن وارد کردن ان تاثیری ندارد
+                        <h3 style="color: yellow; font-weight: bold;">نکته!</h3> نامی که انتخاب میشود تنها در مرحله
+                        ورود به حساب استفاده خواهد شد و پس از آن وارد کردن ان تاثیری ندارد.
                     </span>
                 </div>
                 <span class="passage" style="flex-direction: row; justify-content: flex-start; align-items: center;">

@@ -8,17 +8,12 @@
 	<url>
 		<loc>https://www.rubikalib-php.github.io/docs</loc>
 		<priority>0.67</priority>
-		<lastmod>2024-10-04</lastmod>
-	</url>
-	<url>
-		<loc>https://www.rubikalib-php.github.io/googleb2f030ce824dc3c9.html</loc>
-		<priority>0.67</priority>
-		<lastmod>2024-10-04</lastmod>
+		<lastmod>2024-10-07</lastmod>
 	</url>
 	<url>
 		<loc>https://www.rubikalib-php.github.io/examples</loc>
-		<priority>0.33</priority>
-		<lastmod>2024-10-06</lastmod>
+		<priority>0.67</priority>
+		<lastmod>2024-10-04</lastmod>
 	</url>
 	<url>
 		<loc>https://www.rubikalib-php.github.io/docs/account.html</loc>
@@ -38,7 +33,7 @@
 	<url>
 		<loc>https://www.rubikalib-php.github.io/docs/Failures.html</loc>
 		<priority>0.33</priority>
-		<lastmod>2024-10-04</lastmod>
+		<lastmod>2024-10-07</lastmod>
 	</url>
 	<url>
 		<loc>https://www.rubikalib-php.github.io/docs/folders.html</loc>
@@ -48,12 +43,12 @@
 	<url>
 		<loc>https://www.rubikalib-php.github.io/docs/MainSettings.html</loc>
 		<priority>0.33</priority>
-		<lastmod>2024-10-04</lastmod>
+		<lastmod>2024-10-07</lastmod>
 	</url>
 	<url>
 		<loc>https://www.rubikalib-php.github.io/docs/messages.html</loc>
 		<priority>0.33</priority>
-		<lastmod>2024-10-04</lastmod>
+		<lastmod>2024-10-07</lastmod>
 	</url>
 	<url>
 		<loc>https://www.rubikalib-php.github.io/docs/updates.html</loc>

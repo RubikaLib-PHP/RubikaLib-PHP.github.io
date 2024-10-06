@@ -340,7 +340,6 @@ body > .open_nav_btn :hover {
 main {
   width: calc(100% - 10px);
   margin: 5px;
-  height: 1500px;
   display: flex;
   flex-direction: row;
 }
@@ -491,6 +490,19 @@ main article section code {
 }
 main article section p {
   margin-top: 5px;
+}
+main article section .sample_imgs {
+  width: 100%;
+  background: #97bfff;
+  display: flex;
+  justify-content: center;
+  flex-direction: row;
+  align-items: center;
+}
+main article section .sample_imgs img {
+  max-width: calc(50% - 5px);
+  margin: 0 2.5px;
+  cursor: pointer;
 }
 main article .buttons {
   display: flex;

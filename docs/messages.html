@@ -4,13 +4,13 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <meta name="description" content="کتابخانه روبیکا | صفحه اصلی | کتابخانه ای برای کار با API های روبیکا و شاد">
     <meta name="auther" content="AmirrezaFiroz">
     <link rel="icon" href="../assets/icon.png">
     <link rel="stylesheet" href="../assets/css/docs.css">
     <link rel="stylesheet" href="../assets/css/code.css">
     <meta name="robots" content="index, follow">
-    <title>کتابخانه روبیکا - RubikaLib</title>
+    <meta name="description" content="کتابخانه روبیکا | docs | تنظیمات شخصی سازی شده">
+    <title>کتابخانه روبیکا - RubikaLib - docs</title>
 </head>
 
 <body dir="rtl">
@@ -80,6 +80,9 @@
                     <div>
                         <li><a href="./messages.html#EditMessage">EditMessage</a></li>
                     </div>
+                    <div>
+                        <li><a href="./messages.html#DeleteMessages">DeleteMessages</a></li>
+                    </div>
                     <a href="./account.html">
                         <li>مدیریت حساب</li>
                     </a>
@@ -115,7 +118,7 @@
                 </p>
             </section>
             <h1>
-                <div style="margin-top: 20px;" class="title">SendMessage</div>
+                <div style="margin-top: 10px;" class="title">SendMessage</div>
             </h1>
             <section id="SendMessage">
                 این متد یک پیام متنی را به یک کاربر ارسال میکند.
@@ -174,13 +177,13 @@
                             <td>
                                 متن پیام که میتواند با الگو های markdown زیر باشند:<br>
                                 <span dir="ltr" class="string" style="background: #252526; padding: 0 5px;">"Mono" =>
-                                    '/\`([^`]+)\`/'</span><br>
+                                    '`text`'</span><br>
                                 <span dir="ltr" class="string" style="background: #252526; padding: 0 5px;">"Bold" =>
-                                    '/\*\*([^*]+)\*\*/'</span><br>
+                                    '**text**'</span><br>
                                 <span dir="ltr" class="string" style="background: #252526; padding: 0 5px;">"Italic" =>
-                                    '/\_\_([^_]+)\_\_/'</span><br>
+                                    '__text__'</span><br>
                                 <span dir="ltr" class="string" style="background: #252526; padding: 0 5px;">"Spoiler" =>
-                                    '/\|\|([^#]+)\|\|/'</span>
+                                    '||text||'</span>
                             </td>
                         </tr>
                         <tr>
@@ -195,21 +198,21 @@
                 </div>
             </section>
             <h1>
-                <div style="margin-top: 20px;" class="title">EditMessage</div>
+                <div style="margin-top: 10px;" class="title">EditMessage</div>
             </h1>
             <section id="EditMessage">
-                این متد یک پیام متنی را به یک کاربر ارسال میکند.
+                این متد یک پیام که از طرف شما در یک چت ارسال شده است را ویرایش میکند.
                 پارامتر های دریافتی:
                 <pre class="code"><code>
 <span class="comments">/**
  * Edit Message Text
  *
  * @param string $guid object_guid
- * @param string $NewText message
+ * @param string $newText message
  * @param int $message_id
  * @return array API result
  */</span>
-<span class="keyword">public function</span> <span class="method">EditMessage</span><span class="parantez">(</span><span class="types">string</span> <span class="variable">$guid</span>, <span class="types">string</span> <span class="variable">$NewText</span>, <span class="types">int</span> <span class="variable">$message_id</span><span class="parantez">)</span>: <span class="types">array</span>
+<span class="keyword">public function</span> <span class="method">EditMessage</span><span class="parantez">(</span><span class="types">string</span> <span class="variable">$guid</span>, <span class="types">string</span> <span class="variable">$newText</span>, <span class="types">int</span> <span class="variable">$message_id</span><span class="parantez">)</span>: <span class="types">array</span>
 
 </code></pre>
                 <p>
@@ -230,22 +233,22 @@
                                 $guid
                             </td>
                             <td>
-                                guid فرد, گروه یا کانالی که قرار است پیام به او ارسال شود.
+                                guid فرد, گروه یا کانالی که پیام در ان قرار دارد.
                             </td>
                         <tr>
                             <td>
-                                $NewText
+                                $newText
                             </td>
                             <td>
                                 متن پیام جدید که میتواند با الگو های markdown زیر باشند:<br>
                                 <span dir="ltr" class="string" style="background: #252526; padding: 0 5px;">"Mono" =>
-                                    '/\`([^`]+)\`/'</span><br>
+                                    '`text`'</span><br>
                                 <span dir="ltr" class="string" style="background: #252526; padding: 0 5px;">"Bold" =>
-                                    '/\*\*([^*]+)\*\*/'</span><br>
+                                    '**text**'</span><br>
                                 <span dir="ltr" class="string" style="background: #252526; padding: 0 5px;">"Italic" =>
-                                    '/\_\_([^_]+)\_\_/'</span><br>
+                                    '__text__'</span><br>
                                 <span dir="ltr" class="string" style="background: #252526; padding: 0 5px;">"Spoiler" =>
-                                    '/\|\|([^#]+)\|\|/'</span>
+                                    '||text||'</span>
                             </td>
                         </tr>
                         <tr>
@@ -261,10 +264,71 @@
             </section>
             <div class="hint">
                 <span class="hint-span">
-                    <span style="color: yellow; font-weight: bold;">نکته!</span> تفاوتی ندارد که پیام مورد نظر برای
+                    <h3 style="color: yellow; font-weight: bold;">نکته!</h3> تفاوتی ندارد که پیام مورد نظر برای
                     ویرایش حاوی تصویر یا رسانه دیگری باشد.<br>
                     این متد میتواند تمام پیام های ارسالی از طرف خودتان را ویرایش کند.
             </div>
+            <h1>
+                <div style="margin-top: 10px;" class="title">DeleteMessages</div>
+            </h1>
+            <section id="DeleteMessages">
+                این متد یک پیام که از طرف شما در یک چت ارسال شده است را ویرایش میکند.
+                پارامتر های دریافتی:
+                <pre class="code"><code>
+<span class="comments">/**
+ * delete message from chat
+ *
+ * @param string $object_guid
+ * @param array|int $message_id
+ * @param DeleteType $type local or global
+ * @return array API result
+ */</span>
+<span class="keyword">public function</span> <span class="method">DeleteMessages</span><span class="parantez">(</span><span class="types">string</span> <span class="variable">$object_guid</span>, <span class="types">array</span>!<span class="types">int</span> <span class="variable">$message_id</span>, <span class="red">DeleteType</span> <span class="variable">$type</span> = <span class="red">DeleteType</span>::<span class="consts">Local<span class="parantez">)</span>: <span class="types">array</span>
+
+</code></pre>
+                <p>
+                    توضیحات پارامتر ها:
+                </p>
+                <div class="tab">
+                    <table>
+                        <tr class="table-header">
+                            <td>
+                                پارامتر
+                            </td>
+                            <td>
+                                توضیحات
+                            </td>
+                        </tr>
+                        <tr>
+                            <td>
+                                $object_guid
+                            </td>
+                            <td>
+                                guid فرد, گروه یا کانالی که پیام در ان قرار دارد.
+                            </td>
+                        <tr>
+                            <td>
+                                $message_id
+                            </td>
+                            <td>
+                                آرایه ای از آیدی پیام هایی که قرار است حذف شوند. (یا آیدی یک پیام به صورت تکی)
+                            </td>
+                        </tr>
+                        <tr>
+                            <td>
+                                $type
+                            </td>
+                            <td>
+                                نوع حذف.<br>
+                                <span dir="ltr" class="string" style="background: #252526; padding: 0 5px;">local => فقط
+                                    برای شما'/span></span><br>
+                                <span dir="ltr" class="string" style="background: #252526; padding: 0 5px;">global =>
+                                    برای همه'/span><br></span>
+                            </td>
+                        </tr>
+                    </table>
+                </div>
+            </section>
             <div class="buttons">
                 <a href="messages.html">
                     <div class="button" style="border-radius: 76% 24% 24% 76% / 50% 50% 50% 50% ;">صفحه بعدی</div>
