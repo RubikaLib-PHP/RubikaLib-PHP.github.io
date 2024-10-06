@@ -272,7 +272,6 @@ body .can-not-display {
 }
 
 main {
-  height: 2700px;
   margin: 5px 10px;
   display: flex;
   flex-direction: column;
@@ -338,17 +337,12 @@ main article table tr td {
   border-right: 1px solid black;
   display: flex;
   justify-content: center;
-  overflow-y: scroll;
   overflow-x: hidden;
+  align-items: center;
 }
 @media (max-width: 590px) {
   main article table tr {
     height: 30px;
-  }
-}
-@media (max-width: 347px) {
-  main article table tr {
-    height: 40px;
   }
 }
 main article p {
@@ -393,6 +387,11 @@ main .read-this .context {
 @media (max-width: 400px) {
   main .read-this .context {
     font-size: small;
+  }
+}
+@media (max-width: 331px) {
+  main .read-this {
+    height: 90px;
   }
 }
 main :nth-child(4) {
