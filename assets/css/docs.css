@@ -455,6 +455,7 @@ main article .hint-span {
   padding: 20px 10px;
   background: rgba(196, 42, 42, 0.9490196078);
   height: 100%;
+  font-size: small;
 }
 main article section {
   background-color: #6ba4ff;
@@ -498,6 +499,7 @@ main article section .sample_imgs {
   justify-content: center;
   flex-direction: row;
   align-items: center;
+  margin-top: 10px;
 }
 main article section .sample_imgs img {
   max-width: calc(50% - 5px);

@@ -83,6 +83,9 @@
                     <div>
                         <li><a href="./messages.html#DeleteMessages">DeleteMessages</a></li>
                     </div>
+                    <div>
+                        <li><a href="./messages.html#SendPhoto">SendPhoto</a></li>
+                    </div>
                     <a href="./account.html">
                         <li>مدیریت حساب</li>
                     </a>
@@ -135,6 +138,9 @@
 <span class="keyword">public function</span> <span class="method">SendMessage</span><span class="parantez">(</span><span class="types">string</span> <span class="variable">$guid</span>, <span class="types">string</span> <span class="variable">$text</span>, <span class="types">int</span> <span class="variable">$reply_to_message_id</span> = <span class="numbers">0</span><span class="parantez">)</span>: <span class="types">array</span>
 
 </code></pre>
+                <div class="sample_imgs">
+                    <img src="imgs/sendMessage.png" alt="sendMessage">
+                </div>
                 <style>
                     .tab {
                         width: 100%;
@@ -191,7 +197,7 @@
                                 $reply_to_message_id
                             </td>
                             <td>
-                                در صورتی که پاس داده شود روی پیام مورد نظر reply زده میشود.
+                                ارسال با پاسخ به پیامی که آیدی انرا پاس دهید.
                             </td>
                         </tr>
                     </table>
@@ -215,6 +221,9 @@
 <span class="keyword">public function</span> <span class="method">EditMessage</span><span class="parantez">(</span><span class="types">string</span> <span class="variable">$guid</span>, <span class="types">string</span> <span class="variable">$newText</span>, <span class="types">int</span> <span class="variable">$message_id</span><span class="parantez">)</span>: <span class="types">array</span>
 
 </code></pre>
+                <div class="sample_imgs">
+                    <img src="imgs/editMessage.png" alt="editMessage">
+                </div>
                 <p>
                     توضیحات پارامتر ها:
                 </p>
@@ -283,7 +292,7 @@
  * @param DeleteType $type local or global
  * @return array API result
  */</span>
-<span class="keyword">public function</span> <span class="method">DeleteMessages</span><span class="parantez">(</span><span class="types">string</span> <span class="variable">$object_guid</span>, <span class="types">array</span>!<span class="types">int</span> <span class="variable">$message_id</span>, <span class="red">DeleteType</span> <span class="variable">$type</span> = <span class="red">DeleteType</span>::<span class="consts">Local<span class="parantez">)</span>: <span class="types">array</span>
+<span class="keyword">public function</span> <span class="method">DeleteMessages</span><span class="parantez">(</span><span class="types">string</span> <span class="variable">$object_guid</span>, <span class="types">array</span>|<span class="types">int</span> <span class="variable">$message_id</span>, <span class="red">DeleteType</span> <span class="variable">$type</span> = <span class="red">DeleteType</span>::<span class="consts">Local<span class="parantez">)</span>: <span class="types">array</span>
 
 </code></pre>
                 <p>
@@ -319,21 +328,124 @@
                                 $type
                             </td>
                             <td>
-                                نوع حذف.<br>
+                                نوع حذف: <span class="red"><a href="./enums/DeleteType.html"
+                                        class="red">DeleteType</a></span>
+                                <br>
                                 <span dir="ltr" class="string" style="background: #252526; padding: 0 5px;">local => فقط
-                                    برای شما'/span></span><br>
+                                    برای شما'</span><br>
                                 <span dir="ltr" class="string" style="background: #252526; padding: 0 5px;">global =>
-                                    برای همه'/span><br></span>
+                                    برای همه'<br></span>
+                            </td>
+                        </tr>
+                    </table>
+                </div>
+            </section>
+            <h1>
+                <div style="margin-top: 10px;" class="title">SendPhoto</div>
+            </h1>
+            <section id="SendPhoto">
+                یک تصویر را در چت ارسال میکند:
+                <pre class="code"><code>
+<span class="comments">/**
+ * send photo to chat
+ *
+ * @param string $guid
+ * @param string $path image path
+ * @param boolean $isLink is $path a link or not
+ * @param string $caption
+ * @param string $thumbnail base64 encoded picture
+ * @param string $reply_to_message_id
+ * @return array API result
+ */</span>
+<span class="keyword">public function</span> <span class="method">SendPhoto</span><span class="parantez">(</span>
+    <span class="types">string</span> <span class="variable">$guid</span>,
+    <span class="types">string</span> <span class="variable">$path</span>,
+    <span class="types">bool</span> <span class="variable">$isLink</span> = <span class="consts">false</span>,
+    <span class="types">string</span> <span class="variable">$caption</span> = <span class="string">''</span>,
+    <span class="types">string</span> <span class="variable">$thumbnail</span> = <span class="string">''</span>,
+    <span class="types">string</span> <span class="variable">$reply_to_message_id</span> = <span class="string">''</span>,
+<span class="parantez">)</span>: <span class="types">array</span>
+
+</code></pre>
+                <div class="sample_imgs">
+                    <img src="imgs/sendPhoto.png" alt="sendPhoto">
+                </div>
+                <p>
+                    توضیحات پارامتر ها:
+                </p>
+                <div class="tab">
+                    <table>
+                        <tr class="table-header">
+                            <td>
+                                پارامتر
+                            </td>
+                            <td>
+                                توضیحات
+                            </td>
+                        </tr>
+                        <tr>
+                            <td>
+                                $guid
+                            </td>
+                            <td>
+                                guid فرد, گروه یا کانالی که تصویر به ان ارسال خواهد شد.
+                            </td>
+                        </tr>
+                        <tr>
+                            <td>
+                                $path
+                            </td>
+                            <td>
+                                محل قرار گیری تصویر در سیستم با لینک آن در اینترنت. (example:
+                                https://example.domain/photo.png)
+                            </td>
+                        </tr>
+                        <tr>
+                            <td>
+                                $isLink
+                            </td>
+                            <td>
+                                در صورتی که $path یک لینک در وب باشد این پارامتر را true ارسال کنید درغیر این صورت یک
+                                <span class="red"><abbr
+                                        title="کلاس اختصاصی Exception برای کتابخانه">Failure</abbr></span> دریافت
+                                میکنید.
+                            </td>
+                        </tr>
+                        <tr>
+                            <td>
+                                $caption
+                            </td>
+                            <td>
+                                متن کپشن که به همراه تصویر در زیر ان ارسال خواهد شد.
+                            </td>
+                        </tr>
+                        <tr>
+                            <td>
+                                $thumbnail
+                            </td>
+                            <td>
+                                thumbnail تصویر که باید به صورت base64 تحویل داده شود.<br>
+                                ترجیحا واقعی باشد و یا کیفیت پایین یک تصویر دیگر.<br>
+                                <span dir="ltr" class="string" style="background: #252526; padding: 0 5px;">اگر خالی
+                                    باشد توسط کتابخانه ایجاد میشود.</span>
+                            </td>
+                        </tr>
+                        <tr>
+                            <td>
+                                $reply_to_message_id
+                            </td>
+                            <td>
+                                ارسال با پاسخ به پیامی که آیدی انرا پاس دهید.
                             </td>
                         </tr>
                     </table>
                 </div>
             </section>
             <div class="buttons">
-                <a href="messages.html">
+                <a href="account.html">
                     <div class="button" style="border-radius: 76% 24% 24% 76% / 50% 50% 50% 50% ;">صفحه بعدی</div>
                 </a>
-                <a href="./MainSettings.html">
+                <a href="./Failures.html">
                     <div class="button" style="border-radius: 76% 24% 24% 76% / 50% 50% 50% 50% ;">صفحه قبلی</div>
                 </a>
             </div>
@@ -342,6 +454,18 @@
     <span class="can-not-display">can't display on this size of page. please use another device or use desktop
         mode</span>
 </body>
+<script>
+    let imgs = document.querySelectorAll('.sample_imgs img');
+    imgs[0].addEventListener('click', function () {
+        window.open('https://github.com/AmirrezaFiroz/RubikaLib/blob/main/examples/sendMessage.json', '_blank');
+    });
+    imgs[1].addEventListener('click', function () {
+        window.open('https://github.com/AmirrezaFiroz/RubikaLib/blob/main/examples/editMessage.json', '_blank');
+    });
+    imgs[2].addEventListener('click', function () {
+        window.open('https://github.com/AmirrezaFiroz/RubikaLib/blob/main/examples/sendPhoto.json', '_blank');
+    });
+</script>
 <script src="../assets/js/main.js"></script>
 <script src="../assets/js/docs.js"></script>
 
