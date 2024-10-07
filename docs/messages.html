@@ -86,6 +86,12 @@
                     <div>
                         <li><a href="./messages.html#SendPhoto">SendPhoto</a></li>
                     </div>
+                    <div>
+                        <li><a href="./messages.html#SendVideo">SendVideo</a></li>
+                    </div>
+                    <div>
+                        <li><a href="./messages.html#SendDocument">SendDocument</a></li>
+                    </div>
                     <a href="./account.html">
                         <li>مدیریت حساب</li>
                     </a>
@@ -405,7 +411,9 @@
                                 $isLink
                             </td>
                             <td>
-                                در صورتی که $path یک لینک در وب باشد این پارامتر را true ارسال کنید درغیر این صورت یک
+                                در صورتی که <span dir="ltr" class="string"
+                                    style="background: #252526; padding: 0 5px;">$path</span> یک لینک در وب باشد این
+                                پارامتر را true ارسال کنید درغیر این صورت یک
                                 <span class="red"><abbr
                                         title="کلاس اختصاصی Exception برای کتابخانه">Failure</abbr></span> دریافت
                                 میکنید.
@@ -428,6 +436,201 @@
                                 ترجیحا واقعی باشد و یا کیفیت پایین یک تصویر دیگر.<br>
                                 <span dir="ltr" class="string" style="background: #252526; padding: 0 5px;">اگر خالی
                                     باشد توسط کتابخانه ایجاد میشود.</span>
+                            </td>
+                        </tr>
+                        <tr>
+                            <td>
+                                $reply_to_message_id
+                            </td>
+                            <td>
+                                ارسال با پاسخ به پیامی که آیدی انرا پاس دهید.
+                            </td>
+                        </tr>
+                    </table>
+                </div>
+            </section>
+            <h1>
+                <div style="margin-top: 10px;" class="title">SendVideo</div>
+            </h1>
+            <section id="SendVideo">
+                یک ویدیو را در چت ارسال میکند:
+                <pre class="code"><code>
+<span class="comments">/**
+ * send video to guid
+ *
+ * @param string $guid
+ * @param string $path file path or url
+ * @param boolean $isLink is $path a URL or not
+ * @param string $caption
+ * @param string $thumbnail base64 encoded thumbnail picture
+ * @param string $reply_to_message_id
+ * @return array API result
+ */</span>
+<span class="keyword">public function</span> <span class="method">SendVideo</span><span class="parantez">(</span>
+    <span class="types">string</span> <span class="variable">$guid</span>,
+    <span class="types">string</span> <span class="variable">$path</span>,
+    <span class="types">bool</span> <span class="variable">$isLink</span> = <span class="consts">false</span>,
+    <span class="types">string</span> <span class="variable">$caption</span> = <span class="string">''</span>,
+    <span class="types">string</span> <span class="variable">$thumbnail</span> = <span class="string">''</span>,
+    <span class="types">string</span> <span class="variable">$reply_to_message_id</span> = <span class="string">''</span>,
+<span class="parantez">)</span>: <span class="types">array</span>
+
+</code></pre>
+                <div class="sample_imgs">
+                    <img src="imgs/sendVideo.png" alt="sendVideo">
+                </div>
+                <p>
+                    توضیحات پارامتر ها:
+                </p>
+                <div class="tab">
+                    <table>
+                        <tr class="table-header">
+                            <td>
+                                پارامتر
+                            </td>
+                            <td>
+                                توضیحات
+                            </td>
+                        </tr>
+                        <tr>
+                            <td>
+                                $guid
+                            </td>
+                            <td>
+                                guid فرد, گروه یا کانالی که ویدیو به ان ارسال خواهد شد.
+                            </td>
+                        </tr>
+                        <tr>
+                            <td>
+                                $path
+                            </td>
+                            <td>
+                                محل قرار گیری ویدیو در سیستم با لینک آن در اینترنت. (example:
+                                https://example.domain/video.mp4)
+                            </td>
+                        </tr>
+                        <tr>
+                            <td>
+                                $isLink
+                            </td>
+                            <td>
+                                در صورتی که <span dir="ltr" class="string"
+                                    style="background: #252526; padding: 0 5px;">$path</span> یک لینک در وب باشد این
+                                پارامتر را true ارسال کنید درغیر این صورت یک
+                                <span class="red"><abbr
+                                        title="کلاس اختصاصی Exception برای کتابخانه">Failure</abbr></span> دریافت
+                                میکنید.
+                            </td>
+                        </tr>
+                        <tr>
+                            <td>
+                                $caption
+                            </td>
+                            <td>
+                                متن کپشن که به همراه ویدیو در زیر ان ارسال خواهد شد.
+                            </td>
+                        </tr>
+                        <tr>
+                            <td>
+                                $thumbnail
+                            </td>
+                            <td>
+                                thumbnail ویدیو که باید به صورت base64 تحویل داده شود.<br>
+                                ترجیحا واقعی باشد و یا کیفیت پایین یک ویدیو دیگر.<br>
+                                <span dir="ltr" class="string" style="background: #252526; padding: 0 5px;">اگر خالی
+                                    باشد توسط کتابخانه ایجاد میشود.</span><br>
+                                <a href="https://github.com/AmirrezaFiroz/RubikaLib/blob/main/bin/video.png?raw=true"
+                                    class="string" style="background: #252526; padding: 0 5px;">تصویر پیشفرض</a>
+                            </td>
+                        </tr>
+                        <tr>
+                            <td>
+                                $reply_to_message_id
+                            </td>
+                            <td>
+                                ارسال با پاسخ به پیامی که آیدی انرا پاس دهید.
+                            </td>
+                        </tr>
+                    </table>
+                </div>
+            </section>
+            <h1>
+                <div style="margin-top: 10px;" class="title">SendDocument</div>
+            </h1>
+            <section id="SendDocument">
+                یک فایل را در چت ارسال میکند:
+                <pre class="code"><code>
+<span class="comments">/**
+ * Send Document To Chat
+ *
+ * @param string $guid
+ * @param string $path file path or link
+ * @param boolean $isLink is $path a link or not
+ * @param string $caption
+ * @param string $reply_to_message_id
+ * @return array API result
+ */</span>
+<span class="keyword">public function</span> <span class="method">SendDocument</span><span class="parantez">(</span>
+    <span class="types">string</span> <span class="variable">$guid</span>,
+    <span class="types">string</span> <span class="variable">$path</span>,
+    <span class="types">bool</span> <span class="variable">$isLink</span> = <span class="consts">false</span>,
+    <span class="types">string</span> <span class="variable">$caption</span> = <span class="string">''</span>,
+    <span class="types">string</span> <span class="variable">$reply_to_message_id</span> = <span class="string">''</span>,
+<span class="parantez">)</span>: <span class="types">array</span>
+
+</code></pre>
+                <div class="sample_imgs">
+                    <img src="imgs/sendDocument.png" alt="sendDocument">
+                </div>
+                <p>
+                    توضیحات پارامتر ها:
+                </p>
+                <div class="tab">
+                    <table>
+                        <tr class="table-header">
+                            <td>
+                                پارامتر
+                            </td>
+                            <td>
+                                توضیحات
+                            </td>
+                        </tr>
+                        <tr>
+                            <td>
+                                $guid
+                            </td>
+                            <td>
+                                guid فرد, گروه یا کانالی که فایل به ان ارسال خواهد شد.
+                            </td>
+                        </tr>
+                        <tr>
+                            <td>
+                                $path
+                            </td>
+                            <td>
+                                محل قرار گیری فایل در سیستم با لینک آن در اینترنت. (example:
+                                https://example.domain/file.pdf)
+                            </td>
+                        </tr>
+                        <tr>
+                            <td>
+                                $isLink
+                            </td>
+                            <td>
+                                در صورتی که <span dir="ltr" class="string"
+                                    style="background: #252526; padding: 0 5px;">$path</span> یک لینک در وب باشد این
+                                پارامتر را true ارسال کنید درغیر این صورت یک
+                                <span class="red"><abbr
+                                        title="کلاس اختصاصی Exception برای کتابخانه">Failure</abbr></span> دریافت
+                                میکنید.
+                            </td>
+                        </tr>
+                        <tr>
+                            <td>
+                                $caption
+                            </td>
+                            <td>
+                                متن کپشن که به همراه فایل در زیر ان ارسال خواهد شد.
                             </td>
                         </tr>
                         <tr>
@@ -464,6 +667,12 @@
     });
     imgs[2].addEventListener('click', function () {
         window.open('https://github.com/AmirrezaFiroz/RubikaLib/blob/main/examples/sendPhoto.json', '_blank');
+    });
+    imgs[3].addEventListener('click', function () {
+        window.open('https://github.com/AmirrezaFiroz/RubikaLib/blob/main/examples/sendVideo.json', '_blank');
+    });
+    imgs[4].addEventListener('click', function () {
+        window.open('https://github.com/AmirrezaFiroz/RubikaLib/blob/main/examples/sendDocument.json', '_blank');
     });
 </script>
 <script src="../assets/js/main.js"></script>
