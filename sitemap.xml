@@ -6,9 +6,9 @@
 		<lastmod>2024-10-08</lastmod>
 	</url>
 	<url>
-		<loc>https://www.rubikalib-php.github.io/docs</loc>
+		<loc>https://www.rubikalib-php.github.io/polls</loc>
 		<priority>0.75</priority>
-		<lastmod>2024-10-08</lastmod>
+		<lastmod>2024-10-07</lastmod>
 	</url>
 	<url>
 		<loc>https://www.rubikalib-php.github.io/examples</loc>
@@ -16,27 +16,22 @@
 		<lastmod>2024-10-07</lastmod>
 	</url>
 	<url>
-		<loc>https://www.rubikalib-php.github.io/polls</loc>
+		<loc>https://www.rubikalib-php.github.io/docs</loc>
 		<priority>0.75</priority>
-		<lastmod>2024-10-07</lastmod>
+		<lastmod>2024-10-08</lastmod>
 	</url>
 	<url>
-		<loc>https://www.rubikalib-php.github.io/docs/account.html</loc>
+		<loc>https://www.rubikalib-php.github.io/docs/updates.html</loc>
 		<priority>0.50</priority>
 		<lastmod>2024-10-07</lastmod>
 	</url>
 	<url>
-		<loc>https://www.rubikalib-php.github.io/docs/chats.html</loc>
+		<loc>https://www.rubikalib-php.github.io/docs/messages.html</loc>
 		<priority>0.50</priority>
-		<lastmod>2024-10-07</lastmod>
+		<lastmod>2024-10-08</lastmod>
 	</url>
 	<url>
-		<loc>https://www.rubikalib-php.github.io/docs/contacts.html</loc>
-		<priority>0.50</priority>
-		<lastmod>2024-10-07</lastmod>
-	</url>
-	<url>
-		<loc>https://www.rubikalib-php.github.io/docs/Failures.html</loc>
+		<loc>https://www.rubikalib-php.github.io/docs/MainSettings.html</loc>
 		<priority>0.50</priority>
 		<lastmod>2024-10-08</lastmod>
 	</url>
@@ -46,27 +41,32 @@
 		<lastmod>2024-10-07</lastmod>
 	</url>
 	<url>
-		<loc>https://www.rubikalib-php.github.io/docs/MainSettings.html</loc>
+		<loc>https://www.rubikalib-php.github.io/docs/Failures.html</loc>
 		<priority>0.50</priority>
 		<lastmod>2024-10-08</lastmod>
 	</url>
 	<url>
-		<loc>https://www.rubikalib-php.github.io/docs/messages.html</loc>
-		<priority>0.50</priority>
-		<lastmod>2024-10-08</lastmod>
-	</url>
-	<url>
-		<loc>https://www.rubikalib-php.github.io/docs/updates.html</loc>
+		<loc>https://www.rubikalib-php.github.io/docs/contacts.html</loc>
 		<priority>0.50</priority>
 		<lastmod>2024-10-07</lastmod>
 	</url>
 	<url>
-		<loc>https://www.rubikalib-php.github.io/docs/enums/Apptype.html</loc>
-		<priority>0.25</priority>
+		<loc>https://www.rubikalib-php.github.io/docs/chats.html</loc>
+		<priority>0.50</priority>
+		<lastmod>2024-10-07</lastmod>
+	</url>
+	<url>
+		<loc>https://www.rubikalib-php.github.io/docs/account.html</loc>
+		<priority>0.50</priority>
 		<lastmod>2024-10-07</lastmod>
 	</url>
 	<url>
 		<loc>https://www.rubikalib-php.github.io/docs/enums/DeleteType.html</loc>
+		<priority>0.25</priority>
+		<lastmod>2024-10-07</lastmod>
+	</url>
+	<url>
+		<loc>https://www.rubikalib-php.github.io/docs/enums/Apptype.html</loc>
 		<priority>0.25</priority>
 		<lastmod>2024-10-07</lastmod>
 	</url>
