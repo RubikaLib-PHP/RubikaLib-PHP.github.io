@@ -6,8 +6,8 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <meta name="auther" content="AmirrezaFiroz">
     <link rel="icon" href="../assets/icon.png">
-    <link rel="stylesheet" href="../assets/css/docs-min.css">
-    <link rel="stylesheet" href="../assets/css/code-min.css">
+    <link rel="stylesheet" href="../assets/css/docs.css">
+    <link rel="stylesheet" href="../assets/css/code.css">
     <meta name="robots" content="index, follow">
     <meta name="description" content="کتابخانه روبیکا | docs | تنظیمات شخصی سازی شده">
     <title>کتابخانه روبیکا - RubikaLib - docs</title>
@@ -91,6 +91,9 @@
                     </div>
                     <div>
                         <li><a href="./messages.html#SendDocument">SendDocument</a></li>
+                    </div>
+                    <div>
+                        <li><a href="./messages.html#sendMusic">sendMusic</a></li>
                     </div>
                     <a href="./account.html">
                         <li>مدیریت حساب</li>
@@ -644,6 +647,96 @@
                     </table>
                 </div>
             </section>
+            <h1>
+                <div style="margin-top: 10px;" class="title">sendMusic</div>
+            </h1>
+            <section id="sendMusic">
+                یک فایل را در چت ارسال میکند:
+                <pre class="code"><code>
+<span class="comments">/**
+ * Send Document To Chat
+ *
+ * @param string $guid
+ * @param string $path file path or link
+ * @param boolean $isLink is $path a link or not
+ * @param string $caption
+ * @param string $reply_to_message_id
+ * @return array API result
+ */</span>
+<span class="keyword">public function</span> <span class="method">sendMusic</span><span class="parantez">(</span>
+    <span class="types">string</span> <span class="variable">$guid</span>,
+    <span class="types">string</span> <span class="variable">$path</span>,
+    <span class="types">bool</span> <span class="variable">$isLink</span> = <span class="consts">false</span>,
+    <span class="types">string</span> <span class="variable">$caption</span> = <span class="string">''</span>,
+    <span class="types">string</span> <span class="variable">$reply_to_message_id</span> = <span class="string">''</span>,
+<span class="parantez">)</span>: <span class="types">array</span>
+
+</code></pre>
+                <!-- <div class="sample_imgs">
+                    <img src="imgs/sendMusic.png" alt="sendMusic">
+                </div> -->
+                <p>
+                    توضیحات پارامتر ها:
+                </p>
+                <div class="tab">
+                    <table>
+                        <tr class="table-header">
+                            <td>
+                                پارامتر
+                            </td>
+                            <td>
+                                توضیحات
+                            </td>
+                        </tr>
+                        <tr>
+                            <td>
+                                $guid
+                            </td>
+                            <td>
+                                guid فرد, گروه یا کانالی که فایل به ان ارسال خواهد شد.
+                            </td>
+                        </tr>
+                        <tr>
+                            <td>
+                                $path
+                            </td>
+                            <td>
+                                محل قرار گیری فایل در سیستم با لینک آن در اینترنت. (example:
+                                https://example.domain/file.pdf)
+                            </td>
+                        </tr>
+                        <tr>
+                            <td>
+                                $isLink
+                            </td>
+                            <td>
+                                در صورتی که <span dir="ltr" class="string"
+                                    style="background: #252526; padding: 0 5px;">$path</span> یک لینک در وب باشد این
+                                پارامتر را true ارسال کنید درغیر این صورت یک
+                                <span class="red"><abbr
+                                        title="کلاس اختصاصی Exception برای کتابخانه">Failure</abbr></span> دریافت
+                                میکنید.
+                            </td>
+                        </tr>
+                        <tr>
+                            <td>
+                                $caption
+                            </td>
+                            <td>
+                                متن کپشن که به همراه فایل در زیر ان ارسال خواهد شد.
+                            </td>
+                        </tr>
+                        <tr>
+                            <td>
+                                $reply_to_message_id
+                            </td>
+                            <td>
+                                ارسال با پاسخ به پیامی که آیدی انرا پاس دهید.
+                            </td>
+                        </tr>
+                    </table>
+                </div>
+            </section>
             <div class="buttons">
                 <a href="account.html">
                     <div class="button" style="border-radius: 76% 24% 24% 76% / 50% 50% 50% 50% ;">صفحه بعدی</div>
@@ -675,7 +768,7 @@
         window.open('https://github.com/AmirrezaFiroz/RubikaLib/blob/main/examples/sendDocument.json', '_blank');
     });
 </script>
-<script src="../assets/js/main-min.js"></script>
-<script src="../assets/js/docs-min.js"></script>
+<script src="../assets/js/main.js"></script>
+<script src="../assets/js/docs.js"></script>
 
 </html>
