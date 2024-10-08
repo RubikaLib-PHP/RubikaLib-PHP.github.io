@@ -110,6 +110,23 @@
                 </ul>
             </nav>
         </aside>
+        <style>
+            @media (max-width: 931px) {
+                main aside nav .cls {
+                    display: block;
+                }
+
+                main aside {
+                    display: none;
+                    position: absolute;
+                    width: 230px;
+                }
+
+                body>.open_nav_btn {
+                    display: flex;
+                }
+            }
+        </style>
         <article>
             <h1>
                 <div style="margin-top: 20px;" class="title">معرفی</div>
@@ -651,30 +668,34 @@
                 <div style="margin-top: 10px;" class="title">sendMusic</div>
             </h1>
             <section id="sendMusic">
-                یک فایل را در چت ارسال میکند:
+                یک فایل صوتی را در چت ارسال میکند:
                 <pre class="code"><code>
 <span class="comments">/**
- * Send Document To Chat
+ * send music to guid
  *
  * @param string $guid
- * @param string $path file path or link
- * @param boolean $isLink is $path a link or not
+ * @param string $path path or link
+ * @param MusicFile|null $options
+ * @param boolean $isLink if $path is a link
  * @param string $caption
+ * @param string $thumbnail
  * @param string $reply_to_message_id
  * @return array API result
  */</span>
 <span class="keyword">public function</span> <span class="method">sendMusic</span><span class="parantez">(</span>
     <span class="types">string</span> <span class="variable">$guid</span>,
     <span class="types">string</span> <span class="variable">$path</span>,
+    <span class="red">MusicFile</span>|<span class="consts">null</span> <span class="variable">$options</span>,
     <span class="types">bool</span> <span class="variable">$isLink</span> = <span class="consts">false</span>,
     <span class="types">string</span> <span class="variable">$caption</span> = <span class="string">''</span>,
+    <span class="types">string</span> <span class="variable">$thumbnail</span> = <span class="string">''</span>,
     <span class="types">string</span> <span class="variable">$reply_to_message_id</span> = <span class="string">''</span>,
 <span class="parantez">)</span>: <span class="types">array</span>
 
 </code></pre>
-                <!-- <div class="sample_imgs">
+                <div class="sample_imgs">
                     <img src="imgs/sendMusic.png" alt="sendMusic">
-                </div> -->
+                </div>
                 <p>
                     توضیحات پارامتر ها:
                 </p>
@@ -703,6 +724,14 @@
                             <td>
                                 محل قرار گیری فایل در سیستم با لینک آن در اینترنت. (example:
                                 https://example.domain/file.pdf)
+                            </td>
+                        </tr>
+                        <tr>
+                            <td>
+                                $options
+                            </td>
+                            <td>
+                                پارامتر های file_name و singer در صورتی که بخاهید تغییر دهید.
                             </td>
                         </tr>
                         <tr>
