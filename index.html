@@ -193,7 +193,7 @@ $ <span class="types">composer</span> <span class="string">require</span> <span 
                     <span class="variable">$from</span> = <span class="variable">$update</span><span class="parantez">[</span><span class="string">'message'</span><span class="parantez">]</span><span class="parantez">[</span><span class="string">'author_object_guid'</span><span class="parantez">]</span>; <span class="comments"># Who is message from?</span>
                     <span class="variable">$text</span> = <span class="variable">$update</span><span class="parantez">[</span><span class="string">'message'</span><span class="parantez">]</span><span class="parantez">[</span><span class="string">'text'</span><span class="parantez">]</span>;
 
-                    <span class="variable">$obj</span>-><span class="method">Messages</span>-><span class="method">SendMessage</span><span class="parantez">(</span>
+                    <span class="variable">$obj</span>-><span class="method">Messages</span>-><span class="method">sendMessage</span><span class="parantez">(</span>
                         <span class="types">guid:</span> <span class="variable">$guid</span>,
                         <span class="types">text:</span> <span class="string">"ــmessage recived: </span><span class="variable">$text</span><span class="string">ــ"</span>,
                         <span class="types">reply_to_message_id:</span> <span class="variable">$message_id</span>

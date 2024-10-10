@@ -75,7 +75,7 @@
                         <li><a href="./messages.html#intro">معرفی</a></li>
                     </div>
                     <div>
-                        <li><a href="./messages.html#SendMessage">SendMessage</a></li>
+                        <li><a href="./messages.html#sendMessage">sendMessage</a></li>
                     </div>
                     <div>
                         <li><a href="./messages.html#EditMessage">EditMessage</a></li>
@@ -84,16 +84,22 @@
                         <li><a href="./messages.html#DeleteMessages">DeleteMessages</a></li>
                     </div>
                     <div>
-                        <li><a href="./messages.html#SendPhoto">SendPhoto</a></li>
+                        <li><a href="./messages.html#sendPhoto">sendPhoto</a></li>
                     </div>
                     <div>
-                        <li><a href="./messages.html#SendVideo">SendVideo</a></li>
+                        <li><a href="./messages.html#sendVideo">sendVideo</a></li>
                     </div>
                     <div>
-                        <li><a href="./messages.html#SendDocument">SendDocument</a></li>
+                        <li><a href="./messages.html#sendDocument">sendDocument</a></li>
                     </div>
                     <div>
                         <li><a href="./messages.html#sendMusic">sendMusic</a></li>
+                    </div>
+                    <div>
+                        <li><a href="./messages.html#sendGif">sendGif</a></li>
+                    </div>
+                    <div>
+                        <li><a href="./messages.html#ForwardMessages">ForwardMessages</a></li>
                     </div>
                     <a href="./account.html">
                         <li>مدیریت حساب</li>
@@ -147,9 +153,9 @@
                 </p>
             </section>
             <h1>
-                <div style="margin-top: 10px;" class="title">SendMessage</div>
+                <div style="margin-top: 10px;" class="title">sendMessage</div>
             </h1>
-            <section id="SendMessage">
+            <section id="sendMessage">
                 این متد یک پیام متنی را به یک کاربر ارسال میکند.
                 پارامتر های دریافتی:
                 <pre class="code"><code>
@@ -161,7 +167,7 @@
  * @param int $reply_to_message_id if you have to reply
  * @return array API result
  */</span>
-<span class="keyword">public function</span> <span class="method">SendMessage</span><span class="parantez">(</span><span class="types">string</span> <span class="variable">$guid</span>, <span class="types">string</span> <span class="variable">$text</span>, <span class="types">int</span> <span class="variable">$reply_to_message_id</span> = <span class="numbers">0</span><span class="parantez">)</span>: <span class="types">array</span>
+<span class="keyword">public function</span> <span class="method">sendMessage</span><span class="parantez">(</span><span class="types">string</span> <span class="variable">$guid</span>, <span class="types">string</span> <span class="variable">$text</span>, <span class="types">int</span> <span class="variable">$reply_to_message_id</span> = <span class="numbers">0</span><span class="parantez">)</span>: <span class="types">array</span>
 
 </code></pre>
                 <div class="sample_imgs">
@@ -367,9 +373,9 @@
                 </div>
             </section>
             <h1>
-                <div style="margin-top: 10px;" class="title">SendPhoto</div>
+                <div style="margin-top: 10px;" class="title">sendPhoto</div>
             </h1>
-            <section id="SendPhoto">
+            <section id="sendPhoto">
                 یک تصویر را در چت ارسال میکند:
                 <pre class="code"><code>
 <span class="comments">/**
@@ -383,7 +389,7 @@
  * @param string $reply_to_message_id
  * @return array API result
  */</span>
-<span class="keyword">public function</span> <span class="method">SendPhoto</span><span class="parantez">(</span>
+<span class="keyword">public function</span> <span class="method">sendPhoto</span><span class="parantez">(</span>
     <span class="types">string</span> <span class="variable">$guid</span>,
     <span class="types">string</span> <span class="variable">$path</span>,
     <span class="types">bool</span> <span class="variable">$isLink</span> = <span class="consts">false</span>,
@@ -433,7 +439,9 @@
                             <td>
                                 در صورتی که <span dir="ltr" class="string"
                                     style="background: #252526; padding: 0 5px;">$path</span> یک لینک در وب باشد این
-                                پارامتر را true ارسال کنید درغیر این صورت یک
+                                پارامتر را <span class="variable"
+                                    style="background: #252526; padding: 0 5px;">true</span> ارسال کنید درغیر این صورت
+                                یک
                                 <span class="red"><abbr
                                         title="کلاس اختصاصی Exception برای کتابخانه">Failure</abbr></span> دریافت
                                 میکنید.
@@ -470,9 +478,9 @@
                 </div>
             </section>
             <h1>
-                <div style="margin-top: 10px;" class="title">SendVideo</div>
+                <div style="margin-top: 10px;" class="title">sendVideo</div>
             </h1>
-            <section id="SendVideo">
+            <section id="sendVideo">
                 یک ویدیو را در چت ارسال میکند:
                 <pre class="code"><code>
 <span class="comments">/**
@@ -486,7 +494,7 @@
  * @param string $reply_to_message_id
  * @return array API result
  */</span>
-<span class="keyword">public function</span> <span class="method">SendVideo</span><span class="parantez">(</span>
+<span class="keyword">public function</span> <span class="method">sendVideo</span><span class="parantez">(</span>
     <span class="types">string</span> <span class="variable">$guid</span>,
     <span class="types">string</span> <span class="variable">$path</span>,
     <span class="types">bool</span> <span class="variable">$isLink</span> = <span class="consts">false</span>,
@@ -536,7 +544,9 @@
                             <td>
                                 در صورتی که <span dir="ltr" class="string"
                                     style="background: #252526; padding: 0 5px;">$path</span> یک لینک در وب باشد این
-                                پارامتر را true ارسال کنید درغیر این صورت یک
+                                پارامتر را <span class="variable"
+                                    style="background: #252526; padding: 0 5px;">true</span> ارسال کنید درغیر این صورت
+                                یک
                                 <span class="red"><abbr
                                         title="کلاس اختصاصی Exception برای کتابخانه">Failure</abbr></span> دریافت
                                 میکنید.
@@ -575,13 +585,13 @@
                 </div>
             </section>
             <h1>
-                <div style="margin-top: 10px;" class="title">SendDocument</div>
+                <div style="margin-top: 10px;" class="title">sendDocument</div>
             </h1>
-            <section id="SendDocument">
+            <section id="sendDocument">
                 یک فایل را در چت ارسال میکند:
                 <pre class="code"><code>
 <span class="comments">/**
- * Send Document To Chat
+ * send Document To Chat
  *
  * @param string $guid
  * @param string $path file path or link
@@ -590,7 +600,7 @@
  * @param string $reply_to_message_id
  * @return array API result
  */</span>
-<span class="keyword">public function</span> <span class="method">SendDocument</span><span class="parantez">(</span>
+<span class="keyword">public function</span> <span class="method">sendDocument</span><span class="parantez">(</span>
     <span class="types">string</span> <span class="variable">$guid</span>,
     <span class="types">string</span> <span class="variable">$path</span>,
     <span class="types">bool</span> <span class="variable">$isLink</span> = <span class="consts">false</span>,
@@ -639,7 +649,9 @@
                             <td>
                                 در صورتی که <span dir="ltr" class="string"
                                     style="background: #252526; padding: 0 5px;">$path</span> یک لینک در وب باشد این
-                                پارامتر را true ارسال کنید درغیر این صورت یک
+                                پارامتر را <span class="variable"
+                                    style="background: #252526; padding: 0 5px;">true</span> ارسال کنید درغیر این صورت
+                                یک
                                 <span class="red"><abbr
                                         title="کلاس اختصاصی Exception برای کتابخانه">Failure</abbr></span> دریافت
                                 میکنید.
@@ -685,7 +697,7 @@
 <span class="keyword">public function</span> <span class="method">sendMusic</span><span class="parantez">(</span>
     <span class="types">string</span> <span class="variable">$guid</span>,
     <span class="types">string</span> <span class="variable">$path</span>,
-    <span class="red">MusicFile</span>|<span class="consts">null</span> <span class="variable">$options</span>,
+    <span class="red">MusicFile</span>|<span class="consts">null</span> <span class="variable">$options</span> = <span class="consts">null</span>,
     <span class="types">bool</span> <span class="variable">$isLink</span> = <span class="consts">false</span>,
     <span class="types">string</span> <span class="variable">$caption</span> = <span class="string">''</span>,
     <span class="types">string</span> <span class="variable">$thumbnail</span> = <span class="string">''</span>,
@@ -731,7 +743,8 @@
                                 $options
                             </td>
                             <td>
-                                پارامتر های file_name و singer در صورتی که بخاهید تغییر دهید.
+                                پارامتر های file_name و singer در صورتی که بخاهید تغییر دهید.<br>
+                                باید با <a href="./enums/MusicFile.html" class="red">MusicFile</a> پاس دهید.
                             </td>
                         </tr>
                         <tr>
@@ -741,7 +754,9 @@
                             <td>
                                 در صورتی که <span dir="ltr" class="string"
                                     style="background: #252526; padding: 0 5px;">$path</span> یک لینک در وب باشد این
-                                پارامتر را true ارسال کنید درغیر این صورت یک
+                                پارامتر را <span class="variable"
+                                    style="background: #252526; padding: 0 5px;">true</span> ارسال کنید درغیر این صورت
+                                یک
                                 <span class="red"><abbr
                                         title="کلاس اختصاصی Exception برای کتابخانه">Failure</abbr></span> دریافت
                                 میکنید.
@@ -766,6 +781,177 @@
                     </table>
                 </div>
             </section>
+            <h1>
+                <div style="margin-top: 10px;" class="title">sendGif</div>
+            </h1>
+            <section id="sendGif">
+                یک فایل صوتی را در چت ارسال میکند:
+                <pre class="code"><code>
+<span class="comments">/**
+ * send gif to guid
+ *
+ * @param string $guid
+ * @param Gif $gif if you want to send an uploaded gif
+ * @param string $path file path or url
+ * @param boolean $isLink is $path a URL or not
+ * @param string $caption
+ * @param string $thumbnail base64 encoded thumbnail picture
+ * @return array API result
+ */</span>
+<span class="keyword">public function</span> <span class="method">sendGif</span><span class="parantez">(</span>
+    <span class="types">string</span> <span class="variable">$guid</span>,
+    <span class="red">Gif</span>|<span class="consts">null</span> <span class="variable">$gif</span> = <span class="consts">null</span>,
+    <span class="types">string</span> <span class="variable">$path</span>,
+    <span class="types">bool</span> <span class="variable">$isLink</span> = <span class="consts">false</span>,
+    <span class="types">string</span> <span class="variable">$caption</span> = <span class="string">''</span>,
+    <span class="types">string</span> <span class="variable">$thumbnail</span> = <span class="string">''</span>,
+    <span class="types">string</span> <span class="variable">$reply_to_message_id</span> = <span class="string">''</span>,
+<span class="parantez">)</span>: <span class="types">array</span>
+
+</code></pre>
+                <p>
+                    توجه کنید که یا فقط <span dir="ltr" class="string"
+                        style="background: #252526; padding: 0 5px;">$path</span> را پاس دهید یا <span dir="ltr"
+                        class="string" style="background: #252526; padding: 0 5px;">$gif</span> را. در غیر این صورت یک
+                    <span class="red"><abbr title="کلاس اختصاصی Exception برای کتابخانه">Failure</abbr></span> دریافت
+                    دریافت میکنید.
+                    <br>
+                    لیست توضیحات پارامتر هارا نیز میبینید:
+                </p>
+                <div class="tab">
+                    <table>
+                        <tr class="table-header">
+                            <td>
+                                پارامتر
+                            </td>
+                            <td>
+                                توضیحات
+                            </td>
+                        </tr>
+                        <tr>
+                            <td>
+                                $guid
+                            </td>
+                            <td>
+                                guid فرد, گروه یا کانالی که فایل به ان ارسال خواهد شد.
+                            </td>
+                        </tr>
+                        <tr>
+                            <td>
+                                $path
+                            </td>
+                            <td>
+                                محل قرار گیری فایل در سیستم با لینک آن در اینترنت. (example:
+                                https://example.domain/file.pdf)
+                            </td>
+                        </tr>
+                        <tr>
+                            <td>
+                                $options
+                            </td>
+                            <td>
+                                پارامتر های file_name و singer در صورتی که بخاهید تغییر دهید.
+                            </td>
+                        </tr>
+                        <tr>
+                            <td>
+                                $isLink
+                            </td>
+                            <td>
+                                در صورتی که <span dir="ltr" class="string"
+                                    style="background: #252526; padding: 0 5px;">$path</span> یک لینک در وب باشد این
+                                پارامتر را <span class="variable"
+                                    style="background: #252526; padding: 0 5px;">true</span> ارسال کنید درغیر این صورت
+                                یک
+                                <span class="red"><abbr
+                                        title="کلاس اختصاصی Exception برای کتابخانه">Failure</abbr></span> دریافت
+                                میکنید.
+                            </td>
+                        </tr>
+                        <tr>
+                            <td>
+                                $caption
+                            </td>
+                            <td>
+                                متن کپشن که به همراه فایل در زیر ان ارسال خواهد شد.
+                            </td>
+                        </tr>
+                        <tr>
+                            <td>
+                                $reply_to_message_id
+                            </td>
+                            <td>
+                                ارسال با پاسخ به پیامی که آیدی انرا پاس دهید.
+                            </td>
+                        </tr>
+                    </table>
+                </div>
+            </section>
+            <h1>
+                <div style="margin-top: 10px;" class="title">ForwardMessages</div>
+            </h1>
+            <section id="ForwardMessages">
+                این متد یک پیام که از طرف شما در یک چت ارسال شده است را ویرایش میکند.
+                پارامتر های دریافتی:
+                <pre class="code"><code>
+<span class="comments">/**
+ * forward message text
+ *
+ * @param string $from_object_guid
+ * @param array $message_ids
+ * @param string $to_object_guid
+ * @return array API result
+ */</span>
+<span class="keyword">public function</span> <span class="method">ForwardMessages</span><span class="parantez">(</span><span class="types">string</span> <span class="variable">$from_object_guid</span>, <span class="types">array</span> <span class="variable">$message_ids</span>, <span class="types">string</span> <span class="variable">$to_object_guid</span><span class="parantez">)</span>: <span class="types">array</span>
+
+</code></pre>
+                <p>
+                    توضیحات پارامتر ها:
+                </p>
+                <div class="tab">
+                    <table>
+                        <tr class="table-header">
+                            <td>
+                                پارامتر
+                            </td>
+                            <td>
+                                توضیحات
+                            </td>
+                        </tr>
+                        <tr>
+                            <td>
+                                $from_object_guid
+                            </td>
+                            <td>
+                                guid فرد, گروه یا کانالی که پیام از ان ارسال خواهد شد..
+                            </td>
+                        <tr>
+                            <td>
+                                $message_ids
+                            </td>
+                            <td>
+                                آرایه ای از آیدی پیام هایی که قرار است ارسال شوند.
+                            </td>
+                        </tr>
+                        <tr>
+                            <td>
+                                $to_object_guid
+                            </td>
+                            <td>
+                                guid فرد, گروه یا کانالی که پیام در ان ارسال خواهد شد..
+                            </td>
+                        </tr>
+                    </table>
+                </div>
+            </section>
+            <div class="hint">
+                <span class="hint-span">
+                    <h3 style="color: yellow; font-weight: bold;">نکته!</h3> این متد تنها تا 100 پیام را میتواند فوروارد
+                    کند.
+            </div>
+            <div class="show-more">
+                <span class="click">برای مشاهده باقی موارد کلیک کنید.</span>
+            </div>
             <div class="buttons">
                 <a href="account.html">
                     <div class="button" style="border-radius: 76% 24% 24% 76% / 50% 50% 50% 50% ;">صفحه بعدی</div>
@@ -775,6 +961,74 @@
                 </a>
             </div>
         </article>
+        <style>
+            .show-more {
+                width: 100%;
+                margin-top: 10px;
+                display: flex;
+                justify-content: center;
+            }
+
+            .show-more span {
+                padding: 5px 5px 8px 5px;
+                color: #1c1147;
+                cursor: pointer;
+                font-family: Consolas;
+                font-style: bold;
+            }
+
+            .show-more span::before {
+                content: '> ';
+            }
+
+            .show-more span::after {
+                content: ' <';
+            }
+        </style>
+        <script>
+            var nuds = document.querySelectorAll('main aside nav ul > div');
+            var hal19 = document.querySelectorAll('main article > *');
+            var sm = document.querySelector('.show-more');
+            var i = 0;
+            var i2 = 0;
+            nuds.forEach(e => {
+                if (i >= 9) {
+                    e.addEventListener('click', () => {
+                        sm.style.display = 'none';
+                        hal19.forEach(e => {
+                            if (i2 >= 19 && !e.classList.contains('buttons') && !e.classList.contains('show-more') && !e.classList.contains('hint')) {
+                                e.style.display = 'block';
+                            }
+                            if (e.classList.contains('hint')) {
+                                e.style.display = 'flex';
+                            }
+                            i2++;
+                        });
+                    });
+                }
+                i++;
+            });
+            i = 0;
+            hal19.forEach(e => {
+                if (i >= 19 && !e.classList.contains('buttons') && !e.classList.contains('show-more')) {
+                    e.style.display = 'none';
+                }
+                i++;
+            });
+            i = 0;
+            sm.addEventListener('click', () => {
+                sm.style.display = 'none';
+                hal19.forEach(e => {
+                    if (i >= 19 && !e.classList.contains('buttons') && !e.classList.contains('show-more') && !e.classList.contains('hint')) {
+                        e.style.display = 'block';
+                    }
+                    if (e.classList.contains('hint')) {
+                        e.style.display = 'flex';
+                    }
+                    i++;
+                });
+            });
+        </script>
     </main>
     <span class="can-not-display">can't display on this size of page. please use another device or use desktop
         mode</span>
