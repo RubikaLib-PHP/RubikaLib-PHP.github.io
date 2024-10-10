@@ -81,7 +81,7 @@
                         <li><a href="./messages.html#EditMessage">EditMessage</a></li>
                     </div>
                     <div>
-                        <li><a href="./messages.html#DeleteMessages">DeleteMessages</a></li>
+                        <li><a href="./messages.html#deleteMessages">deleteMessages</a></li>
                     </div>
                     <div>
                         <li><a href="./messages.html#sendPhoto">sendPhoto</a></li>
@@ -100,6 +100,12 @@
                     </div>
                     <div>
                         <li><a href="./messages.html#ForwardMessages">ForwardMessages</a></li>
+                    </div>
+                    <div>
+                        <li><a href="./messages.html#addMessageReaction">addMessageReaction</a></li>
+                    </div>
+                    <div>
+                        <li><a href="./messages.html#createPoll">createPoll</a></li>
                     </div>
                     <a href="./account.html">
                         <li>مدیریت حساب</li>
@@ -171,6 +177,7 @@
 
 </code></pre>
                 <div class="sample_imgs">
+                    <span class="text">برای مشاهده نمونه خروجی بر روی تصویر زیر کلیک کنید:</span>
                     <img src="imgs/sendMessage.png" alt="sendMessage">
                 </div>
                 <style>
@@ -254,6 +261,7 @@
 
 </code></pre>
                 <div class="sample_imgs">
+                    <span class="text">برای مشاهده نمونه خروجی بر روی تصویر زیر کلیک کنید:</span>
                     <img src="imgs/editMessage.png" alt="editMessage">
                 </div>
                 <p>
@@ -274,7 +282,7 @@
                                 $guid
                             </td>
                             <td>
-                                guid فرد, گروه یا کانالی که پیام در ان قرار دارد.
+                                guid فرد, گروه یا کانالی که پیام در آن قرار دارد.
                             </td>
                         <tr>
                             <td>
@@ -310,9 +318,9 @@
                     این متد میتواند تمام پیام های ارسالی از طرف خودتان را ویرایش کند.
             </div>
             <h1>
-                <div style="margin-top: 10px;" class="title">DeleteMessages</div>
+                <div style="margin-top: 10px;" class="title">deleteMessages</div>
             </h1>
-            <section id="DeleteMessages">
+            <section id="deleteMessages">
                 این متد یک پیام که از طرف شما در یک چت ارسال شده است را ویرایش میکند.
                 پارامتر های دریافتی:
                 <pre class="code"><code>
@@ -324,7 +332,7 @@
  * @param DeleteType $type local or global
  * @return array API result
  */</span>
-<span class="keyword">public function</span> <span class="method">DeleteMessages</span><span class="parantez">(</span><span class="types">string</span> <span class="variable">$object_guid</span>, <span class="types">array</span>|<span class="types">int</span> <span class="variable">$message_id</span>, <span class="red">DeleteType</span> <span class="variable">$type</span> = <span class="red">DeleteType</span>::<span class="consts">Local<span class="parantez">)</span>: <span class="types">array</span>
+<span class="keyword">public function</span> <span class="method">deleteMessages</span><span class="parantez">(</span><span class="types">string</span> <span class="variable">$object_guid</span>, <span class="types">array</span>|<span class="types">int</span> <span class="variable">$message_id</span>, <span class="red">DeleteType</span> <span class="variable">$type</span> = <span class="red">DeleteType</span>::<span class="consts">Local<span class="parantez">)</span>: <span class="types">array</span>
 
 </code></pre>
                 <p>
@@ -345,7 +353,7 @@
                                 $object_guid
                             </td>
                             <td>
-                                guid فرد, گروه یا کانالی که پیام در ان قرار دارد.
+                                guid فرد, گروه یا کانالی که پیام در آن قرار دارد.
                             </td>
                         <tr>
                             <td>
@@ -371,6 +379,13 @@
                         </tr>
                     </table>
                 </div>
+                <p style="text-align: center; margin-top: 10px;">
+                    <span class="string" style="background: #252526; padding: 5px; padding-bottom: 6px;">
+                        نمونه خروجی: <a
+                            href="https://github.com/AmirrezaFiroz/RubikaLib/blob/main/examples/deleteMessages.json">کلیک
+                            کنید</a>
+                    </span>
+                </p>
             </section>
             <h1>
                 <div style="margin-top: 10px;" class="title">sendPhoto</div>
@@ -400,6 +415,7 @@
 
 </code></pre>
                 <div class="sample_imgs">
+                    <span class="text">برای مشاهده نمونه خروجی بر روی تصویر زیر کلیک کنید:</span>
                     <img src="imgs/sendPhoto.png" alt="sendPhoto">
                 </div>
                 <p>
@@ -420,7 +436,7 @@
                                 $guid
                             </td>
                             <td>
-                                guid فرد, گروه یا کانالی که تصویر به ان ارسال خواهد شد.
+                                guid فرد, گروه یا کانالی که تصویر به آن ارسال خواهد شد.
                             </td>
                         </tr>
                         <tr>
@@ -452,7 +468,7 @@
                                 $caption
                             </td>
                             <td>
-                                متن کپشن که به همراه تصویر در زیر ان ارسال خواهد شد.
+                                متن کپشن که به همراه تصویر در زیر آن ارسال خواهد شد.
                             </td>
                         </tr>
                         <tr>
@@ -505,6 +521,7 @@
 
 </code></pre>
                 <div class="sample_imgs">
+                    <span class="text">برای مشاهده نمونه خروجی بر روی تصویر زیر کلیک کنید:</span>
                     <img src="imgs/sendVideo.png" alt="sendVideo">
                 </div>
                 <p>
@@ -525,7 +542,7 @@
                                 $guid
                             </td>
                             <td>
-                                guid فرد, گروه یا کانالی که ویدیو به ان ارسال خواهد شد.
+                                guid فرد, گروه یا کانالی که ویدیو به آن ارسال خواهد شد.
                             </td>
                         </tr>
                         <tr>
@@ -557,7 +574,7 @@
                                 $caption
                             </td>
                             <td>
-                                متن کپشن که به همراه ویدیو در زیر ان ارسال خواهد شد.
+                                متن کپشن که به همراه ویدیو در زیر آن ارسال خواهد شد.
                             </td>
                         </tr>
                         <tr>
@@ -610,6 +627,7 @@
 
 </code></pre>
                 <div class="sample_imgs">
+                    <span class="text">برای مشاهده نمونه خروجی بر روی تصویر زیر کلیک کنید:</span>
                     <img src="imgs/sendDocument.png" alt="sendDocument">
                 </div>
                 <p>
@@ -630,7 +648,7 @@
                                 $guid
                             </td>
                             <td>
-                                guid فرد, گروه یا کانالی که فایل به ان ارسال خواهد شد.
+                                guid فرد, گروه یا کانالی که فایل به آن ارسال خواهد شد.
                             </td>
                         </tr>
                         <tr>
@@ -662,7 +680,7 @@
                                 $caption
                             </td>
                             <td>
-                                متن کپشن که به همراه فایل در زیر ان ارسال خواهد شد.
+                                متن کپشن که به همراه فایل در زیر آن ارسال خواهد شد.
                             </td>
                         </tr>
                         <tr>
@@ -706,6 +724,7 @@
 
 </code></pre>
                 <div class="sample_imgs">
+                    <span class="text">برای مشاهده نمونه خروجی بر روی تصویر زیر کلیک کنید:</span>
                     <img src="imgs/sendMusic.png" alt="sendMusic">
                 </div>
                 <p>
@@ -726,7 +745,7 @@
                                 $guid
                             </td>
                             <td>
-                                guid فرد, گروه یا کانالی که فایل به ان ارسال خواهد شد.
+                                guid فرد, گروه یا کانالی که فایل به آن ارسال خواهد شد.
                             </td>
                         </tr>
                         <tr>
@@ -767,7 +786,7 @@
                                 $caption
                             </td>
                             <td>
-                                متن کپشن که به همراه فایل در زیر ان ارسال خواهد شد.
+                                متن کپشن که به همراه فایل در زیر آن ارسال خواهد شد.
                             </td>
                         </tr>
                         <tr>
@@ -833,7 +852,7 @@
                                 $guid
                             </td>
                             <td>
-                                guid فرد, گروه یا کانالی که فایل به ان ارسال خواهد شد.
+                                guid فرد, گروه یا کانالی که فایل به آن ارسال خواهد شد.
                             </td>
                         </tr>
                         <tr>
@@ -873,7 +892,7 @@
                                 $caption
                             </td>
                             <td>
-                                متن کپشن که به همراه فایل در زیر ان ارسال خواهد شد.
+                                متن کپشن که به همراه فایل در زیر آن ارسال خواهد شد.
                             </td>
                         </tr>
                         <tr>
@@ -886,6 +905,13 @@
                         </tr>
                     </table>
                 </div>
+                <p style="text-align: center; margin-top: 10px;">
+                    <span class="string" style="background: #252526; padding: 5px; padding-bottom: 6px;">
+                        نمونه خروجی: <a
+                            href="https://github.com/AmirrezaFiroz/RubikaLib/blob/main/examples/sendGif.json">کلیک
+                            کنید</a>
+                    </span>
+                </p>
             </section>
             <h1>
                 <div style="margin-top: 10px;" class="title">ForwardMessages</div>
@@ -905,6 +931,10 @@
 <span class="keyword">public function</span> <span class="method">ForwardMessages</span><span class="parantez">(</span><span class="types">string</span> <span class="variable">$from_object_guid</span>, <span class="types">array</span> <span class="variable">$message_ids</span>, <span class="types">string</span> <span class="variable">$to_object_guid</span><span class="parantez">)</span>: <span class="types">array</span>
 
 </code></pre>
+                <div class="sample_imgs">
+                    <span class="text">برای مشاهده نمونه خروجی بر روی تصویر زیر کلیک کنید:</span>
+                    <img src="imgs/forwardMessages.png" alt="forwardMessages">
+                </div>
                 <p>
                     توضیحات پارامتر ها:
                 </p>
@@ -923,7 +953,7 @@
                                 $from_object_guid
                             </td>
                             <td>
-                                guid فرد, گروه یا کانالی که پیام از ان ارسال خواهد شد..
+                                guid فرد, گروه یا کانالی که پیام از آن ارسال خواهد شد..
                             </td>
                         <tr>
                             <td>
@@ -938,7 +968,7 @@
                                 $to_object_guid
                             </td>
                             <td>
-                                guid فرد, گروه یا کانالی که پیام در ان ارسال خواهد شد..
+                                guid فرد, گروه یا کانالی که پیام در آن ارسال خواهد شد..
                             </td>
                         </tr>
                     </table>
@@ -949,6 +979,264 @@
                     <h3 style="color: yellow; font-weight: bold;">نکته!</h3> این متد تنها تا 100 پیام را میتواند فوروارد
                     کند.
             </div>
+            <h1>
+                <div style="margin-top: 10px; max-width: 200px;" class="title">addMessageReaction</div>
+            </h1>
+            <section id="addMessageReaction">
+                این متد یک ری-اکشن روی پیام مورد نظر ارسال میکند.
+                <pre class="code"><code>
+<span class="comments">/**
+ * send message re-action
+ *
+ * @param string $guid
+ * @param string $message_id
+ * @param ReactionsEmoji|ReactionsString $reaction
+ * @return array API result
+ */</span>
+<span class="keyword">public function</span> <span class="method">addMessageReaction</span><span class="parantez">(</span><span class="types">string</span> <span class="variable">$guid</span>, <span class="types">string</span> <span class="variable">$message_id</span>, <span class="red">ReactionsEmoji</span>!<span class="red">ReactionsString</span> <span class="variable">$reaction</span><span class="parantez">)</span>: <span class="types">array</span>
+   
+</code></pre>
+                <div class="sample_imgs">
+                    <span class="text">برای مشاهده نمونه خروجی بر روی تصویر زیر کلیک کنید:</span>
+                    <img src="imgs/addMessageReaction.png" alt="addMessageReaction">
+                </div>
+                <p>
+                    توضیحات پارامتر ها:
+                </p>
+                <div class="tab">
+                    <table>
+                        <tr class="table-header">
+                            <td>
+                                پارامتر
+                            </td>
+                            <td>
+                                توضیحات
+                            </td>
+                        </tr>
+                        <tr>
+                            <td>
+                                $guid
+                            </td>
+                            <td>
+                                guid فرد, گروه یا کانالی که پیام در آن قرار دارد.
+                            </td>
+                        <tr>
+                            <td>
+                                $message_id
+                            </td>
+                            <td>
+                                آیدی پیامی که قرار است ریاکشن روی آن ارسال شود.
+                            </td>
+                        </tr>
+                        <tr>
+                            <td>
+                                $addMessageReaction
+                            </td>
+                            <td>
+                                یک ریاکشن از بین ریاکشن های <a href="enums/ReactionsEmoji"
+                                    class="red">ReactionsEmoji</a> یا <a href="ReactionsString"
+                                    class="red">ReactionsString</a> .
+                            </td>
+                        </tr>
+                    </table>
+                </div>
+            </section>
+            <h1>
+                <div style="margin-top: 10px; max-width: 230px;" class="title">removeMessageReaction</div>
+            </h1>
+            <section id="removeMessageReaction">
+                ریاکشن روی یک پیام را پاک میکند.
+                <pre class="code"><code>
+<span class="comments">/**
+ * remove message re-action
+ *
+ * @param string $guid
+ * @param string $message_id
+ * @return array API result
+ */</span>
+<span class="keyword">public function</span> <span class="method">removeMessageReaction</span><span class="parantez">(</span><span class="types">string</span> <span class="variable">$guid</span>, <span class="types">string</span> <span class="variable">$message_id</span><span class="parantez">)</span>: <span class="types">array</span>
+   
+</code></pre>
+                <p>
+                    توضیحات پارامتر ها:
+                </p>
+                <div class="tab">
+                    <table>
+                        <tr class="table-header">
+                            <td>
+                                پارامتر
+                            </td>
+                            <td>
+                                توضیحات
+                            </td>
+                        </tr>
+                        <tr>
+                            <td>
+                                $guid
+                            </td>
+                            <td>
+                                guid فرد, گروه یا کانالی که پیام در آن قرار دارد.
+                            </td>
+                        <tr>
+                            <td>
+                                $message_id
+                            </td>
+                            <td>
+                                آیدی پیامی که قرار است ریاکشن روی آن پاک شود.
+                            </td>
+                        </tr>
+                    </table>
+                </div>
+                <p style="text-align: center; margin-top: 10px;">
+                    <span class="string" style="background: #252526; padding: 5px; padding-bottom: 6px;">
+                        نمونه خروجی: <a
+                            href="https://github.com/AmirrezaFiroz/RubikaLib/blob/main/examples/removeMessageReaction.json">کلیک
+                            کنید</a>
+                    </span>
+                </p>
+            </section>
+            <h1>
+                <div style="margin-top: 10px;" class="title">createPoll</div>
+            </h1>
+            <section id="createPoll">
+                یک نظرسنجی را در چت ارسال میکند:
+                <pre class="code"><code><span class="comments">/**
+ * send poll to chat
+ *
+ * @param string $guid
+ * @param string $question
+ * @param boolean $is_anonymous
+ * @param array $options example: ['option1', 'options2', ...]
+ * @param pollType $type Regular or Quiz
+ * @param string $explanation if $type if Quiz (can be empty)
+ * @param integer $correct_option_index if $type is Quiz (required)
+ * @param boolean $allows_multiple_answers it can't be set if $type is Quiz
+ * @param string $reply_to_message_id
+ * @return array API result
+ */</span>
+<span class="keyword">public function</span> <span class="method">createPoll</span><span class="parantez">(</span>
+    <span class="types">string</span> <span class="variable">$guid</span>,
+    <span class="types">string</span> <span class="variable">$question</span>,
+    <span class="types">array</span> <span class="variable">$options</span>,
+    <span class="red">PollType</span> <span class="variable">$type</span>,
+    <span class="types">bool</span> <span class="variable">$is_anonymous</span> = <span class="consts">false</span>,
+    <span class="types">string</span> <span class="variable">$explanation</span> = <span class="string">''</span>,
+    <span class="types">int</span> <span class="variable">$correct_option_index</span> = <span class="numbers">0</span>,
+    <span class="types">bool</span> <span class="variable">$allows_multiple_answers</span> = <span class="consts">false</span>,
+    <span class="types">string</span> <span class="variable">$reply_to_message_id</span> = <span class="string">''</span>,
+<span class="parantez">)</span>: <span class="types">array</span>
+
+</code></pre>
+                <div class="sample_imgs" style="flex-direction: column;">
+                    <img src="imgs/createPoll1.png" alt="createPoll">
+                    <img src="imgs/createPoll2.png" style="margin-top: 5px;" alt="createPoll">
+                    <img src="imgs/createPoll3.png" style="margin-top: 5px;" alt="createPoll">
+                    <img src="imgs/createPoll4.png" style="margin-top: 5px;" alt="createPoll">
+                </div>
+                <p>
+                    توجه داشته باشید که نظرسنجی ارسال یا باید به صورت regular باشد و یا به صورت quiz. اما در هر حالت
+                    میتوانید نظرسنجی ناشناس را فعال کنید یا نکنید.
+                    <br>
+                    توضیحات پارامتر ها:
+                </p>
+                <div class="tab">
+                    <table>
+                        <tr class="table-header">
+                            <td>
+                                پارامتر
+                            </td>
+                            <td>
+                                توضیحات
+                            </td>
+                        </tr>
+                        <tr>
+                            <td>
+                                $guid
+                            </td>
+                            <td>
+                                guid فرد, گروه یا کانالی که نظرسنجی به آن ارسال خواهد شد.
+                            </td>
+                        </tr>
+                        <tr>
+                            <td>
+                                $question
+                            </td>
+                            <td>
+                                متن نظرسنجی که در بالای آن نشان داده میشود.
+                            </td>
+                        </tr>
+                        <tr>
+                            <td>
+                                $options
+                            </td>
+                            <td>
+                                آرایه از گزینه ها که به صورت تک رشته ای نشان پاس داده میشنود. مثال:<br>
+                                <span dir="ltr" class="string" style="background: #252526; padding: 0 5px;">
+                                    ['گزینه یک', 'گزینه دو', ...]
+                                </span>
+                            </td>
+                        </tr>
+                        <tr>
+                            <td>
+                                $type
+                            </td>
+                            <td>
+                                نوع نظر سنجی.
+                                <br>
+                                <span dir="ltr" class="string" style="background: #252526; padding: 0 5px;">
+                                    <span class="red">PollType <span style="color: white;">::Regular</span></span> ->
+                                    نظر سنجی معمولی
+                                </span>
+                                <br>
+                                <span dir="ltr" class="string" style="background: #252526; padding: 0 5px;">
+                                    <span class="red">PollType <span style="color: white;">::Quiz</span></span> ->
+                                    نظرسنجی پرسشی یا امتیازی
+                                </span>
+                            </td>
+                        </tr>
+                        <tr>
+                            <td>
+                                $is_anonymous
+                            </td>
+                            <td>
+                                شرکت در نظر سنجی به صورت ناشناس.
+                            </td>
+                        </tr>
+                        <tr>
+                            <td>
+                                $explanation
+                            </td>
+                            <td>
+                                توضیحات اضافی در صورتی که نظر سنجی به شکل Quiz باشد.
+                            </td>
+                        </tr>
+                        <tr>
+                            <td>
+                                $correct_option_index
+                            </td>
+                            <td>
+                                پاسخ صحیح در صورتی که نظر سنجی به شکل Quiz باشد.
+                            </td>
+                        </tr>
+                        <tr>
+                            <td>
+                                $allows_multiple_answers
+                            </td>
+                            <td>
+                                امکان انتخاب چند گزینه در صورتی که نظر سنجی به شکل Regular باشد.
+                            </td>
+                        </tr>
+                        <tr>
+                            <td>
+                                $reply_to_message_id
+                            </td>
+                            <td>
+                                ارسال با پاسخ به پیامی که آیدی انرا پاس دهید.
+                            </td>
+                        </tr>
+                    </table>
+                </div>
+            </section>
             <div class="show-more">
                 <span class="click">برای مشاهده باقی موارد کلیک کنید.</span>
             </div>
@@ -1035,21 +1323,25 @@
 </body>
 <script>
     let imgs = document.querySelectorAll('.sample_imgs img');
-    imgs[0].addEventListener('click', function () {
-        window.open('https://github.com/AmirrezaFiroz/RubikaLib/blob/main/examples/sendMessage.json', '_blank');
-    });
-    imgs[1].addEventListener('click', function () {
-        window.open('https://github.com/AmirrezaFiroz/RubikaLib/blob/main/examples/editMessage.json', '_blank');
-    });
-    imgs[2].addEventListener('click', function () {
-        window.open('https://github.com/AmirrezaFiroz/RubikaLib/blob/main/examples/sendPhoto.json', '_blank');
-    });
-    imgs[3].addEventListener('click', function () {
-        window.open('https://github.com/AmirrezaFiroz/RubikaLib/blob/main/examples/sendVideo.json', '_blank');
-    });
-    imgs[4].addEventListener('click', function () {
-        window.open('https://github.com/AmirrezaFiroz/RubikaLib/blob/main/examples/sendDocument.json', '_blank');
-    });
+    let link_list = [
+        'https://github.com/AmirrezaFiroz/RubikaLib/blob/main/examples/sendMessage.json',
+        'https://github.com/AmirrezaFiroz/RubikaLib/blob/main/examples/editMessage.json',
+        'https://github.com/AmirrezaFiroz/RubikaLib/blob/main/examples/sendPhoto.json',
+        'https://github.com/AmirrezaFiroz/RubikaLib/blob/main/examples/sendVideo.json',
+        'https://github.com/AmirrezaFiroz/RubikaLib/blob/main/examples/sendDocument.json',
+        'https://github.com/AmirrezaFiroz/RubikaLib/blob/main/examples/sendMusic.json',
+        'https://github.com/AmirrezaFiroz/RubikaLib/blob/main/examples/forwardMessages.json',
+        'https://github.com/AmirrezaFiroz/RubikaLib/blob/main/examples/addMessageReaction.json',
+        'https://github.com/AmirrezaFiroz/RubikaLib/blob/main/examples/createPoll.json',
+        'https://github.com/AmirrezaFiroz/RubikaLib/blob/main/examples/createPoll.json',
+        'https://github.com/AmirrezaFiroz/RubikaLib/blob/main/examples/createPoll.json',
+        'https://github.com/AmirrezaFiroz/RubikaLib/blob/main/examples/createPoll.json'
+    ];
+    for (let i = 0; i < imgs.length; i++) {
+        imgs[i].addEventListener('click', function () {
+            window.open(link_list[i], '_blank');
+        });
+    }
 </script>
 <script src="../assets/js/main.js"></script>
 <script src="../assets/js/docs.js"></script>

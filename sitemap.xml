@@ -3,12 +3,12 @@
 	<url>
 		<loc>https://www.rubikalib-php.github.io</loc>
 		<priority>1.00</priority>
-		<lastmod>2024-10-09</lastmod>
+		<lastmod>2024-10-11</lastmod>
 	</url>
 	<url>
 		<loc>https://www.rubikalib-php.github.io/docs</loc>
 		<priority>0.75</priority>
-		<lastmod>2024-10-08</lastmod>
+		<lastmod>2024-10-11</lastmod>
 	</url>
 	<url>
 		<loc>https://www.rubikalib-php.github.io/examples</loc>
@@ -48,17 +48,27 @@
 	<url>
 		<loc>https://www.rubikalib-php.github.io/docs/MainSettings.html</loc>
 		<priority>0.50</priority>
-		<lastmod>2024-10-08</lastmod>
+		<lastmod>2024-10-11</lastmod>
 	</url>
 	<url>
 		<loc>https://www.rubikalib-php.github.io/docs/messages.html</loc>
 		<priority>0.50</priority>
-		<lastmod>2024-10-10</lastmod>
+		<lastmod>2024-10-11</lastmod>
 	</url>
 	<url>
 		<loc>https://www.rubikalib-php.github.io/docs/updates.html</loc>
 		<priority>0.50</priority>
 		<lastmod>2024-10-07</lastmod>
+	</url>
+	<url>
+		<loc>https://www.rubikalib-php.github.io/docs/enums/ReactionsString.html</loc>
+		<priority>0.25</priority>
+		<lastmod>2024-10-11</lastmod>
+	</url>
+	<url>
+		<loc>https://www.rubikalib-php.github.io/docs/enums/ReactionsEmoji.html</loc>
+		<priority>0.25</priority>
+		<lastmod>2024-10-11</lastmod>
 	</url>
 	<url>
 		<loc>https://www.rubikalib-php.github.io/docs/enums/Apptype.html</loc>
