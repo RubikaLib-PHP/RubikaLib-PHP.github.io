@@ -10,7 +10,7 @@
     <link rel="stylesheet" href="../assets/css/code.css">
     <meta name="robots" content="index, follow">
     <meta name="description" content="کتابخانه روبیکا | docs | تنظیمات شخصی سازی شده">
-    <title>کتابخانه روبیکا - RubikaLib - docs</title>
+    <title>کتابخانه روبیکا - RubikaLib - Messaging Methods</title>
 </head>
 
 <body dir="rtl">
@@ -107,6 +107,9 @@
                     <div>
                         <li><a href="./messages.html#createPoll">createPoll</a></li>
                     </div>
+                    <div>
+                        <li><a href="./messages.html#seenChat">seenChat</a></li>
+                    </div>
                     <a href="./account.html">
                         <li>مدیریت حساب</li>
                     </a>
@@ -159,7 +162,7 @@
                 </p>
             </section>
             <h1>
-                <div style="margin-top: 10px;" class="title">sendMessage</div>
+                <div class="title">sendMessage</div>
             </h1>
             <section id="sendMessage">
                 این متد یک پیام متنی را به یک کاربر ارسال میکند.
@@ -243,7 +246,7 @@
                 </div>
             </section>
             <h1>
-                <div style="margin-top: 10px;" class="title">EditMessage</div>
+                <div class="title">EditMessage</div>
             </h1>
             <section id="EditMessage">
                 این متد یک پیام که از طرف شما در یک چت ارسال شده است را ویرایش میکند.
@@ -318,7 +321,7 @@
                     این متد میتواند تمام پیام های ارسالی از طرف خودتان را ویرایش کند.
             </div>
             <h1>
-                <div style="margin-top: 10px;" class="title">deleteMessages</div>
+                <div class="title">deleteMessages</div>
             </h1>
             <section id="deleteMessages">
                 این متد یک پیام که از طرف شما در یک چت ارسال شده است را ویرایش میکند.
@@ -388,7 +391,7 @@
                 </p>
             </section>
             <h1>
-                <div style="margin-top: 10px;" class="title">sendPhoto</div>
+                <div class="title">sendPhoto</div>
             </h1>
             <section id="sendPhoto">
                 یک تصویر را در چت ارسال میکند:
@@ -494,7 +497,7 @@
                 </div>
             </section>
             <h1>
-                <div style="margin-top: 10px;" class="title">sendVideo</div>
+                <div class="title">sendVideo</div>
             </h1>
             <section id="sendVideo">
                 یک ویدیو را در چت ارسال میکند:
@@ -602,7 +605,7 @@
                 </div>
             </section>
             <h1>
-                <div style="margin-top: 10px;" class="title">sendDocument</div>
+                <div class="title">sendDocument</div>
             </h1>
             <section id="sendDocument">
                 یک فایل را در چت ارسال میکند:
@@ -695,7 +698,7 @@
                 </div>
             </section>
             <h1>
-                <div style="margin-top: 10px;" class="title">sendMusic</div>
+                <div class="title">sendMusic</div>
             </h1>
             <section id="sendMusic">
                 یک فایل صوتی را در چت ارسال میکند:
@@ -801,7 +804,7 @@
                 </div>
             </section>
             <h1>
-                <div style="margin-top: 10px;" class="title">sendGif</div>
+                <div class="title">sendGif</div>
             </h1>
             <section id="sendGif">
                 یک فایل صوتی را در چت ارسال میکند:
@@ -914,7 +917,7 @@
                 </p>
             </section>
             <h1>
-                <div style="margin-top: 10px;" class="title">ForwardMessages</div>
+                <div class="title">ForwardMessages</div>
             </h1>
             <section id="ForwardMessages">
                 این متد یک پیام که از طرف شما در یک چت ارسال شده است را ویرایش میکند.
@@ -1096,7 +1099,7 @@
                 </p>
             </section>
             <h1>
-                <div style="margin-top: 10px;" class="title">createPoll</div>
+                <div class="title">createPoll</div>
             </h1>
             <section id="createPoll">
                 یک نظرسنجی را در چت ارسال میکند:
@@ -1128,6 +1131,7 @@
 
 </code></pre>
                 <div class="sample_imgs" style="flex-direction: column;">
+                    <span class="text">برای مشاهده نمونه خروجی بر روی تصویر زیر کلیک کنید:</span>
                     <img src="imgs/createPoll1.png" alt="createPoll">
                     <img src="imgs/createPoll2.png" style="margin-top: 5px;" alt="createPoll">
                     <img src="imgs/createPoll3.png" style="margin-top: 5px;" alt="createPoll">
@@ -1237,6 +1241,69 @@
                     </table>
                 </div>
             </section>
+            <h1>
+                <div class="title">seenChat</div>
+            </h1>
+            <section id="seenChat">
+                این متد پیام های خوانده نشده در چت هارا به عنوان خوانده شده علامت گذاری میکند.
+                <pre class="code"><code>
+<span class="comments">/**
+ * seen chat
+ *
+ * @param string $guid
+ * @param string $last_message_id
+ * @return array API result
+ */</span>
+<span class="keyword">public function</span> <span class="method">seenChat</span><spanclass="parantez">(</span><span class="types">string</span> <span class="variable">$guid</span>, <span class="types">string</span> <span class="variable">$last_message_id</span><span class="parantez">)</span>: <span class="types">array</span>
+
+</code></pre>
+                <p>
+                    توضیحات پارامتر ها:
+                </p>
+                <div class="tab">
+                    <table>
+                        <tr class="table-header">
+                            <td>
+                                پارامتر
+                            </td>
+                            <td>
+                                توضیحات
+                            </td>
+                        </tr>
+                        <tr>
+                            <td>
+                                $guid
+                            </td>
+                            <td>
+                                guid فرد, گروه یا کانالی که های آن خوانده خواهند شد..
+                            </td>
+                        <tr>
+                            <td>
+                                $last_message_id
+                            </td>
+                            <td>
+                                آخرین پیامی که خوانده خواهد شد.
+                            </td>
+                        </tr>
+                    </table>
+                </div>
+                <p style="text-align: center; margin-top: 10px;">
+                    <span class="string" style="background: #252526; padding: 5px; padding-bottom: 6px;">
+                        نمونه خروجی: <a
+                            href="https://github.com/AmirrezaFiroz/RubikaLib/blob/main/examples/removeMessageReaction.json">کلیک
+                            کنید</a>
+                    </span>
+                </p>
+            </section>
+            <div class="hint">
+                <span class="hint-span">
+                    <h3 style="color: yellow; font-weight: bold;">نکته!</h3>
+                    متد ذیگری نیز وجود دارد که میتوانید با آن همزمان چند چت را بخوانیدد. نمونه استفاده از این متد:
+                    <pre class="code"><code>
+<span class="method">seenChatsArray</span><span class="parantez">(</span><span class="parantez2">[</span><span class="string">'u0UBF88...'</span> => <span class="string">'91729830180'</span>, <spab class="string">'g0UKLD66...'</spab> => <span class="string">'9798103900'</span><span class="parantez2">]</span><span class="parantez">)</span>;
+
+</code></pre>
+            </div>
             <div class="show-more">
                 <span class="click">برای مشاهده باقی موارد کلیک کنید.</span>
             </div>
@@ -1250,6 +1317,10 @@
             </div>
         </article>
         <style>
+            .title {
+                margin-top: 10px;
+            }
+
             .show-more {
                 width: 100%;
                 margin-top: 10px;
