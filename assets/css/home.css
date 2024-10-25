@@ -142,7 +142,6 @@ body header {
   flex-direction: row;
   align-items: center;
   justify-content: space-between;
-  overflow-x: scroll;
   overflow-y: hidden;
 }
 body header .icon {
