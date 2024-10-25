@@ -78,7 +78,16 @@
                         <li><a href="#intro">معرفی</a></li>
                     </div>
                     <div>
-                        <li><a href="#sendMessage">sendMessage</a></li>
+                        <li><a href="#getMySelf">getMySelf</a></li>
+                    </div>
+                    <div>
+                        <li><a href="#logout">logout</a></li>
+                    </div>
+                    <div>
+                        <li><a href="#getMySessions">getMySessions</a></li>
+                    </div>
+                    <div>
+                        <li><a href="#TerminateSession">TerminateSession</a></li>
                     </div>
                     <a href="./chats.html">
                         <li>چت ها</li>
@@ -115,41 +124,27 @@
             </h1>
             <section id="intro">
                 <p>
-                    این بخش از کتابخانه برای ارسال پیام نوشته شده است. البته در دیگر بخش ها نیز امکان ارسال پیام وجود
-                    دارد. اما بیشتر متد ها و اصلی ترین انها در این قسمت نوشته شده اند.
+                    این قسمت از کتابخانه طراحی شده است تا بتوانید حساب خود را مدیریت کنید.
                 </p>
                 <pre class="code"><code>
-<span class="variable">$app</span>-><span class="method">Messages</span>-><span class="method">{...}</span>;
+<span class="variable">$app</span>-><span class="method">Account</span>-><span class="method">{...}</span>;
 
 </code></pre>
-                <p>
-                    میتوانید لیستی از نمونه اپدیت های ارسالی از طرف API را <a href="updates.html">اینجا</a> ببینید.
-                    <br>
-                    لیست کامل متد هارا اینجا میبینیم:
-                </p>
             </section>
             <h1>
-                <div class="title">sendMessage</div>
+                <div class="title">getMySelf</div>
             </h1>
-            <section id="sendMessage">
-                این متد یک پیام متنی را به یک کاربر ارسال میکند.
-                پارامتر های دریافتی:
+            <section id="getMySelf">
+                این متد اطلاعاتی در مورد حساب را برایتان برمیگرداند.
                 <pre class="code"><code>
 <span class="comments">/**
- * send text to someone or somewhere
+ * get Session Data
  *
- * @param string $guid object_guid
- * @param string $text message (can be with markworn metadatas)
- * @param int $reply_to_message_id if you have to reply
- * @return array API result
+ * @return array user data of session
  */</span>
-<span class="keyword">public function</span> <span class="method">sendMessage</span><span class="parantez">(</span><span class="types">string</span> <span class="variable">$guid</span>, <span class="types">string</span> <span class="variable">$text</span>, <span class="types">int</span> <span class="variable">$reply_to_message_id</span> = <span class="numbers">0</span><span class="parantez">)</span>: <span class="types">array</span>
+<span class="keyword">public function</span> <span class="method">getMySelf</span><span class="parantez">(</span><span class="parantez">)</span>: <span class="types">array</span>
 
 </code></pre>
-                <div class="sample_imgs">
-                    <span class="text">برای مشاهده نمونه خروجی بر روی تصویر زیر کلیک کنید:</span>
-                    <img src="imgs/sendMessage.png" alt="sendMessage">
-                </div>
                 <style>
                     .tab {
                         width: 100%;
@@ -166,52 +161,86 @@
                     }
                 </style>
                 <p>
-                    توضیحات پارامتر ها:
+                    نمونه داده های بازگردانده شده:
+                <pre class="code"><code>
+<span class="parantez">{</span>
+    <span class="string">"user_guid": "u0H..."</span>,
+    <span class="string">"first_name": "Amir"</span>,
+    <span class="string">"phone": "98921..."</span>,
+    <span class="string">"username": ""</span>,
+    <span class="string">"last_online": 1723291788</span>,
+    <span class="string">"is_deleted": false</span>,
+    <span class="string">"is_verified": false</span>,
+    <span class="string">"online_time"</span>: <span class="parantez3">{</span>
+        <span class="string">"type": "Exact"</span>,
+        <span class="string">"exact_time": 1723291788</span>    
+    <span class="parantez3">}</span>
+<span class="parantez">}</span>
+
+</code></pre>
                 </p>
-                <div class="tab">
-                    <table>
-                        <tr class="table-header">
-                            <td>
-                                پارامتر
-                            </td>
-                            <td>
-                                توضیحات
-                            </td>
-                        </tr>
-                        <tr>
-                            <td>
-                                $guid
-                            </td>
-                            <td>
-                                guid فرد, گروه یا کانالی که قرار است پیام به او ارسال شود.
-                            </td>
-                        <tr>
-                            <td>
-                                $text
-                            </td>
-                            <td>
-                                متن پیام که میتواند با الگو های markdown زیر باشند:<br>
-                                <span dir="ltr" class="string" style="background: #252526; padding: 0 5px;">"Mono" =>
-                                    '`text`'</span><br>
-                                <span dir="ltr" class="string" style="background: #252526; padding: 0 5px;">"Bold" =>
-                                    '**text**'</span><br>
-                                <span dir="ltr" class="string" style="background: #252526; padding: 0 5px;">"Italic" =>
-                                    '__text__'</span><br>
-                                <span dir="ltr" class="string" style="background: #252526; padding: 0 5px;">"Spoiler" =>
-                                    '||text||'</span>
-                            </td>
-                        </tr>
-                        <tr>
-                            <td>
-                                $reply_to_message_id
-                            </td>
-                            <td>
-                                ارسال با پاسخ به پیامی که آیدی انرا پاس دهید.
-                            </td>
-                        </tr>
-                    </table>
-                </div>
             </section>
+            <h1>
+                <div class="title">logout</div>
+            </h1>
+            <section id="logout">
+                این متد نشست را خالی میکند و از حساب خارج میشود.
+                <pre class="code"><code>
+<span class="comments">/**
+ * Terminate This Session
+ *
+ * @return array API result
+ */</span>
+<span class="keyword">public function</span> <span class="method">logout</span><span class="parantez">(</span><span class="parantez">)</span>: <span class="types">array</span>
+
+</code></pre>
+            </section>
+            <h1>
+                <div class="title">getMySessions</div>
+            </h1>
+            <section id="getMySessions">
+                این متد لیستی از نشست های فعال حساب را برمیگرداند.
+                <pre class="code"><code>
+<span class="comments">/**
+ * get Account Sessions List
+ *
+ * @return array API result
+ */</span>
+<span class="keyword">public function</span> <span class="method">getMySessions</span><span class="parantez">(</span><span class="parantez">)</span>: <span class="types">array</span>
+
+</code></pre>
+                <p style="text-align: center; margin-top: 10px;">
+                    <span class="string" style="background: #252526; padding: 5px; padding-bottom: 6px;">
+                        نمونه خروجی: <a
+                            href="https://github.com/AmirrezaFiroz/RubikaLib/blob/main/examples/getMySessions.json">کلیک
+                            کنید</a>
+                    </span>
+                </p>
+            </section>
+            <h1>
+                <div class="title">TerminateSession</div>
+            </h1>
+            <section id="TerminateSession">
+                این متد یکی از نشست های حساب را که انتخاب میکننید را غیرفعال کرده و اجازه استفاده از حساب را به ان
+                نمیدهد.
+                <pre class="code"><code>
+<span class="comments">/**
+ * Terminate a Session
+ *
+ * @param string $session_key session key
+ * @throws Failure on error
+ * @return array API result
+ */</span>
+<span class="keyword">public function</span> <span class="method">TerminateSession</span><span class="parantez">(</span><span class="types">string</span> <span class="variable">$session_key</span><span class="parantez">)</span>: <span class="types">array</span>
+
+</code></pre>
+            </section>
+            <div class="hint">
+                <span class="hint-span">
+                    <h3 style="color: yellow; font-weight: bold;">نکته!</h3> برای استفاده از این متد حتما باید حداقل یک
+                    هفته از ورود به حساب گذشته باشد.
+                    کند.
+            </div>
             <div class="buttons">
                 <a href="account.html">
                     <div class="button" style="border-radius: 76% 24% 24% 76% / 50% 50% 50% 50% ;">صفحه بعدی</div>
