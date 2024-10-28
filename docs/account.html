@@ -89,6 +89,24 @@
                     <div>
                         <li><a href="#TerminateSession">TerminateSession</a></li>
                     </div>
+                    <div>
+                        <li><a href="#ChangeUsername">ChangeUsername</a></li>
+                    </div>
+                    <div>
+                        <li><a href="#CheckUsername">CheckUsername</a></li>
+                    </div>
+                    <div>
+                        <li><a href="#EditProfile">EditProfile</a></li>
+                    </div>
+                    <div>
+                        <li><a href="#RequestDeleteAccount">RequestDeleteAccount</a></li>
+                    </div>
+                    <div>
+                        <li><a href="#turnOffTwoStep">turnOffTwoStep</a></li>
+                    </div>
+                    <div>
+                        <li><a href="#UploadNewProfileAvatar">UploadNewProfileAvatar</a></li>
+                    </div>
                     <a href="./chats.html">
                         <li>چت ها</li>
                     </a>
@@ -225,10 +243,9 @@
                 نمیدهد.
                 <pre class="code"><code>
 <span class="comments">/**
- * Terminate a Session
+ * Set Account Username
  *
- * @param string $session_key session key
- * @throws Failure on error
+ * @param string $newUserName example: @rubika_lib or rubika_lib
  * @return array API result
  */</span>
 <span class="keyword">public function</span> <span class="method">TerminateSession</span><span class="parantez">(</span><span class="types">string</span> <span class="variable">$session_key</span><span class="parantez">)</span>: <span class="types">array</span>
@@ -241,11 +258,299 @@
                     هفته از ورود به حساب گذشته باشد.
                     کند.
             </div>
+            <h1>
+                <div class="title">ChangeUsername</div>
+            </h1>
+            <section id="ChangeUsername">
+                این متد یک نام کاربری جدید را برای پروفایل انتخاب میکند.
+                <pre class="code"><code>
+<span class="comments">/**
+ * Set Account Username
+ *
+ * @param string $newUserName example: @rubika_lib or rubika_lib
+ * @return bool username can be set on profile
+ */</span>
+<span class="keyword">public function</span> <span class="method">ChangeUsername</span><span class="parantez">(</span><span class="types">string</span> <span class="variable">$newUserName</span><span class="parantez">)</span>: <span class="types">array</span>
+
+</code></pre>
+                <div class="sample_imgs">
+                    <span class="text">برای مشاهده نمونه خروجی بر روی تصویر زیر کلیک کنید:</span>
+                    <img src="imgs/ChangeUsername.png" alt="ChangeUsername">
+                </div>
+                <p>
+                    لیست توضیحات پارامتر هارا نیز میبینید:
+                </p>
+                <div class="tab">
+                    <table>
+                        <tr class="table-header">
+                            <td>
+                                پارامتر
+                            </td>
+                            <td>
+                                توضیحات
+                            </td>
+                        </tr>
+                        <tr>
+                            <td>
+                                $newUserName
+                            </td>
+                            <td>
+                                نام کاربری جدیدی که آزاد باشد.<br>
+                                میتوانید با متد <a href="#CheckUsername"><span dir="ltr" class="string"
+                                        style="background: #252526; padding: 0 5px;">CheckUsername</span></a> انرا متوجه
+                                شوید.
+                            </td>
+
+                        </tr>
+                    </table>
+                </div>
+            </section>
+            <h1>
+                <div class="title">CheckUsername</div>
+            </h1>
+            <section id="CheckUsername">
+                این متد بررسی میکند که ایا یک نام کاربری قابل استفاده است یا خیر.
+                <pre class="code"><code>
+<span class="comments">/**
+ * checks that an username can be used or not
+ *
+ * @param string $username example: @rubika_lib or rubika_lib
+ * @return bool username can be set on profile
+ */</span>
+<span class="keyword">public function</span> <span class="method">CheckUsername</span><span class="parantez">(</span><span class="types">string</span> <span class="variable">$username</span><span class="parantez">)</span>: <span class="types">bool</span>
+
+</code></pre>
+                <div class="sample_imgs">
+                    <span class="text">برای مشاهده نمونه خروجی بر روی تصویر زیر کلیک کنید:</span>
+                    <img src="imgs/CheckUsername.png" alt="CheckUsername">
+                </div>
+                <p>
+                    لیست توضیحات پارامتر هارا نیز میبینید:
+                </p>
+                <div class="tab">
+                    <table>
+                        <tr class="table-header">
+                            <td>
+                                پارامتر
+                            </td>
+                            <td>
+                                توضیحات
+                            </td>
+                        </tr>
+                        <tr>
+                            <td>
+                                $username
+                            </td>
+                            <td>
+                                بررسی میکند که ایا یک نام کاربری آزاد است یا خیر.
+                            </td>
+                        </tr>
+                    </table>
+                </div>
+            </section>
+            <h1>
+                <div class="title">EditProfile</div>
+            </h1>
+            <section id="EditProfile">
+                اطلاعات پروفایل را تغییر میدهد.
+                <pre class="code"><code>
+<span class="comments">/**
+ * Edit Account Info
+ *
+ * @param string $first_name new first name (if want to change)
+ * @param string $last_name new last name (if want to change)
+ * @param string $bio new bio (if want to change)
+ * @throws Failure on error
+ * @return array API result
+ */</span>
+<span class="keyword">public function</span> <span class="method">EditProfile</span><span class="parantez">(</span>
+    <span class="types">string</span> <span class="variable">$first_name</span> = <span class="string">''</span>,
+    <span class="types">string</span> <span class="variable">$last_name</span> = <span class="string">''</span>,
+    <span class="types">string</span> <span class="variable">$bio</span> = <span class="string">''</span>
+<span class="parantez">)</span>: <span class="types">array</span>
+
+</code></pre>
+                <div class="sample_imgs">
+                    <span class="text">برای مشاهده نمونه خروجی بر روی تصویر زیر کلیک کنید:</span>
+                    <img src="imgs/EditProfile.png" alt="EditProfile">
+                </div>
+                <p>
+                    برای این متد حداقل باید یکی از پارامتر هارا پاس دهید در غیر این صورت یک <span class="red"><abbr
+                            title="کلاس اختصاصی Exception برای کتابخانه">Failure</abbr></span> دریافت میکنید.
+                    لیست توضیحات پارامتر هارا نیز میبینید:
+                </p>
+                <div class="tab">
+                    <table>
+                        <tr class="table-header">
+                            <td>
+                                پارامتر
+                            </td>
+                            <td>
+                                توضیحات
+                            </td>
+                        </tr>
+                        <tr>
+                            <td>
+                                $first_name
+                            </td>
+                            <td>
+                                نام حساب
+                            </td>
+                        </tr>
+                        <tr>
+                            <td>
+                                $last_name
+                            </td>
+                            <td>
+                                نام خانوادگی حساب
+                            </td>
+                        </tr>
+                        <tr>
+                            <td>
+                                $bio
+                            </td>
+                            <td>
+                                بیوگرافی حساب
+                            </td>
+                        </tr>
+                    </table>
+                </div>
+            </section>
+            <h1>
+                <div class="title" style="max-width: 250px;">RequestDeleteAccount</div>
+            </h1>
+            <section id="RequestDeleteAccount">
+                یک درخواست حذف حساب ارسال میکند.
+                <pre class="code"><code>
+<span class="comments">/**
+ * Request Delete Account
+ *
+ * @return array API result
+ */</span>
+<span class="keyword">public function</span> <span class="method">RequestDeleteAccount</span><span class="parantez">(</span><span class="parantez">)</span>: <span class="types">array</span>
+
+</code></pre>
+                <p>
+                    این متد درخواست حذف حساب کاربری را به روبیکا ارسال میکند و صاحت حساب با دریافت لین پیامک حای لینک
+                    صفحه
+                    حذف حساب میتوانید آنرا برای همیشه حذف کند.
+                </p>
+            </section>
+            <h1>
+                <div class="title">turnOffTwoStep</div>
+            </h1>
+            <section id="turnOffTwoStep">
+                تایید دومرحله ای حساب را تغییر میدهد.
+                <pre class="code"><code>
+<span class="comments">/**
+ * turn off account passwrod
+ *
+ * @return array API result
+ */</span>
+<span class="keyword">public function</span> <span class="method">turnOffTwoStep</span><span class="parantez">(</span><span class="parantez">)</span>: <span class="types">array</span>
+
+</code></pre>
+            </section>
+            <h1>
+                <div class="title" style="max-width: 300px;">UploadNewProfileAvatar</div>
+            </h1>
+            <section id="UploadNewProfileAvatar">
+                تصویر پروفایل را تغییر میدهد.
+                <pre class="code"><code>
+<span class="comments">/**
+ * Upload New Profile Picture
+ *
+ * @param string $file_path must be a picture (png/jpg/jpeg)
+ * @param bool $isLink
+ * @return array API result
+ */</span>
+<span class="keyword">public function</span> <span class="method">UploadNewProfileAvatar</span><span class="parantez">(</span>
+    <span class="types">string</span> <span class="variable">$file_path</span>,
+    <span class="types">bool</span> <span class="variable">$isLink</span> = <span class="consts">false</span>
+<span class="parantez">)</span>: <span class="types">array</span>
+
+</code></pre>
+                <div class="sample_imgs">
+                    <span class="text">برای مشاهده نمونه خروجی بر روی تصویر زیر کلیک کنید:</span>
+                    <img src="imgs/UploadNewProfileAvatar.png" alt="UploadNewProfileAvatar">
+                </div>
+                <p>
+                    این تصویری که انتخاب میکنید به عنوان اخرین تصویر پروفایل به لیست پروفایلتان افزوده خواهد شد.
+                </p>
+                <div class="tab">
+                    <table>
+                        <tr class="table-header">
+                            <td>
+                                پارامتر
+                            </td>
+                            <td>
+                                توضیحات
+                            </td>
+                        </tr>
+                        <tr>
+                            <td>
+                                $file_path
+                            </td>
+                            <td>
+                                آدرس فایل تصویر
+                            </td>
+                        </tr>
+                        <tr>
+                            <td>
+                                $isLink
+                            </td>
+                            <td>
+                                آیا <span class="string" style="background: #252526; padding: 0 5px;">$file_path</span>
+                                یک لینک است؟
+                            </td>
+                        </tr>
+                    </table>
+                </div>
+            </section>
+            <h1>
+                <div class="title">DeleteMyAvatar</div>
+            </h1>
+            <section id="DeleteMyAvatar">
+                این متد بررسی میکند که ایا یک نام کاربری قابل استفاده است یا خیر.
+                <pre class="code"><code>
+<span class="comments">/**
+ * Delete Profile Picture
+ *
+ * @param string $avatar_id
+ * @return void API result
+ */</span>
+<span class="keyword">public function</span> <span class="method">DeleteMyAvatar</span><span class="parantez">(</span><span class="types">string</span> <span class="variable">$avatar_id</span><span class="parantez">)</span>: <span class="types">bool</span>
+
+</code></pre>
+                <p>
+                    لیست توضیحات پارامتر هارا نیز میبینید:
+                </p>
+                <div class="tab">
+                    <table>
+                        <tr class="table-header">
+                            <td>
+                                پارامتر
+                            </td>
+                            <td>
+                                توضیحات
+                            </td>
+                        </tr>
+                        <tr>
+                            <td>
+                                $avatar_id
+                            </td>
+                            <td>
+                                شناسه تصویری که میخاهید انرا حذف کنید.
+                            </td>
+                        </tr>
+                    </table>
+                </div>
+            </section>
             <div class="buttons">
-                <a href="account.html">
+                <a href="messages.html">
                     <div class="button" style="border-radius: 76% 24% 24% 76% / 50% 50% 50% 50% ;">صفحه بعدی</div>
                 </a>
-                <a href="./Failures.html">
+                <a href="./chats.html">
                     <div class="button" style="border-radius: 76% 24% 24% 76% / 50% 50% 50% 50% ;">صفحه قبلی</div>
                 </a>
             </div>
@@ -262,10 +567,13 @@
 <script>
     let imgs = document.querySelectorAll('.sample_imgs img');
     let link_list = [
-        'https://github.com/AmirrezaFiroz/RubikaLib/blob/main/examples/sendMessage.json',
+        'https://github.com/AmirrezaFiroz/RubikaLib/blob/main/examples/ChangeUsername.json',
+        '<!-- CheckUsername -->',
+        'https://github.com/AmirrezaFiroz/RubikaLib/blob/main/examples/EditProfile.json',
+        'https://github.com/AmirrezaFiroz/RubikaLib/blob/main/examples/UploadNewProfileAvatar.json',
     ];
     for (let i = 0; i < imgs.length; i++) {
-        imgs[i].addEventListener('click', function () {
+        if (imgs[i].alt != 'CheckUsername') imgs[i].addEventListener('click', function () {
             window.open(link_list[i], '_blank');
         });
     }

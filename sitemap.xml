@@ -6,9 +6,9 @@
 		<lastmod>2024-10-11</lastmod>
 	</url>
 	<url>
-		<loc>https://www.rubikalib-php.github.io/docs</loc>
+		<loc>https://www.rubikalib-php.github.io/polls</loc>
 		<priority>0.75</priority>
-		<lastmod>2024-10-11</lastmod>
+		<lastmod>2024-10-07</lastmod>
 	</url>
 	<url>
 		<loc>https://www.rubikalib-php.github.io/examples</loc>
@@ -16,22 +16,27 @@
 		<lastmod>2024-10-07</lastmod>
 	</url>
 	<url>
-		<loc>https://www.rubikalib-php.github.io/polls</loc>
+		<loc>https://www.rubikalib-php.github.io/docs</loc>
 		<priority>0.75</priority>
-		<lastmod>2024-10-07</lastmod>
+		<lastmod>2024-10-11</lastmod>
 	</url>
 	<url>
-		<loc>https://www.rubikalib-php.github.io/docs/account.html</loc>
-		<priority>0.50</priority>
-		<lastmod>2024-10-25</lastmod>
-	</url>
-	<url>
-		<loc>https://www.rubikalib-php.github.io/docs/chats.html</loc>
+		<loc>https://www.rubikalib-php.github.io/docs/updates.html</loc>
 		<priority>0.50</priority>
 		<lastmod>2024-10-07</lastmod>
 	</url>
 	<url>
-		<loc>https://www.rubikalib-php.github.io/docs/contacts.html</loc>
+		<loc>https://www.rubikalib-php.github.io/docs/messages.html</loc>
+		<priority>0.50</priority>
+		<lastmod>2024-10-24</lastmod>
+	</url>
+	<url>
+		<loc>https://www.rubikalib-php.github.io/docs/MainSettings.html</loc>
+		<priority>0.50</priority>
+		<lastmod>2024-10-11</lastmod>
+	</url>
+	<url>
+		<loc>https://www.rubikalib-php.github.io/docs/folders.html</loc>
 		<priority>0.50</priority>
 		<lastmod>2024-10-07</lastmod>
 	</url>
@@ -41,37 +46,22 @@
 		<lastmod>2024-10-24</lastmod>
 	</url>
 	<url>
-		<loc>https://www.rubikalib-php.github.io/docs/folders.html</loc>
+		<loc>https://www.rubikalib-php.github.io/docs/contacts.html</loc>
 		<priority>0.50</priority>
 		<lastmod>2024-10-07</lastmod>
 	</url>
 	<url>
-		<loc>https://www.rubikalib-php.github.io/docs/MainSettings.html</loc>
-		<priority>0.50</priority>
-		<lastmod>2024-10-11</lastmod>
-	</url>
-	<url>
-		<loc>https://www.rubikalib-php.github.io/docs/messages.html</loc>
-		<priority>0.50</priority>
-		<lastmod>2024-10-24</lastmod>
-	</url>
-	<url>
-		<loc>https://www.rubikalib-php.github.io/docs/updates.html</loc>
+		<loc>https://www.rubikalib-php.github.io/docs/chats.html</loc>
 		<priority>0.50</priority>
 		<lastmod>2024-10-07</lastmod>
 	</url>
 	<url>
-		<loc>https://www.rubikalib-php.github.io/docs/enums/ReactionsString.html</loc>
-		<priority>0.25</priority>
-		<lastmod>2024-10-11</lastmod>
+		<loc>https://www.rubikalib-php.github.io/docs/account.html</loc>
+		<priority>0.50</priority>
+		<lastmod>2024-10-28</lastmod>
 	</url>
 	<url>
-		<loc>https://www.rubikalib-php.github.io/docs/enums/ReactionsEmoji.html</loc>
-		<priority>0.25</priority>
-		<lastmod>2024-10-11</lastmod>
-	</url>
-	<url>
-		<loc>https://www.rubikalib-php.github.io/docs/enums/Apptype.html</loc>
+		<loc>https://www.rubikalib-php.github.io/docs/enums/MusicFile.html</loc>
 		<priority>0.25</priority>
 		<lastmod>2024-10-09</lastmod>
 	</url>
@@ -81,8 +71,18 @@
 		<lastmod>2024-10-07</lastmod>
 	</url>
 	<url>
-		<loc>https://www.rubikalib-php.github.io/docs/enums/MusicFile.html</loc>
+		<loc>https://www.rubikalib-php.github.io/docs/enums/Apptype.html</loc>
 		<priority>0.25</priority>
 		<lastmod>2024-10-09</lastmod>
+	</url>
+	<url>
+		<loc>https://www.rubikalib-php.github.io/docs/enums/ReactionsEmoji.html</loc>
+		<priority>0.25</priority>
+		<lastmod>2024-10-11</lastmod>
+	</url>
+	<url>
+		<loc>https://www.rubikalib-php.github.io/docs/enums/ReactionsString.html</loc>
+		<priority>0.25</priority>
+		<lastmod>2024-10-11</lastmod>
 	</url>
 </urlset>
